@@ -1,14 +1,17 @@
 <template>
     <div class="container">
-        <h1>Bienvenue au pays mon fils</h1>
-        <p>c'est la page principale de Caladrius</p>
-        <router-link to="/contact">Contactez nous !</router-link>
+        <navbar></navbar>
+        <firstSection></firstSection>
     </div>
 </template>
 
 <script>
+import firstSection from '@/components/section/firstSection.vue';
+import navbar from '@/components/section/layout/navbar.vue';
 export default {
-
+    components: {
+        navbar, firstSection
+    }
 }
 </script>
 
