@@ -20,7 +20,7 @@ export default {
 
 <style scoped>
 .services__button {
-  padding: 0.9rem;
+  padding: 0.8rem;
   border: 2px solid #007bff;
   border-radius: 0.6rem;
   font-size: 1rem;

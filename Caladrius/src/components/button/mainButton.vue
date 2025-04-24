@@ -1,12 +1,18 @@
 <template>
   <button class="main__button">
-    Découvrir
+    {{ label }}
   </button>
 </template>
 
 <script>
 export default {
-  name: 'MainButton'
+  name: 'MainButton',
+  props:{
+    label:{
+      type: String,
+      default: "Decouvrir"
+    }
+  }
 }
 </script>
 
