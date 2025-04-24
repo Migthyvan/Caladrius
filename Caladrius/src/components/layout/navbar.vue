@@ -24,7 +24,7 @@
       >
         <ul @click="closeMenu">
           <li><a href="#">Accueil</a></li>
-          <li><a href="#">A propos</a></li>
+          <li> <router-link to="/about"> A propos </router-link> </li>
           <li><a href="#">Services</a></li>
           <li><a href="#">Contact</a></li>
         </ul>

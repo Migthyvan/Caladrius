@@ -18,7 +18,7 @@
                 </span>
                 <span class="coordinates__item">
                     <i class="ri-phone-line"></i>
-                    <a href="tel:+225 0103926375">+225 0103926375</a>
+                    <a href="tel:+225 0140008192">+225 0140008192</a>
                 </span>
             </div>
             
