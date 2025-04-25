@@ -101,12 +101,14 @@ components:{
     border-radius: 1rem;
     background: #3f4e5e;
     padding: 1rem;
+    max-width: 400px;
 }
 
 .services__card span{
     padding: 1rem;
     border: 1px solid #007bff;
     width: 18%;
+    max-width: 16%;
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -156,6 +158,19 @@ components:{
 
 @media (min-width: 1024px) {
 
-  
+    .main__content{
+        height: 100vh;
+    }
+
+    .services__container{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 2rem;
+    }
+
+    .second__container{
+        padding: 1rem 3rem 1rem 3rem;
+    }
+
 } 
 </style>

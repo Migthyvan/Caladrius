@@ -10,7 +10,7 @@
       props:{
         label:{
             type: String,
-            default: "Votre nom"
+            default: "Votre message"
         },
         type:{
             type:String,

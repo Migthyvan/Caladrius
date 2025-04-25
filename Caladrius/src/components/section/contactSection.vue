@@ -131,8 +131,24 @@ gap: 1rem;
         padding-top: 4rem;
     }
 
-  .title-line-second{
-    display: none;
-  }
+  
 }
+
+@media (min-width: 1024px) {
+
+    .main__content{
+        height: 100vh;
+    }
+
+    .services__container{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 2rem;
+    }
+
+    .second__container{
+        padding: 1rem 3rem 1rem 3rem;
+    }
+
+} 
 </style>

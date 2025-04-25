@@ -45,11 +45,12 @@ export default {
     flex-direction: column;
     justify-content: left;
     align-items: center;
-    padding: 10rem 1rem;
+    padding: 10rem 1rem 1rem 1rem;
     gap: 1rem;
-    background: #222222;
+    background-image: url("../../assets/pictures/busines%20building.jpg");
     background-size: cover; /* Couvre tout l'espace */
     background-repeat: no-repeat; /* Empêche la répétition */
+    height: 100vh;
 }
 
 .main__content{
@@ -114,7 +115,19 @@ a{
 }
 
 @media (min-width: 1024px) {
+    .main__container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 10rem 4rem 1rem 4rem;
+    height: 100vh;
+    }
 
-  
+    h2{
+        font-size: 3rem;
+    }
+
+    p, a, i{
+        font-size: 1.5rem;
+    }
 } 
 </style>
