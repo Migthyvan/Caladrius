@@ -22,16 +22,18 @@
               <secondButton/>
 
             </div>
-      </section>
+        </section>
+        <footerSection/>
     </div>
   </template>
   
   <script>
   import secondButton from '../components/button/secondButton.vue';
   import navbar from '@/components/layout/navbar.vue';
+  import footerSection from '@/components/section/footerSection.vue';
   export default {
   components:{
-      secondButton, navbar
+      secondButton, navbar, footerSection
   }
   }
   </script>
@@ -41,6 +43,7 @@
       display: flex;
       flex-direction: column;
       gap: 1rem;
+      padding-top: 5rem;
   }
   
   .second__container{

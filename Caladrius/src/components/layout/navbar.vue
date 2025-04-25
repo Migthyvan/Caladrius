@@ -23,10 +23,10 @@
         :class="{ active: isMenuOpen }"
       >
         <ul @click="closeMenu">
-          <li><a href="#">Accueil</a></li>
+          <li><router-link to="/"> Accueil </router-link></li>
           <li> <router-link to="/about"> A propos </router-link> </li>
-          <li><a href="#">Services</a></li>
-          <li><a href="#">Contact</a></li>
+          <li><router-link to="/services">services</router-link></li>
+          <li><router-link to="/contact">contact</router-link></li>
         </ul>
       </div>
     </nav>

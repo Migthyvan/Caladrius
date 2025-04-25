@@ -1,5 +1,8 @@
 <template>
-    <section class="second__container">
+
+    <div class="">
+        <navbar/>
+        <section class="second__container">
         <div class="main__content">
             <div class="title-line"></div>
     
@@ -39,72 +42,78 @@
     
         </div>
         </section>
-    </template>
-      
-    <script>
-    import secondButton from '../button/secondButton.vue';
-    import mainButton from '../button/mainButton.vue';
-    import inputFamily from '../tools/inputFamily.vue';
-    import textArea from '../tools/textArea.vue';
+        <footerSection/>
+    </div>
+
+</template>
     
-    export default {
-    components:{
-        secondButton, inputFamily, textArea,mainButton
-    }
-    }
-    </script>
-      
-    <style scoped>
-    .main__content {
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-    }
+<script>
+import secondButton from '../components/button/secondButton.vue';
+import mainButton from '../components/button/mainButton.vue';
+import inputFamily from '../components/tools/inputFamily.vue';
+import textArea from '../components/tools/textArea.vue';
+import navbar from '../components/layout/navbar.vue';
+import footerSection from '../components/section/footerSection.vue';
+
+export default {
+components:{
+    secondButton, inputFamily, textArea,mainButton, navbar, footerSection
+}
+}
+</script>
     
-    .second__container{
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-        padding: 1rem;
-    }
-    
-    .section__subtitle{
-        font-weight: 700;
-        color: #469fff;
-    }
-    
-    .coordinates{
+<style scoped>
+.main__content {
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    }
+    padding-top: 5rem;
+}
+
+.second__container{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.section__subtitle{
+    font-weight: 700;
+    color: #469fff;
+}
+
+.coordinates{
+display: flex;
+flex-direction: column;
+gap: 1rem;
+}
+
+.coordinates__item{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 1rem;
+}
     
-    .coordinates__item{
-        display: flex;
-        align-items: center;
-        justify-content: start;
-        gap: 1rem;
-    }
-      
-    .title-line {
-        width: 120px; /* Longueur de la ligne */
-        height: 4px; /* Épaisseur de la ligne */
-        background-color: #007bff; /* Couleur de la ligne */
-        margin-bottom: 1rem; /* Espace entre la ligne et le titre */
-        border-radius: 2px; /* Bords légèrement arrondis */
-    }
-    
-    .title-line-second{
-        width: 95%; /* Longueur de la ligne */
-        height: 2px; /* Épaisseur de la ligne */
-        background-color: #007bff; /* Couleur de la ligne */
-        margin-bottom: 1rem; /* Espace entre la ligne et le titre */
-        border-radius: 2px; /* Bords légèrement arrondis */
-    }
-    
-    .email__box{
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-    }
-    </style>
+.title-line {
+    width: 120px; /* Longueur de la ligne */
+    height: 4px; /* Épaisseur de la ligne */
+    background-color: #007bff; /* Couleur de la ligne */
+    margin-bottom: 1rem; /* Espace entre la ligne et le titre */
+    border-radius: 2px; /* Bords légèrement arrondis */
+}
+
+.title-line-second{
+    width: 95%; /* Longueur de la ligne */
+    height: 2px; /* Épaisseur de la ligne */
+    background-color: #007bff; /* Couleur de la ligne */
+    margin-bottom: 1rem; /* Espace entre la ligne et le titre */
+    border-radius: 2px; /* Bords légèrement arrondis */
+}
+
+.email__box{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+</style>
