@@ -13,44 +13,47 @@
                 Services digitaux
             </h3>
 
-            <div class="services__card">
-                <span><i class="fa-solid fa-code"></i></span>
-                <h4 class="services__card__title">
-                    Conception de sites internet
-                </h4>
-                <p> Nous vous aidons à naviguer dans le monde complexe
-                    de la finance des marchés, en vous fournissant des 
-                    conseils et des solutions sur mesure.
-                </p>
-                <secondButton
-                    label = "je créé mon site"
-                />
+            <div class="services__container">
+                
+                <div class="services__card">
+                    <span><i class="fa-solid fa-code"></i></span>
+                    <h4 class="services__card__title">
+                        Conception de sites internet
+                    </h4>
+                    <p> Nous vous aidons à naviguer dans le monde complexe
+                        de la finance des marchés, en vous fournissant des 
+                        conseils et des solutions sur mesure.
+                    </p>
+                    <secondButton
+                        label = "je créé mon site"
+                    />
 
-            </div>
+                </div>
 
-            <div class="services__card">
-                <span><i class="fa-solid fa-mobile-screen-button"></i></span>
-                <h4 class="services__card__title">
-                    Conception d'application mobile
-                </h4>
-                <p> Nous vous aidons à naviguer dans le monde complexe 
-                    de la finance des marchés, en vous fournissant 
-                    des conseils et des solutions sur mesure.
-                </p>
-                <secondButton
-                    label = "je créé mon app"
-                />
-            </div>
+                <div class="services__card">
+                    <span><i class="fa-solid fa-mobile-screen-button"></i></span>
+                    <h4 class="services__card__title">
+                        Conception d'application mobile
+                    </h4>
+                    <p> Nous vous aidons à naviguer dans le monde complexe 
+                        de la finance des marchés, en vous fournissant 
+                        des conseils et des solutions sur mesure.
+                    </p>
+                    <secondButton
+                        label = "je créé mon app"
+                    />
+                </div>
 
-            <div class="services__card">
-                <span><i class="fa-solid fa-laptop"></i></span>
-                <h4 class="services__card__title">
-                    Services freelances
-                </h4>
-                <p>Nous vous aidons à naviguer dans le monde complexe de la finance des marchés, en vous fournissant des conseils et des solutions sur mesure.</p>
-                <secondButton
-                    label="Mon freelance"
-                />
+                <div class="services__card">
+                    <span><i class="fa-solid fa-laptop"></i></span>
+                    <h4 class="services__card__title">
+                        Services freelances
+                    </h4>
+                    <p>Nous vous aidons à naviguer dans le monde complexe de la finance des marchés, en vous fournissant des conseils et des solutions sur mesure.</p>
+                    <secondButton
+                        label="Mon freelance"
+                    />
+                </div>
             </div>
 
             <p>Découvrir tous nos services<i class="ri-contract-right-line"></i></p>
@@ -64,9 +67,10 @@
 import footerSection from '../components/section/footerSection.vue';
 import secondButton from '../components/button/secondButton.vue';
 import navbar from '../components/layout/navbar.vue';
+import serviceSection from '@/components/section/serviceSection.vue';
 export default {
 components:{
-    secondButton, navbar, footerSection
+    secondButton, navbar, footerSection, serviceSection
 }
 }
 </script>
@@ -76,7 +80,7 @@ components:{
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    padding-top: 5rem;
+    padding-top: 2em;
 }
 
 .second__container{
@@ -89,6 +93,12 @@ components:{
 .section__subtitle{
     font-weight: 700;
     color: #469fff;
+}
+
+.services__container{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
 }
 
 .services__card{
@@ -137,4 +147,23 @@ components:{
     margin-bottom: 1rem; /* Espace entre la ligne et le titre */
     border-radius: 2px; /* Bords légèrement arrondis */
 }
+
+@media (min-width: 768px) {
+    .services__container{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+    }
+
+    
+
+  .title-line-second{
+    display: none;
+  }
+}
+
+@media (min-width: 1024px) {
+
+  
+} 
 </style>

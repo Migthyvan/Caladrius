@@ -1,11 +1,15 @@
 <template>
     <section class="main__container">
+        
         <div class="main__content">
             <div class="title-line"></div>
             <h2>Entrons ensemble dans un univers de transformation et
                 d'innovation.
             </h2>
             <mainButton></mainButton>
+        </div>
+
+        <div class="main__content">
             <div class="title-line-second"></div>
             <div class="coordinates">
                 <span class="coordinates__item">
@@ -21,7 +25,6 @@
                     <a href="tel:+225 0140008192">+225 0140008192</a>
                 </span>
             </div>
-            
         </div>
         
     </section>
@@ -29,7 +32,6 @@
 
 <script>
 import mainButton from '@/components/button/mainButton.vue';
-import { ref } from 'vue';
 export default {
     components: {
         mainButton
@@ -41,7 +43,7 @@ export default {
 .main__container {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: left;
     align-items: center;
     padding: 10rem 1rem;
     gap: 1rem;
@@ -55,12 +57,15 @@ export default {
     flex-direction: column;
     justify-content: left;
     gap: 3rem;
+    width: 100%;
 }
 
 .coordinates{
     display: flex;
     flex-direction: column;
+    justify-content: left;
     gap: 1rem;
+    width: 100%;
 }
 
 .coordinates__item{
@@ -96,4 +101,20 @@ a{
   text-decoration: none;
   color: #f3f3f3;
 }
+
+@media (min-width: 768px) {
+  .main__container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .title-line-second{
+    display: none;
+  }
+}
+
+@media (min-width: 1024px) {
+
+  
+} 
 </style>

@@ -26,6 +26,7 @@ export default {
   background: #007bff;
   color: #f3f3f3;
   width: 50%;
+  max-width: 400px;
   cursor: pointer;
   /* Ajoutez la transition ici pour une meilleure pratique */
   transition: all 0.5s ease;

@@ -7,35 +7,41 @@
 
         <div class="title-line-second"></div>
 
-        <h3 class="section__subtitle">
-        Coordonnées
-        </h3>
+        <div class="large__box">
+            <div class="responsive__box">
+                <h3 class="section__subtitle">
+                Coordonnées
+                </h3>
 
-        <div class="coordinates">
-            <span class="coordinates__item">
-                <i class="ri-map-pin-2-line"></i>
-                <p>Abidjan, Côte d'Ivoire</p>
-            </span>
-            <span class="coordinates__item">
-                <i class="ri-mail-line"></i>
-                <a href="mailto:caladriusllc@gmail.com">caladriusllc@gmail.com</a>
-            </span>
-            <span class="coordinates__item">
-                <i class="ri-phone-line"></i>
-                <a href="tel:+225 0103926375">+225 0103926375</a>
-            </span>
+                <div class="coordinates">
+                    <span class="coordinates__item">
+                        <i class="ri-map-pin-2-line"></i>
+                        <p>Abidjan, Côte d'Ivoire</p>
+                    </span>
+                    <span class="coordinates__item">
+                        <i class="ri-mail-line"></i>
+                        <a href="mailto:caladriusllc@gmail.com">caladriusllc@gmail.com</a>
+                    </span>
+                    <span class="coordinates__item">
+                        <i class="ri-phone-line"></i>
+                        <a href="tel:+225 0103926375">+225 0103926375</a>
+                    </span>
+                </div>
+            </div>
+
+            <div class="responsive__box">
+                <h3 class="section__subtitle">
+                Contacter par email
+                </h3>
+
+                <div class="email__box">
+                    <inputFamily/>
+                    <textArea/>
+                </div>
+
+                <mainButton label = "Envoyer"/>
+            </div>
         </div>
-
-        <h3 class="section__subtitle">
-            Contacter par email
-        </h3>
-
-        <div class="email__box">
-            <inputFamily/>
-            <textArea/>
-        </div>
-
-        <mainButton label = "Envoyer"/>
 
     </div>
     </section>
@@ -66,6 +72,12 @@ components:{
     flex-direction: column;
     gap: 1rem;
     padding: 1rem;
+}
+
+.responsive__box{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
 }
 
 .section__subtitle{
@@ -106,5 +118,21 @@ gap: 1rem;
     display: flex;
     flex-direction: column;
     gap: 1rem;
+}
+
+@media (min-width: 768px) {
+    .large__box{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+    }
+
+    .main__content{
+        padding-top: 4rem;
+    }
+
+  .title-line-second{
+    display: none;
+  }
 }
 </style>

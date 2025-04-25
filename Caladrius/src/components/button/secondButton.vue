@@ -34,6 +34,7 @@ export default {
   display: flex;
   gap:0.5rem;
   align-items: center;
+  max-width: 250px;
 }
 
 i{

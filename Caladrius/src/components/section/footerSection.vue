@@ -1,7 +1,8 @@
 <template>
   <footer>
-    <div class="title-line"></div>
+    
     <div class="logo">
+        <div class="title-line"></div>
         CALADRIUS
         <ul>
             <li>Accueil</li>
@@ -16,7 +17,6 @@
         <ul>
             <li class="footer_li">Conditions générales</li>
             <li class="footer_li">Politique de confidentialité</li>
-            <li class="footer_li">Politique de livraison</li>
             <li class="footer_li">Valeurs morales et éthiques</li>
             <li class="footer_li">Droits d'auteurs</li>
         </ul>
@@ -96,5 +96,17 @@ ul{
     background-color: #007bff; /* Couleur de la ligne */
     margin-bottom: 1rem; /* Espace entre la ligne et le titre */
     border-radius: 2px; /* Bords légèrement arrondis */
+}
+
+@media (min-width: 768px) {
+    footer{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+    }
+
+  .title-line-second{
+    display: none;
+  }
 }
 </style>
