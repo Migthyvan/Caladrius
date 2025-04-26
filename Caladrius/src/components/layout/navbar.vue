@@ -114,7 +114,7 @@ transition: all 0.3s ease;
 }
 
 /* Responsive - Menu Hamburger */
-@media (max-width: 768px) {
+@media (max-width: 1400px) {
 .nav__container {
     padding: 1rem;
 }
