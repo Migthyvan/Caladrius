@@ -44,7 +44,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 
 .main__container{
     padding: 4rem 1rem 1rem 1rem;
@@ -93,14 +93,12 @@ span {
 
 @media (min-width: 1024px) {
     .main__container{
-    display: grid;
-    grid-template-columns: 1fr 1fr ;
     padding: 10rem 4rem 1rem 4rem;
     height: 100vh;
     }
 
     h2{
-        font-size: 3rem;
+        font-size: 2rem;
     }
 
     p, a, i{

@@ -32,7 +32,7 @@ export default {
 .container{
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 2rem;
     width: 100%;
     height: auto;
     background: #111111;

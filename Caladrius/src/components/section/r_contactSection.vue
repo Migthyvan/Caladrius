@@ -1,7 +1,7 @@
 <template>
 <div class="main__container center__flex__mobile">
     <p class="title">Contact</p>
-    <h2>
+    <h2 class="subtitle">
         Nous contacter
     </h2>
     <p>
@@ -62,6 +62,37 @@ export default {
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 1rem;
+        width: 100%;
+    }
+
+    title, .subtitle{
+        text-align: center;
+    }
+
+    .subtitle{
+        font-size: 2rem;
+    }
+}
+
+@media (min-width: 1024px) {
+
+    .main__container{
+        margin: 0 4rem;
+    }
+
+    .contact__container{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+        width: 100%;
+    }
+
+    title, .subtitle{
+        text-align: center;
+    }
+
+    .subtitle{
+        font-size: 2rem;
     }
 }
 </style>

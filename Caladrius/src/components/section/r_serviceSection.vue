@@ -1,7 +1,7 @@
 <template>
   <div class="main__container center__flex__mobile">
     <p class="title">Nos services</p>
-    <h2>
+    <h2 class="subtitle">
         Trouvez tout ce dont vous avez besoin
     </h2>
     <p>
@@ -56,13 +56,45 @@ export default {
     gap: 1rem;
 }
 
+.subtitle{
+    font-size: 2rem;
+}
+
 @media (min-width: 768px) {
 
     .service__container{
         display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: 1rem;
+        gap: 2rem;
+    }
+    
+    title, .subtitle{
+        text-align: center;
+    }
+
+    .subtitle{
+        font-size: 2rem;
     }
 }
 
+@media (min-width: 1024px) {
+
+    .main__container{
+        margin: 0 4rem;
+    }
+
+    .service__container{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 2rem;
+    }
+
+    title, .subtitle{
+        text-align: center;
+    }
+
+    .subtitle{
+        font-size: 2rem;
+    }
+}
 </style>

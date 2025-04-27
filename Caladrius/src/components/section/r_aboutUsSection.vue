@@ -1,14 +1,13 @@
 <template>
     <div class="main__container center__flex__mobile">
         <p class="title">A propos</p>
-        <h2>
+        <h2 class="subtitle">
             Qui sommes-nous?
         </h2>
         
         <div class="center__flex__mobile service__container ">
-            <div class="pictures">
-                <img src="../../assets/pictures/african__students__2.jpeg" alt="african students">
-            </div>
+            
+            <img src="../../assets/pictures/african__students__2.jpeg" alt="african students">
 
             <p>
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
@@ -77,6 +76,11 @@ span i {
     color:#f3f3f3
 }
 
+
+.subtitle{
+    font-size: 2rem;
+}
+
 @media (min-width: 768px) {
 
     .aboutUs__container{
@@ -88,8 +92,24 @@ span i {
 
     .service__container{
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;      
         gap: 1rem;
     }
+
+    title, .subtitle{
+        text-align: center;
+    }
+
+    .subtitle{
+        font-size: 2rem;
+    }
+}
+
+@media (min-width: 1024px) {
+
+    .main__container{
+        margin: 0 5rem;
+    }
+
 }
 </style>

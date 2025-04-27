@@ -63,11 +63,19 @@ footer{
 
 .subtitle{
     color: #007bff;
+    text-align: start;
 }
 
 ul {
     list-style: none;
     line-height: 2;
+}
+
+.sub__container{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    gap: 1rem;
 }
 
 @media (min-width: 580px) {
@@ -81,11 +89,11 @@ ul {
 
 @media (min-width: 980px) {
 
-.my__footer{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 1rem;
-}
+    .my__footer{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 1rem;
+    }
 }
 
 </style>
