@@ -51,7 +51,7 @@
 import secondButton from '../components/button/secondButton.vue';
 import mainButton from '../components/button/mainButton.vue';
 import inputFamily from '../components/tools/inputFamily.vue';
-import textArea from '../components/tools/textArea.vue';
+import textArea from '../components/tools/textAreaTool.vue';
 import navbar from '../components/layout/navbar.vue';
 import footerSection from '../components/section/footerSection.vue';
 

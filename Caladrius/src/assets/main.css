@@ -7,6 +7,10 @@
   font-family: 'Inter', sans-serif;
 }
 
+.body{
+  background: #111111;
+}
+
 h1 {
   font-size: 3rem;
   color: #f3f3f3;
@@ -63,8 +67,8 @@ section{
 }
 
 img{
-  width: 350px;
-  height: 350px;
+  width: 330px;
+  height: 330px;
   background-size: cover;
   border-radius: 1rem;
 }
@@ -95,6 +99,13 @@ img{
 
   h1, h2{
     width: 60%;
+  }
+
+  img{
+    width: 400px;
+    height: 400px;
+    background-size: cover;
+    border-radius: 1rem;
   }
  
 }

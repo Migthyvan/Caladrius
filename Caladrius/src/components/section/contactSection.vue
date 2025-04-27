@@ -51,7 +51,7 @@
 import secondButton from '../button/secondButton.vue';
 import mainButton from '../button/mainButton.vue';
 import inputFamily from '../tools/inputFamily.vue';
-import textArea from '../tools/textArea.vue';
+import textArea from '../tools/textAreaTool.vue';
 
 export default {
 components:{

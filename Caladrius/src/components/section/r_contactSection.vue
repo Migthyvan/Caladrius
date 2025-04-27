@@ -1,69 +1,64 @@
 <template>
 <div class="main__container center__flex__mobile">
+    <p class="title">Contact</p>
     <h2>
-        Get in touch
+        Nous contacter
     </h2>
     <p>
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
-        Ipsam maiores rem sapiente voluptatum molestias. 
-        Repellendus consectetur nemo voluptate iste explicabo sed laborum, 
-        sapiente rerum et expedita? Sed ratione doloribus cumque.
+        N'hésitez surtout à nous contacter pour toute question ou demande de renseignement.
     </p>
-    <div class="center__flex__mobile service__container ">
-        <div class="card">
-            <i class="fa-solid fa-code"></i>
-            <div class="card__info">
-                <h4>Développement web</h4>
-                <p>
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
-                    Ipsam maiores rem sapiente voluptatum molestias.
-                </p>
-                <span>En savoir plus <i class="ri-contract-right-line" style="color: #007bff;"></i> </span>
-            </div>
+    <div class="center__flex__mobile contact__container ">
+
+        <div class="center__flex__mobile">
+            <span class="coordinates__item">
+                <i class="ri-map-pin-2-line"></i>
+                <p>Abidjan, Côte d'Ivoire</p>
+            </span>
+            <span class="coordinates__item">
+                <i class="ri-mail-line"></i>
+                <a href="mailto:caladriusllc@gmail.com">caladriusllc@gmail.com</a>
+            </span>
+            <span class="coordinates__item">
+                <i class="ri-phone-line"></i>
+                <a href="tel:+225 0140008192">+225 0140008192</a>
+            </span>
         </div>
 
         <div class="card">
-            <i class="fa-solid fa-mobile-screen-button"></i>
-            <div class="card__info">
-                <h4>Développement web</h4>
-                <p>
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
-                    Ipsam maiores rem sapiente voluptatum molestias.
-                </p>
-                <span>En savoir plus <i class="ri-contract-right-line" style="color: #007bff;"></i> </span>
-            </div>
+            <formTool></formTool>
         </div>
-
-        <div class="card">
-            <i class="fa-solid fa-laptop"></i>
-            <div class="card__info">
-                <h4>Développement web</h4>
-                <p>
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
-                    Ipsam maiores rem sapiente voluptatum molestias.
-                </p>
-                <span>En savoir plus <i class="ri-contract-right-line" style="color: #007bff;"></i> </span>
-            </div>
-        </div>
+        
     </div>
 </div>
 </template>
 
 <script>
+import formTool from '../tools/formTool.vue';
 export default {
-
+    components:{
+        formTool,
+    }
 }
 </script>
 
 <style scoped>
+
+.main__container{
+    padding: 1rem;
+}
 .card{
     display: flex;
     gap: 1rem;
 }
 
+.coordinates__item{
+    font-size: 1rem;
+    font-weight: 500;
+}
+
 @media (min-width: 768px) {
 
-    .service__container{
+    .contact__container{
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 1rem;

@@ -65,12 +65,4 @@ export default {
     }
 }
 
-@media (min-width: 768px) {
-
-.service__container{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 1rem;
-}
-}
 </style>

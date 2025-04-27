@@ -87,6 +87,7 @@ font-weight: 400;
 transition: color 0.3s ease;
 position: relative;
 padding: 0.5rem 0;
+font-size: 1rem;
 }
 
 .div__menu a:hover {
@@ -114,7 +115,7 @@ transition: all 0.3s ease;
 }
 
 /* Responsive - Menu Hamburger */
-@media (max-width: 1400px) {
+@media (max-width: 1399px) {
 .nav__container {
     padding: 1rem;
 }
@@ -143,21 +144,23 @@ transition: all 0.3s ease;
 }
 
 .div__menu ul {
-    flex-direction: column;
-    align-items: center;
-    gap: 1.5rem;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  font-size: 1rem;
 }
 
 .div__menu li {
-    margin: 0;
-    width: 100%;
-    text-align: center;
+  margin: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 1rem;
 }
 
-.div__menu a {
-    display: block;
-    padding: 1rem;
-    font-size: 1.2rem;
+.div__menu ul li a {
+  display: block;
+  padding: 1rem;
+  font-size: 1rem;
 }
 
 /* Animation Hamburger */

@@ -1,5 +1,5 @@
 <template>
-  <footer>
+  <footer class="center__flex__mobile">
     
     <div class="logo">
         <div class="title-line"></div>

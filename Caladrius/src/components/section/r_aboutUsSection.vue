@@ -19,7 +19,8 @@
 
         </div>
 
-        <div class="card">
+        <div class="center__flex__mobile aboutUs__container">
+            <div class="card">
                 <i class="fa-solid fa-mobile-screen-button"></i>
                 <div class="card__info">
                     <h4>Nos valeurs et principes</h4>
@@ -30,6 +31,29 @@
                     <span>En savoir plus <i class="ri-contract-right-line" style="color: #007bff;"></i> </span>
                 </div>
             </div>
+            <div class="card">
+                <i class="fa-solid fa-mobile-screen-button"></i>
+                <div class="card__info">
+                    <h4>Nos valeurs et principes</h4>
+                    <p>
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+                        Ipsam maiores rem sapiente voluptatum molestias.
+                    </p>
+                    <span>En savoir plus <i class="ri-contract-right-line" style="color: #007bff;"></i> </span>
+                </div>
+            </div>
+            <div class="card">
+                <i class="fa-solid fa-mobile-screen-button"></i>
+                <div class="card__info">
+                    <h4>Nos valeurs et principes</h4>
+                    <p>
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+                        Ipsam maiores rem sapiente voluptatum molestias.
+                    </p>
+                    <span>En savoir plus <i class="ri-contract-right-line" style="color: #007bff;"></i> </span>
+                </div>
+            </div>
+        </div>
     </div>
 </template>
 
@@ -54,6 +78,13 @@ span i {
 }
 
 @media (min-width: 768px) {
+
+    .aboutUs__container{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 1rem;
+        padding: 1rem;
+    }
 
     .service__container{
         display: grid;

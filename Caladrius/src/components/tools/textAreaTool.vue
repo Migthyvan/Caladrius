@@ -25,20 +25,28 @@
   </script>
   
 <style scoped>
-.input__family{
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
+    .input__family{
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
 
-label{
-    color: #f3f3f3;
-}
+    label{
+        color: #f3f3f3;
+    }
 
-textarea{
-    padding: 1rem;
-    border-radius: 1rem;
-    border: none;
-    outline: none;
-}
+    textarea{
+        padding: 1rem;
+        background: #111111;
+        border: 1px solid #f3f3f3;
+        outline: #f3f3f3;
+        color: #f3f3f3;
+        border-radius: 0.5rem;
+    }
+
+    textarea:focus{
+        outline: #007bff;
+        border: 1px solid #007bff;
+        transition: all 0.3s ease-in-out;
+    }
 </style>
