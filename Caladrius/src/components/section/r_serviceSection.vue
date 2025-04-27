@@ -1,23 +1,19 @@
 <template>
   <div class="main__container center__flex__mobile">
-    <p class="title">Deploy Faster</p>
+    <p class="title">Nos services</p>
     <h2>
         Trouvez tout ce dont vous avez besoin
     </h2>
     <p>
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
-        Ipsam maiores rem sapiente voluptatum molestias. 
-        Repellendus consectetur nemo voluptate iste explicabo sed laborum, 
-        sapiente rerum et expedita? Sed ratione doloribus cumque.
+        
     </p>
     <div class="center__flex__mobile service__container ">
         <div class="card">
             <i class="fa-solid fa-code"></i>
             <div class="card__info">
-                <h4>Développement web</h4>
+                <h4>Sercice freelance</h4>
                 <p>
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
-                    Ipsam maiores rem sapiente voluptatum molestias.
+                   nous offrons des services de freelance pour vous aider à réaliser vos projets.
                 </p>
                 <span>En savoir plus <i class="ri-contract-right-line" style="color: #007bff;"></i> </span>
             </div>
@@ -26,10 +22,9 @@
         <div class="card">
             <i class="fa-solid fa-mobile-screen-button"></i>
             <div class="card__info">
-                <h4>Développement web</h4>
+                <h4>conception d'application mobile</h4>
                 <p>
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
-                    Ipsam maiores rem sapiente voluptatum molestias.
+                    nous concevons des applications mobiles sur mesure pour répondre à vos besoins spécifiques.
                 </p>
                 <span>En savoir plus <i class="ri-contract-right-line" style="color: #007bff;"></i> </span>
             </div>
@@ -38,10 +33,9 @@
         <div class="card">
             <i class="fa-solid fa-laptop"></i>
             <div class="card__info">
-                <h4>Développement web</h4>
+                <h4>conception de site internet</h4>
                 <p>
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
-                    Ipsam maiores rem sapiente voluptatum molestias.
+                    nous créons des sites internet modernes et personnalisés pour vous démarquer en ligne.
                 </p>
                 <span>En savoir plus <i class="ri-contract-right-line" style="color: #007bff;"></i> </span>
             </div>
