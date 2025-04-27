@@ -81,7 +81,6 @@ span {
     h1,h2{
         text-align: center;
     }
-
     
     .about__btn {
     display: flex;
@@ -95,7 +94,7 @@ span {
 @media (min-width: 1024px) {
     .main__container{
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr ;
     padding: 10rem 4rem 1rem 4rem;
     height: 100vh;
     }

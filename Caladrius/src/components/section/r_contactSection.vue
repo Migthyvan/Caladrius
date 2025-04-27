@@ -1,8 +1,7 @@
 <template>
-  <div class="main__container center__flex__mobile">
-    <p class="title">Deploy Faster</p>
+<div class="main__container center__flex__mobile">
     <h2>
-        Trouvez tout ce dont vous avez besoin
+        Get in touch
     </h2>
     <p>
         Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
@@ -47,7 +46,7 @@
             </div>
         </div>
     </div>
-  </div>
+</div>
 </template>
 
 <script>
@@ -69,14 +68,5 @@ export default {
         grid-template-columns: 1fr 1fr;
         gap: 1rem;
     }
-}
-
-@media (min-width: 768px) {
-
-.service__container{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 1rem;
-}
 }
 </style>
