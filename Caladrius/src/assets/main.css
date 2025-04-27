@@ -62,6 +62,13 @@ section{
   background: #222222;;
 }
 
+img{
+  width: 350px;
+  height: 350px;
+  background-size: cover;
+  border-radius: 1rem;
+}
+
 /* My center setting */
 .center__flex__mobile{
   display: flex;

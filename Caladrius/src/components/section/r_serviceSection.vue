@@ -56,7 +56,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .card{
     display: flex;
     gap: 1rem;
