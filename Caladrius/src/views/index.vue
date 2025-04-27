@@ -2,6 +2,7 @@
     <div class="container">
         <navbar></navbar>
         <r_firstSection></r_firstSection>
+        <r_serviceSection></r_serviceSection>
         <mainSection></mainSection>
         <aboutUsSection></aboutUsSection>
         <contactSection></contactSection>
@@ -16,10 +17,11 @@ import mainSection from '@/components/section/serviceSection.vue';
 import aboutUsSection from '@/components/section/aboutUsSection.vue';
 import contactSection from '@/components/section/contactSection.vue';
 import footerSection from '@/components/section/footerSection.vue';
+import r_serviceSection from '@/components/section/r_serviceSection.vue';
 
 export default {
     components: {
-        navbar, r_firstSection, mainSection, aboutUsSection, contactSection, footerSection
+        navbar, r_firstSection, r_serviceSection , mainSection, aboutUsSection, contactSection, footerSection
     }
 }
 </script>
