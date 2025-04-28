@@ -93,7 +93,7 @@ span {
 
 @media (min-width: 1024px) {
     .main__container{
-    padding: 10rem 4rem 1rem 4rem;
+    padding: 6rem 4rem 1rem 4rem;
     height: 100vh;
     }
 

@@ -7,7 +7,7 @@
     <p>
         N'hésitez surtout à nous contacter pour toute question ou demande de renseignement.
     </p>
-    <div class="center__flex__mobile contact__container ">
+    <div class=" contact__container ">
 
         <div class="center__flex__mobile">
             <span class="coordinates__item">
@@ -52,8 +52,15 @@ export default {
 }
 
 .coordinates__item{
+    display: flex;
+    gap: 1rem;
     font-size: 1rem;
     font-weight: 500;
+    width: 100%;
+}
+
+.subtitle{
+    font-size: 2rem;
 }
 
 @media (min-width: 768px) {
@@ -81,8 +88,9 @@ export default {
     }
 
     .contact__container{
-        display: grid;
-        grid-template-columns: 1fr 1fr;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
         gap: 2rem;
         width: 100%;
     }

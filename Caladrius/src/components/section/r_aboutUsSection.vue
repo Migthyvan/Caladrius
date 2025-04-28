@@ -5,7 +5,7 @@
             Qui sommes-nous?
         </h2>
         
-        <div class="center__flex__mobile service__container ">
+        <div class="service__container ">
             
             <img src="../../assets/pictures/african__students__2.jpeg" alt="african students">
 
@@ -72,8 +72,15 @@ export default {
     color: #f3f3f3;
 }
 
+span{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap: 1rem;
+}
+
 span i {
-    color:#f3f3f3
+    color:#f3f3f3;
 }
 
 
@@ -108,7 +115,18 @@ span i {
 @media (min-width: 1024px) {
 
     .main__container{
-        margin: 0 5rem;
+        margin: 0 3rem;
+    }
+
+    .service__container{
+        display: flex;
+        align-items: center;
+        justify-content: center;      
+        gap: 4rem;
+    }
+
+    .service__container p{
+        width: 40%;
     }
 
 }
