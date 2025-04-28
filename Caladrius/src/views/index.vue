@@ -30,7 +30,6 @@ export default {
 
 <style scoped>
 .container{
-    padding: 0.5rem;
     display: flex;
     flex-direction: column;
     gap: 2rem;
