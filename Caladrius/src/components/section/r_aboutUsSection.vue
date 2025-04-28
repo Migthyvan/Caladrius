@@ -68,6 +68,12 @@ export default {
     gap: 1rem;
 }
 
+.card h4{
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #47a0ff;
+}
+
 .card i{
     color: #f3f3f3;
 }

@@ -30,10 +30,10 @@ export default {
 
 <style scoped>
 .container{
+    padding: 0.5rem;
     display: flex;
     flex-direction: column;
     gap: 2rem;
-    width: 100%;
     height: auto;
     background: #111111;
 }

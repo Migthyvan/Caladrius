@@ -15,12 +15,14 @@
 
 h1 {
   font-size: 3rem;
+  font-weight: 600;
   color: #f3f3f3;
   margin-bottom: 1rem;
 }
 
 h2 {
   font-size: 2rem;
+  font-weight: 600;
   color: #f3f3f3;
   margin-bottom: 1rem;
 }
@@ -115,4 +117,7 @@ img{
 
 .main__container{
   padding: 1rem;
+  box-sizing: border-box; /* Inclut padding/border dans la largeur */
+  min-height: 100vh;
+  overflow-y: hidden ;/* Masque le défilement vertical */
 }

@@ -51,6 +51,7 @@ export default {
     gap: 1rem;
 }
 
+
 .coordinates__item{
     display: flex;
     gap: 1rem;

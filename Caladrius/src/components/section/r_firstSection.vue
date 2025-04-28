@@ -7,7 +7,7 @@
                 d'innovation.
             </h1>
             <h2>
-                Decouvrez notre panoplie de solutions pour faire grandir votre business.
+                Decouvrez notre panoplie de solutions digitales pour faire grandir votre business.
             </h2>
             <div class="about__btn">
                 <mainButton label = "Commencer"></mainButton>
@@ -49,6 +49,9 @@ export default {
 .main__container{
     padding: 4rem 1rem 1rem 1rem;
     background: #111111;
+    box-sizing: border-box; /* Inclut padding/border dans la largeur */
+    min-height: 100vh;
+    overflow-y: hidden ;
 }
 
 .coordinates__item{
@@ -93,8 +96,8 @@ span {
 
 @media (min-width: 1024px) {
     .main__container{
-    padding: 6rem 4rem 1rem 4rem;
-    height: 100vh;
+    padding: 4rem 4rem 1rem 4rem;
+    min-height: 100vh;
     }
 
     h2{

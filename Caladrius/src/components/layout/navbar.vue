@@ -53,7 +53,6 @@ justify-content: space-between;
 align-items: center;
 padding: 1rem 2rem;
 background-color:#222222;
-;
 color: #f3f3f3;
 position: fixed;
 top: 0;
@@ -61,6 +60,7 @@ left: 0;
 width: 100%;
 z-index: 1000;
 box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+overflow-x: hidden; /* Empêche le débordement horizontal */
 }
 
 .div__logo h3 {
@@ -75,6 +75,7 @@ display: flex;
 list-style: none;
 margin: 0;
 padding: 0;
+
 }
 
 .div__menu li {
@@ -116,7 +117,7 @@ transition: all 0.3s ease;
 }
 
 /* Responsive - Menu Hamburger */
-@media (max-width: 1399px) {
+@media (max-width: 1350px) {
 .nav__container {
     padding: 1rem;
 }
@@ -126,18 +127,19 @@ transition: all 0.3s ease;
 }
 
 .div__menu {
-    position: fixed;
-    top: 70px;
-    left: 0;
-    width: 100%;
-    height: calc(100vh - 70px);
-    background-color: #222222;
-    padding: 2rem 1rem;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    transform: translateX(-100%);
-    transition: transform 0.3s ease;
-    z-index: 1000;
-    overflow-y: auto;
+  position: fixed;
+  top: 70px;
+  left: 0;
+  width: 100%;
+  height: calc(100vh - 70px);
+  background-color: #222222;
+  padding: 2rem 1rem;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+  z-index: 1000;
+  overflow-y: auto;
+  overscroll-behavior: contain; /* Évite le débordement du scroll parent */
 }
 
 .div__menu.active {
