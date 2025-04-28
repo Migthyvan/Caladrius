@@ -2,17 +2,17 @@
 <div class="services">
     <navbar/>
     <r_serviceSection/>
-    <footerSection/>
+    <r_footerSection/>
 </div>
 </template>
   
 <script>
-import footerSection from '../components/section/footerSection.vue';
+import r_footerSection from '../components/section/r_footerSection.vue';
 import navbar from '../components/layout/navbar.vue';
 import r_serviceSection from '../components/section/r_serviceSection.vue';
 export default {
 components:{
-   navbar, footerSection, r_serviceSection
+   navbar, r_footerSection, r_serviceSection
 }
 }
 </script>

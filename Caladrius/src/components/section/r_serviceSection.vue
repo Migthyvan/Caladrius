@@ -52,7 +52,7 @@ export default {
 
 <style scoped>
 .main__container{
-    padding-top: 2rem;
+    padding-top: 6rem;
 }
 
 .card{

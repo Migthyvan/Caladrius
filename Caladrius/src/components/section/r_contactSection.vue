@@ -44,7 +44,7 @@ export default {
 <style scoped>
 
 .main__container{
-    padding: 1rem;
+    padding: 6rem 1rem 1rem 1rem;
 }
 .card{
     display: flex;
