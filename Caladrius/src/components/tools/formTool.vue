@@ -8,7 +8,7 @@
             <inputFamily label="Email" placeholder="votre email" type="mail"></inputFamily>
         </div>
         <div class="about__email">
-            <textAreaTool label="Email" placeholder="Entrer votre email" type="email"></textAreaTool> 
+            <textAreaTool label="Message" placeholder="Entrer votre message" type="text"></textAreaTool> 
         </div>
         <mainButton label="Envoyer" type="submit"></mainButton>
     </div>
