@@ -51,6 +51,10 @@ export default {
 </script>
 
 <style scoped>
+.main__container{
+    padding-top: 2rem;
+}
+
 .card{
     display: flex;
     gap: 1rem;
