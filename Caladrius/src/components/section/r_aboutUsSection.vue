@@ -10,44 +10,39 @@
             <img src="../../assets/pictures/african__students__2.jpeg" alt="african students">
 
             <p>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
-                Ipsam maiores rem sapiente voluptatum molestias. 
-                Repellendus consectetur nemo voluptate iste explicabo sed laborum, 
-                sapiente rerum et expedita? Sed ratione doloribus cumque.
+                {{ description }}
             </p>
 
         </div>
 
         <div class="center__flex__mobile aboutUs__container">
             <div class="card">
-                <i class="fa-solid fa-mobile-screen-button"></i>
+                <i class="fa-solid fa-book"></i>
                 <div class="card__info">
-                    <h4>Nos valeurs et principes</h4>
+                    <h4>Nos valeurs</h4>
                     <p>
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
-                        Ipsam maiores rem sapiente voluptatum molestias.
+                        Chez caladrius, nous croyons en l'innovation, la créativité et l'engagement envers nos clients.
                     </p>
                     <span>En savoir plus <i class="ri-contract-right-line" style="color: #007bff;"></i> </span>
                 </div>
             </div>
             <div class="card">
-                <i class="fa-solid fa-mobile-screen-button"></i>
+                <i class="fa-solid fa-pen"></i>
                 <div class="card__info">
-                    <h4>Nos valeurs et principes</h4>
+                    <h4>Nos principes</h4>
                     <p>
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
-                        Ipsam maiores rem sapiente voluptatum molestias.
+                        Nous nous engageons à fournir des solutions de qualité, en respectant les délais et en dépassant les attentes de nos clients.
                     </p>
                     <span>En savoir plus <i class="ri-contract-right-line" style="color: #007bff;"></i> </span>
                 </div>
             </div>
             <div class="card">
-                <i class="fa-solid fa-mobile-screen-button"></i>
+                <i class="fa-solid fa-bullseye"></i>
                 <div class="card__info">
-                    <h4>Nos valeurs et principes</h4>
+                    <h4>Nos objectifs</h4>
                     <p>
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
-                        Ipsam maiores rem sapiente voluptatum molestias.
+                        Notre objectif est de transformer vos idées en réalité numérique,
+                        en vous offrant des solutions sur mesure qui répondent à vos besoins spécifiques.
                     </p>
                     <span>En savoir plus <i class="ri-contract-right-line" style="color: #007bff;"></i> </span>
                 </div>
@@ -58,7 +53,16 @@
 
 <script>
 export default {
-
+    props: {
+        title :{
+            type: String,
+            default: "A propos"
+        },
+        description :{
+            type: String,
+            default: "Nous concevons des sites web modernes, des applications mobiles intuitives et offrons des solutions freelance adaptées à vos besoins.Chez Caladrius, une équipe passionnée vous accompagne pour donner vie à vos projets avec un design soigné, des technologies performantes et une approche personnalisée."
+        }
+    }
 }
 </script>
 
