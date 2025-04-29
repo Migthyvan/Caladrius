@@ -27,23 +27,47 @@
           <li> <router-link to="/about"> A propos </router-link> </li>
           <li><router-link to="/services">services</router-link></li>
           <li><router-link to="/contact">contact</router-link></li>
+          <li><router-link to="/newsletter">newsletter</router-link></li>
         </ul>
+      </div>
+
+      <div class="btn__started">
+        <startButton label="commencer"/>
       </div>
     </nav>
 </template>
   
-<script setup>
-  import { ref } from 'vue';
+<script>
+import { ref } from 'vue';
+import startButton from '../button/startButton.vue';
+
+export default {
+  name: 'Navbar',
   
-  const isMenuOpen = ref(false);
-  
-  const toggleMenu = () => {
-    isMenuOpen.value = !isMenuOpen.value;
-  };
-  
-  const closeMenu = () => {
-    isMenuOpen.value = false;
-  };
+  components: {
+    startButton,
+  },
+
+  setup() {
+    const isMenuOpen = ref(false);
+
+    const toggleMenu = () => {
+      isMenuOpen.value = !isMenuOpen.value;
+    };
+
+    const closeMenu = () => {
+      isMenuOpen.value = false;
+    };
+
+    return {
+      isMenuOpen,
+      toggleMenu,
+      closeMenu
+    };
+  }
+};
+
+
 </script>
   
 <style scoped>
@@ -117,7 +141,7 @@ transition: all 0.3s ease;
 }
 
 /* Responsive - Menu Hamburger */
-@media (max-width: 1350px) {
+@media (max-width: 1280px) {
 .nav__container {
     padding: 1rem;
 }
@@ -177,6 +201,10 @@ transition: all 0.3s ease;
 
 .hamburger.active .hamburger__line:nth-child(3) {
     transform: translateY(-7px) rotate(-45deg);
+}
+
+.btn__started{
+  display: none;
 }
 }
 </style>

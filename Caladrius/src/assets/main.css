@@ -117,6 +117,7 @@ img{
 
 .main__container{
   padding: 1rem;
+  background-color: #111111;
   box-sizing: border-box; /* Inclut padding/border dans la largeur */
   min-height: 100vh;
   overflow-y: hidden ;/* Masque le défilement vertical */

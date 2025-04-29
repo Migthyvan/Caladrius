@@ -7,10 +7,7 @@
         <div class="about__email">
             <inputFamily label="Email" placeholder="votre email" type="mail"></inputFamily>
         </div>
-        <div class="about__email">
-            <textAreaTool label="Message" placeholder="Entrer votre message" type="text"></textAreaTool> 
-        </div>
-        <mainButton label="envoyer" type="submit"></mainButton>
+        <mainButton label="souscrire" type="submit"></mainButton>
     </div>
 </template>
 
@@ -18,18 +15,12 @@
 import mainButton from '../button/mainButton.vue';
 import inputFamily from './inputFamily.vue';
 import textAreaTool from './textAreaTool.vue';
+
 export default {
     
     components:{
         inputFamily, textAreaTool, mainButton
     },
-
-    setup(){
-       
-        return {
-            
-        }
-    }
 }
 </script>
 

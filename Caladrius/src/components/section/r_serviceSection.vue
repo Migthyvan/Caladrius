@@ -4,9 +4,6 @@
     <h2 class="subtitle">
         Trouvez tout ce dont vous avez besoin
     </h2>
-    <p>
-        
-    </p>
     <div class="center__flex__mobile service__container ">
         <div class="card">
             <i class="fa-solid fa-code"></i>
@@ -64,6 +61,12 @@ export default {
     font-size: 1.3rem;
     font-weight: 600;
     color: #47a0ff;
+}
+
+.card span{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
 }
 
 .subtitle{
