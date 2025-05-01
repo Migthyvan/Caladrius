@@ -26,6 +26,11 @@ const routes = [
     path:'/newsletter',
     name: 'newsletter',
     component: () => import('../views/newsletter.vue')
+  },
+  {
+    path:'/zakistudy',
+    name: 'zakistudy',
+    component: () => import('../views/secondViews/zakiStudy.vue')
   }
 ];
 

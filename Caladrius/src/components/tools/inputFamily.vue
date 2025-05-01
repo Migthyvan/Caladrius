@@ -1,11 +1,12 @@
 <template>
   <div class="input__family">
     <label for="name">{{ label }}</label>
-    <input :type=type :placeholder= placeholder>
+    <input :type="type" :placeholder="placeholder" :value="inputValue" @input="updateValue" />
   </div>
 </template>
 
 <script>
+import { ref } from 'vue';
 export default {
     props:{
         label:{
@@ -19,7 +20,25 @@ export default {
         placeholder:{
             type:String,
             default: 'Entrer votre nom'
+        },
+        modelValue:{
+            type: String,
+            default: ''
         }
+    },
+    emits: ['update:modelValue'],
+    setup(props, { emit }) {
+        const inputValue = ref(props.modelValue);
+
+        const updateValue = (event) => {
+            inputValue.value = event.target.value;
+            emit('update:modelValue', inputValue.value);
+        };
+
+        return {
+            inputValue,
+            updateValue
+        };
     }
 }
 </script>

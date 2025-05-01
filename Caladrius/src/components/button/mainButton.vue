@@ -5,6 +5,7 @@
 </template>
 
 <script>
+import loaderTools from './loaderTools.vue';
 export default {
   name: 'MainButton',
   props:{
@@ -12,6 +13,9 @@ export default {
       type: String,
       default: "Decouvrir"
     }
+  },
+  components:{
+    loaderTools
   }
 }
 </script>

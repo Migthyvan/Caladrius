@@ -64,6 +64,7 @@ footer{
 .subtitle{
     color: #007bff;
     text-align: start;
+    font-size: 1.2rem;
 }
 
 ul {

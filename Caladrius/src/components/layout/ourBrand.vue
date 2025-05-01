@@ -1,6 +1,6 @@
 <template>
   <footer>
-    <p>Provided by Caladrius</p>
+    <p>Provided by Caladrius Digital</p>
   </footer>
 </template>
 
