@@ -65,7 +65,7 @@
   flex-direction: column;
   gap: 1rem;
   width: 100%;
-    
+  padding: 0.4rem 1rem;  
 }
 
 .checkbox__item{

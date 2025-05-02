@@ -59,36 +59,35 @@
 </script>
   
 <style scoped>
-    .input__family{
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-        
-    }
+  .input__family{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
 
-    label{
-        color: #f3f3f3;
-    }
+  label{
+    color: #f3f3f3;
+  }
 
-    select{
-        padding: 1rem;
-        background: #111111;
-        border: 1px solid #f3f3f3;
-        outline: #f3f3f3;
-        color: #f3f3f3;
-        border-radius: 0.5rem;
-        width: 100%;
-    }
+  select{
+    padding: 0.4rem 1rem; 
+    background: #111111;
+    border: 1px solid #f3f3f3;
+    outline: #f3f3f3;
+    color: #f3f3f3;
+    width: 100%;
+    border-radius: 0.2rem;
+  }
     
-    select:focus{
-        outline: #007bff;
-        border: 1px solid #007bff;
-        transition: all 0.3s ease-in-out;
-    }
+  select:focus{
+    outline: #007bff;
+    border: 1px solid #007bff;
+    transition: all 0.3s ease-in-out;
+  }
 
-    @media (min-width: 768px) {
+  @media (min-width: 768px) {
 
-        
-    }
+      
+  }
 
 </style>
