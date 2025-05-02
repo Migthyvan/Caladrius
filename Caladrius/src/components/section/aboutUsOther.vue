@@ -5,9 +5,9 @@
             Qui sommes-nous?
         </h2>
         
-        <div class="service__container ">
+        <div class="service__container">
             
-            <img src="../../assets/pictures/african__students__2.jpeg" alt="african students">
+            <img src="../../assets/pictures/african__students__2.jpeg" data-aos="fade-left" alt="african students">
 
             <p>
                 {{ description }}
@@ -15,34 +15,41 @@
 
         </div>
 
-        <h2 class="subtitle">
+        <h2 class="subtitle" data-aos="fade-up"
+            data-aos-duration="3000"
+        >
             Nos valeurs
         </h2>
 
         <div class="service__container ">
             
-            <p>
+            <p data-aos="fade-up"
+                data-aos-duration="3000"
+            >
                 {{ description }}
             </p>
 
-            <img src="../../assets/pictures/holdman.jpeg" alt="african students">
+            <img src="../../assets/pictures/holdman.jpeg" data-aos="fade-right" alt="african students">
 
         </div>
 
-        <h2 class="subtitle">
+        <h2 class="subtitle" data-aos="fade-up"
+            data-aos-duration="3000"
+        >
             Nos principes
         </h2>
 
         <div class="service__container ">
 
-            <img src="../../assets/pictures/african__students__2.jpeg" alt="african students">
+            <img src="../../assets/pictures/valeur.jpg" data-aos="fade-left" alt="african students">
 
-            <p>
+            <p data-aos="fade-right">
                 {{ description }}
             </p>
         </div>
 
-        <h2 class="subtitle">
+        <h2 class="subtitle" data-aos="fade-up"
+            data-aos-duration="3000">
             Nos Objectifs
         </h2>
 
@@ -52,7 +59,7 @@
                 {{ description }}
             </p>
 
-            <img src="../../assets/pictures/african__students__2.jpeg" alt="african students">
+            <img src="../../assets/pictures/objectif.jpg" data-aos="fade-left" alt="african students">
 
         </div>
     </div>
