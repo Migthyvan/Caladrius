@@ -12,5 +12,5 @@ app.use(router); // Utilisation du router
 app.mount('#app');
 AOS.init({
     duration: 1000, // Durée de l'animation (ms)
-    once: false, // Animation jouée une seule fois
+    once: false, // Animation jouée plusieurs fois
   });
