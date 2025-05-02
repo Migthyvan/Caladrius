@@ -20,7 +20,9 @@
                     />
                 </transition>
             </div>
-            <secondButton label="suivant" type="submit" @click="incrementStep"></secondButton>
+            <div class="about__btn">
+                <nextButton label="suivant" type="submit" @click="incrementStep"/>
+            </div>
         </div>
 
         <div class="center__flex__mobile my__form" v-if="step === 2">
@@ -43,7 +45,10 @@
                     v-model="selectedProfession" 
                 />
             </div>
-            <secondButton label="suivant" type="submit" @click="incrementStep"></secondButton>
+            <div class="about__btn">
+                <prevButton label = "précédent" @click="decrement"/>
+                <nextButton label="suivant" type="submit" @click="incrementStep"/>
+            </div>
         </div>
 
         <div class="center__flex__mobile my__form" v-if="step === 3">
@@ -51,7 +56,10 @@
                 label="Quels types de produits achetez-vous habituellement ?" 
                 :options="kindOfProductsOptions" 
             />
-            <secondButton label="suivant" type="submit" @click="incrementStep"></secondButton>
+            <div class="about__btn">
+                <prevButton label = "précédent" @click="decrement"/>
+                <nextButton label="suivant" type="submit" @click="incrementStep"/>
+            </div>        
         </div>
 
         <div class="center__flex__mobile my__form" v-if="step === 4">
@@ -67,7 +75,10 @@
             question="Quels types de produits aimeriez-vous pouvoir commander via une telle application ?"
             :options="kindOfProductsOptions" 
             />
-            <secondButton label="suivant" type="submit" @click="incrementStep"></secondButton>
+            <div class="about__btn">
+                <prevButton label = "précédent" @click="decrement"/>
+                <nextButton label="suivant" type="submit" @click="incrementStep"/>
+            </div>
         </div>
 
         <div class="center__flex__mobile my__form" v-if="step === 5">
@@ -83,7 +94,10 @@
                 label="Avez-vous d'autres commentaires ou suggestions concernant une application de livraison de produits vivriers ?"
                 placeholder="Vos commentaires"
             />
-            <mainButton label="envoyer" type="submit" @click="incrementStep"></mainButton>
+            <div class="about__btn">
+                <prevButton label = "précédent" @click="decrement"/>
+                <nextButton label="suivant" type="submit" @click="incrementStep"/>
+            </div>        
         </div>
     </section>
 </template>
@@ -94,12 +108,15 @@ import inputFamily from './inputFamily.vue';
 import textAreaTool from './textAreaTool.vue';
 import selectFamily from './selectFamily.vue';
 import secondButton from '../button/secondButton.vue';
+import prevButton from '../button/prevButton.vue';
+import nextButton from '../button/nextButton.vue';
 import checkBoxTool from './checkBoxTool.vue';
 import { ref } from 'vue';
 export default {
     
     components:{
-        inputFamily, textAreaTool, mainButton, selectFamily, secondButton, checkBoxTool
+        inputFamily, textAreaTool, mainButton, selectFamily, secondButton, checkBoxTool, prevButton,
+        nextButton
     },
 
     setup(){
@@ -119,13 +136,16 @@ export default {
         function incrementStep() {
             step.value++;
         };
+        function decrement() {
+            step.value --;
+        }
 
         return {
             step, professionOptions, selectedProfession, buyLocationOptions,
             buyFrequencyOptions, buyBudgetOptions, kindOfProductsOptions,
             kindOfInterestOptions, kindOfProductsOptions, kindOfAvantagesOptions,
             deliveryDurationOptions, deliveryCostOptions,
-            selectedProfession, incrementStep, buyFrequencyOptions
+            selectedProfession, incrementStep, buyFrequencyOptions, decrement
         }
     }
 }
@@ -149,6 +169,14 @@ export default {
 }
 
 .about__email{
+    width: 100%;
+}
+
+.about__btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
     width: 100%;
 }
 
