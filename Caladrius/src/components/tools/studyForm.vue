@@ -20,7 +20,7 @@
                     />
                 </transition>
             </div>
-            <secondButton label="envoyer" type="submit" @click="incrementStep"></secondButton>
+            <secondButton label="suivant" type="submit" @click="incrementStep"></secondButton>
         </div>
 
         <div class="center__flex__mobile my__form" v-if="step === 2">
@@ -38,20 +38,52 @@
             </div>
             <div class="input__group ">
                 <selectFamily 
-                    label="Quel est votre budget moyen par semaine pour l'achat de produits vivriers ?" 
+                    label="Quel est votre budget moyen pour l'achat de produits vivriers ?" 
                     :options="buyBudgetOptions" 
                     v-model="selectedProfession" 
                 />
-                <transition>
-                    <inputFamily
-                        v-if="selectedProfession === 'Autre'"
-                        label="Précisez votre profession" 
-                        placeholder="Votre profession" 
-                        type="text"
-                    />
-                </transition>
             </div>
-            <secondButton label="envoyer" type="submit"></secondButton>
+            <secondButton label="suivant" type="submit" @click="incrementStep"></secondButton>
+        </div>
+
+        <div class="center__flex__mobile my__form" v-if="step === 3">
+            <checkBoxTool 
+                label="Quels types de produits achetez-vous habituellement ?" 
+                :options="kindOfProductsOptions" 
+            />
+            <secondButton label="suivant" type="submit" @click="incrementStep"></secondButton>
+        </div>
+
+        <div class="center__flex__mobile my__form" v-if="step === 4">
+            <selectFamily 
+                label="Seriez-vous intéressé(e) par une application mobile pour vous faire livrer des produits vivriers à domicile ?"
+                :options="kindOfInterestOptions" 
+            />
+            <checkBoxTool 
+            question="Quels seraient les avantages les plus importants pour vous d'utiliser une telle application ?"
+            :options="kindOfAvantagesOptions" 
+            />
+            <checkBoxTool 
+            question="Quels types de produits aimeriez-vous pouvoir commander via une telle application ?"
+            :options="kindOfProductsOptions" 
+            />
+            <secondButton label="suivant" type="submit" @click="incrementStep"></secondButton>
+        </div>
+
+        <div class="center__flex__mobile my__form" v-if="step === 5">
+            <selectFamily 
+                label="Quel serait le délai de livraison idéal pour vous ?"
+                :options="deliveryDurationOptions" 
+            />
+            <selectFamily 
+                label="Quel serait le montant de frais de livraison que vous seriez prêt(e) à payer ?"
+                :options="deliveryCostOptions" 
+            />
+            <textAreaTool 
+                label="Avez-vous d'autres commentaires ou suggestions concernant une application de livraison de produits vivriers ?"
+                placeholder="Vos commentaires"
+            />
+            <mainButton label="envoyer" type="submit" @click="incrementStep"></mainButton>
         </div>
     </section>
 </template>
@@ -62,11 +94,12 @@ import inputFamily from './inputFamily.vue';
 import textAreaTool from './textAreaTool.vue';
 import selectFamily from './selectFamily.vue';
 import secondButton from '../button/secondButton.vue';
+import checkBoxTool from './checkBoxTool.vue';
 import { ref } from 'vue';
 export default {
     
     components:{
-        inputFamily, textAreaTool, mainButton, selectFamily, secondButton
+        inputFamily, textAreaTool, mainButton, selectFamily, secondButton, checkBoxTool
     },
 
     setup(){
@@ -78,15 +111,21 @@ export default {
         const buyFrequencyOptions = ['Tous les jours', 'Plusieurs fois par semaine', 'Une fois par semaine', "Une fois chaque deux semaines", 'Une fois par mois', 'Rarement']
         const buyBudgetOptions = ['Moins de 5000 FCFA', '5 000 - 10 000 FCFA', '10 001 - 20 000 FCFA', 'Plus de 20 000 FCFA']
         const kindOfProductsOptions = ['Fruits', 'Légumes', 'Produits laitiers', 'Viande', 'Poisson', 'Produits bio', 'Produits locaux', 'Autre']
-        
+        const kindOfInterestOptions = ['Oui, très intéressé(e)', 'Oui, potentiellement intéressé(e)','Peut-être' , 'Non, pas intéressé(e)']
+        const kindOfAvantagesOptions = ['Gain de temps', 'Facilité et commodité', 'Accès à des produits locaux/spécifiques', 'Possibilité de comparer les prix', 'Autres']
+        const deliveryDurationOptions = ['30 minutes à 1 heure', '1 à 2 heures', 'Plus de 2 heures']
+        const deliveryCostOptions = ['Moins de 500 FCFA', '500 - 1000 FCFA', '1001 - 2000 FCFA', 'Plus de 2000 FCFA', 'livraison gratuite sous certaines conditions (ex: montant minimum d\'achat)']
+
         function incrementStep() {
             step.value++;
         };
 
         return {
             step, professionOptions, selectedProfession, buyLocationOptions,
-            buyFrequencyOptions, buyBudgetOptions, kindOfProductsOptions, 
-            incrementStep, buyFrequencyOptions
+            buyFrequencyOptions, buyBudgetOptions, kindOfProductsOptions,
+            kindOfInterestOptions, kindOfProductsOptions, kindOfAvantagesOptions,
+            deliveryDurationOptions, deliveryCostOptions,
+            selectedProfession, incrementStep, buyFrequencyOptions
         }
     }
 }
