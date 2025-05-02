@@ -15,11 +15,11 @@ import selectFamily from '../tools/selectFamily.vue';
 import studyForm from '../tools/studyForm.vue';
 export default {
 
-    components:{
-        inputFamily,
-        selectFamily,
-        studyForm
-    }
+  components:{
+    inputFamily,
+    selectFamily,
+    studyForm
+  }
 
 }
 </script>
