@@ -29,7 +29,7 @@
             <div class="card">
                 <i class="fa-solid fa-pen"></i>
                 <div class="card__info">
-                    <h4>Nos principes</h4>
+                    <h4 data-aos="fade-up">Nos principes</h4>
                     <p>
                         Nous nous engageons à fournir des solutions de qualité, en respectant les délais et en dépassant les attentes de nos clients.
                     </p>
