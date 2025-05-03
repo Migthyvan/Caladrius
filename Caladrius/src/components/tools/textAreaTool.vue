@@ -1,28 +1,28 @@
 <template>
     <div class="input__family" data-aos="fade-down">
-      <label for="name">{{ label }}</label>
-      <textarea name="" id="" :placeholder=placeholder></textarea>
+        <label for="name">{{ label }}</label>
+        <textarea name="" id="" :placeholder=placeholder></textarea>
     </div>
-  </template>
+</template>
   
-  <script>
-  export default {
-      props:{
-        label:{
-            type: String,
-            default: "Votre message"
-        },
-        type:{
-            type:String,
-            default: 'text'
-        },
-        placeholder:{
-            type:String,
-            default: 'Entrer votre message'
-        }
-      }
-  }
-  </script>
+<script>
+export default {
+    props:{
+    label:{
+        type: String,
+        default: "Votre message"
+    },
+    type:{
+        type:String,
+        default: 'text'
+    },
+    placeholder:{
+        type:String,
+        default: 'Entrer votre message'
+    }
+    }
+}
+</script>
   
 <style scoped>
     .input__family{

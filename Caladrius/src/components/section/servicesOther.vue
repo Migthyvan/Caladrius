@@ -68,7 +68,7 @@
                     <p>
                         $15 per month if paid annually
                     </p>
-                    <mainButton text="Get started"/>
+                    <mainButton label="Get started"/>
 
                     <ul>
                         <li>5 products</li>
@@ -89,7 +89,7 @@
                     <p>
                         $15 per month if paid annually
                     </p>
-                    <mainButton text="Get started"/>
+                    <mainButton label="Get started"/>
 
                     <ul>
                         <li>5 products</li>
@@ -110,7 +110,7 @@
                     <p>
                         $15 per month if paid annually
                     </p>
-                    <mainButton text="Get started"/>
+                    <mainButton label="Get started"/>
 
                     <ul>
                         <li>5 products</li>
@@ -159,7 +159,7 @@
                     <p>
                         $15 per month if paid annually
                     </p>
-                    <mainButton text="Get started"/>
+                    <mainButton label="Get started"/>
 
                     <ul>
                         <li>5 products</li>
@@ -180,7 +180,7 @@
                     <p>
                         $15 per month if paid annually
                     </p>
-                    <mainButton text="Get started"/>
+                    <mainButton label="Get started"/>
 
                     <ul>
                         <li>5 products</li>
@@ -201,7 +201,7 @@
                     <p>
                         $15 per month if paid annually
                     </p>
-                    <mainButton text="Get started"/>
+                    <mainButton label="Get started"/>
 
                     <ul>
                         <li>5 products</li>

@@ -1,5 +1,5 @@
 <template>
-  <div class="input__family" data-aos="fade-down">
+  <div class="input__family">
     <label for="name">{{ label }}</label>
     <input :type="type" :placeholder="placeholder" :value="inputValue" @input="updateValue" />
   </div>
