@@ -14,6 +14,7 @@
               <li>A propos</li>
               <li>Services</li>
               <li>Contact</li>
+              <li>Newsletter</li>
             </ul>
         </div>
   
