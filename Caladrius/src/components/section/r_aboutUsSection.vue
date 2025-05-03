@@ -1,15 +1,15 @@
 <template>
     <div class="main__container center__flex__mobile">
-        <p class="title">A propos</p>
-        <h2 class="subtitle">
+        <p class="title" data-aos="fade-up">A propos</p>
+        <h2 class="subtitle" data-aos="fade-up">
             Qui sommes-nous?
         </h2>
         
         <div class="service__container ">
             
-            <img src="../../assets/pictures/african__students__2.jpeg" alt="african students">
+            <img src="../../assets/pictures/african__students__2.jpeg" data-aos="fade-right" alt="african students">
 
-            <p>
+            <p data-aos="fade-left">
                 {{ description }}
             </p>
 
@@ -17,34 +17,34 @@
 
         <div class="center__flex__mobile aboutUs__container">
             <div class="card">
-                <i class="fa-solid fa-book"></i>
+                <i class="fa-solid fa-book" data-aos="fade-right"></i>
                 <div class="card__info">
-                    <h4>Nos valeurs</h4>
-                    <p>
+                    <h4 data-aos="fade-right">Nos valeurs</h4>
+                    <p data-aos="fade-right">
                         Chez caladrius, nous croyons en l'innovation, la créativité et l'engagement envers nos clients.
                     </p>
-                    <span>En savoir plus <i class="ri-contract-right-line" style="color: #007bff;"></i> </span>
+                    <span data-aos="fade-right">En savoir plus <i class="ri-contract-right-line" style="color: #007bff;"></i> </span>
                 </div>
             </div>
             <div class="card">
-                <i class="fa-solid fa-pen"></i>
+                <i class="fa-solid fa-pen" data-aos="fade-down"></i>
                 <div class="card__info">
-                    <h4 data-aos="fade-up">Nos principes</h4>
-                    <p>
+                    <h4 data-aos="fade-down">Nos principes</h4>
+                    <p data-aos="fade-up">
                         Nous nous engageons à fournir des solutions de qualité, en respectant les délais et en dépassant les attentes de nos clients.
                     </p>
-                    <span>En savoir plus <i class="ri-contract-right-line" style="color: #007bff;"></i> </span>
+                    <span data-aos="fade-up">En savoir plus <i class="ri-contract-right-line" style="color: #007bff;"></i> </span>
                 </div>
             </div>
             <div class="card">
-                <i class="fa-solid fa-bullseye"></i>
+                <i class="fa-solid fa-bullseye" data-aos="fade-left"></i>
                 <div class="card__info">
-                    <h4>Nos objectifs</h4>
-                    <p>
+                    <h4 data-aos="fade-left">Nos objectifs</h4>
+                    <p data-aos="fade-left">
                         Notre objectif est de transformer vos idées en réalité numérique,
                         en vous offrant des solutions sur mesure qui répondent à vos besoins spécifiques.
                     </p>
-                    <span>En savoir plus <i class="ri-contract-right-line" style="color: #007bff;"></i> </span>
+                    <span data-aos="fade-left">En savoir plus <i class="ri-contract-right-line" style="color: #007bff;"></i> </span>
                 </div>
             </div>
         </div>

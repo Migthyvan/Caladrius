@@ -1,26 +1,35 @@
 <template>
 <div class="main__container center__flex__mobile">
-    <p class="title">Contact</p>
-    <h2 class="subtitle">
+    <p class="title" data-aos="fade-right">Contact</p>
+    <h2 class="subtitle" data-aos="fade-left">
         Nous contacter
     </h2>
-    <p>
+    <p data-aos="fade-up"
+        data-aos-duration="3000">
         N'hésitez surtout à nous contacter pour toute question ou demande de renseignement.
     </p>
     <div class=" contact__container ">
 
         <div class="center__flex__mobile">
-            <span class="coordinates__item">
+            <span class="coordinates__item" data-aos="fade-right">
                 <i class="ri-map-pin-2-line"></i>
                 <p>Abidjan, Côte d'Ivoire</p>
             </span>
-            <span class="coordinates__item">
+            <span class="coordinates__item" data-aos="fade-right">
                 <i class="ri-mail-line"></i>
                 <a href="mailto:caladriusllc@gmail.com">caladriusllc@gmail.com</a>
             </span>
-            <span class="coordinates__item">
+            <span class="coordinates__item" data-aos="fade-right">
                 <i class="ri-phone-line"></i>
                 <a href="tel:+225 0140008192">+225 0140008192</a>
+            </span>
+            <span class="coordinates__item" data-aos="fade-right">
+                <i class="ri-whatsapp-line"></i>
+                <a href="https://wa.me/2250140008192">+225 0140008192</a>
+            </span>
+            <span class="coordinates__item" data-aos="fade-right">
+                <i class="ri-telegram-2-line"></i>
+                <a href="https://t.me/2250140008192"> +225 0140008192</a>
             </span>
         </div>
 

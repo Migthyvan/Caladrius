@@ -1,40 +1,42 @@
 <template>
   <div class="main__container center__flex__mobile">
-    <p class="title">Nos services</p>
-    <h2 class="subtitle">
+    <p class="title" data-aos="fade-up">Nos services</p>
+    <h2 class="subtitle" data-aos="fade-up">
         Trouvez tout ce dont vous avez besoin
     </h2>
     <div class="center__flex__mobile service__container ">
         <div class="card">
-            <i class="fa-solid fa-code"></i>
+            <i class="fa-solid fa-code" data-aos="fade-right"></i>
             <div class="card__info">
-                <h4>Sercice freelance</h4>
-                <p>
+                <h4 data-aos="fade-right">Service freelance</h4>
+                <p data-aos="fade-right">
+                    Nous sommes une équipe de développeurs et de designers passionnés, et
                    nous offrons des services de freelance pour vous aider à réaliser vos projets.
                 </p>
-                <span>En savoir plus <i class="ri-contract-right-line" style="color: #007bff;"></i> </span>
+                <span data-aos="fade-right">En savoir plus <i class="ri-contract-right-line" style="color: #007bff;"></i> </span>
             </div>
         </div>
 
         <div class="card">
-            <i class="fa-solid fa-mobile-screen-button"></i>
+            <i class="fa-solid fa-mobile-screen-button" data-aos="fade-up"></i>
             <div class="card__info">
-                <h4>conception d'application mobile</h4>
-                <p>
+                <h4 data-aos="fade-down">conception d'application mobile</h4>
+                <p data-aos="fade-up">
                     nous concevons des applications mobiles sur mesure pour répondre à vos besoins spécifiques.
                 </p>
-                <span>En savoir plus <i class="ri-contract-right-line" style="color: #007bff;"></i> </span>
+                <span data-aos="fade-up">En savoir plus <i class="ri-contract-right-line" style="color: #007bff;"></i> </span>
             </div>
         </div>
 
         <div class="card">
-            <i class="fa-solid fa-laptop"></i>
+            <i class="fa-solid fa-laptop" data-aos="fade-left"></i>
             <div class="card__info">
-                <h4>conception de site internet</h4>
-                <p>
+                <h4 data-aos="fade-left">conception de site internet</h4>
+                <p data-aos="fade-left">
+                    Grâce à notre expertise en développement web,
                     nous créons des sites internet modernes et personnalisés pour vous démarquer en ligne.
                 </p>
-                <span>En savoir plus <i class="ri-contract-right-line" style="color: #007bff;"></i> </span>
+                <span data-aos="fade-left">En savoir plus <i class="ri-contract-right-line" style="color: #007bff;"></i> </span>
             </div>
         </div>
     </div>
