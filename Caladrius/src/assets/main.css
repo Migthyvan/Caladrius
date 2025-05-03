@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import "tailwindcss";
+
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+}
+
+.body{
+  background: #111111;
+}
+
+h1 {
+  font-size: 3rem;
+  font-weight: 600;
+  color: #f3f3f3;
+  margin-bottom: 1rem;
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #f3f3f3;
+  margin-bottom: 1rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+  color: #f3f3f3;
+  margin-bottom: 1rem;
+}
+
+h4 {
+  font-size: 1.1rem;
+  color: #2b92ff;
+  margin-bottom: 1rem;
+}
+
+
+.subtitle {
+  font-size: 1rem;
+  color: #f3f3f3;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+p {
+  color: #f3f3f3;
+  line-height: 2;
+}
+
+i{
+  font-size: 1.3rem;
+  color: #007bff;
+}
+
+a{
+  text-decoration: none;
+  color: #f3f3f3;
+}
+
+span{
+  color: #f3f3f3;
+}
+
+section{
+  background: #111111;
+}
+
+img{
+  width: 330px;
+  height: 330px;
+  background-size: cover;
+  border-radius: 1rem;
+}
+
+/* My center setting */
+.center__flex__mobile{
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  gap: 2rem;
+}
+
+.center__flex__ipad{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+
+  h1, h2{
+    width: 60%;
+  }
+
+  .center__flex__mobile{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  img{
+    width: 400px;
+    height: 400px;
+    background-size: cover;
+    border-radius: 1rem;
+  }
+ 
+}
+
+.main__container{
+  padding: 1rem;
+  background-color: #111111;
+  box-sizing: border-box; /* Inclut padding/border dans la largeur */
+  min-height: 100vh;
+  overflow-y: hidden ;/* Masque le défilement vertical */
+}
