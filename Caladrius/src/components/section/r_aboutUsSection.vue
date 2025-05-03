@@ -23,7 +23,7 @@
                     <p data-aos="fade-right">
                         Chez caladrius, nous croyons en l'innovation, la créativité et l'engagement envers nos clients.
                     </p>
-                    <span data-aos="fade-right">En savoir plus <i class="ri-contract-right-line" style="color: #007bff;"></i> </span>
+                    <span data-aos="fade-right" @click="router.push('/about')">En savoir plus <i class="ri-contract-right-line" style="color: #007bff;"></i> </span>
                 </div>
             </div>
             <div class="card">
@@ -33,7 +33,7 @@
                     <p data-aos="fade-up">
                         Nous nous engageons à fournir des solutions de qualité, en respectant les délais et en dépassant les attentes de nos clients.
                     </p>
-                    <span data-aos="fade-up">En savoir plus <i class="ri-contract-right-line" style="color: #007bff;"></i> </span>
+                    <span data-aos="fade-up" @click="router.push('/about')">En savoir plus <i class="ri-contract-right-line" style="color: #007bff;"></i> </span>
                 </div>
             </div>
             <div class="card">
@@ -44,7 +44,7 @@
                         Notre objectif est de transformer vos idées en réalité numérique,
                         en vous offrant des solutions sur mesure qui répondent à vos besoins spécifiques.
                     </p>
-                    <span data-aos="fade-left">En savoir plus <i class="ri-contract-right-line" style="color: #007bff;"></i> </span>
+                    <span data-aos="fade-left" @click="router.push('/about')">En savoir plus <i class="ri-contract-right-line" style="color: #007bff;"></i> </span>
                 </div>
             </div>
         </div>
@@ -52,6 +52,7 @@
 </template>
 
 <script>
+import { useRouter } from 'vue-router';
 export default {
     props: {
         title :{
@@ -61,6 +62,12 @@ export default {
         description :{
             type: String,
             default: "Nous concevons des sites web modernes, des applications mobiles intuitives et offrons des solutions freelance adaptées à vos besoins.Chez Caladrius, une équipe passionnée vous accompagne pour donner vie à vos projets avec un design soigné, des technologies performantes et une approche personnalisée."
+        }
+    },
+    setup(){
+        const router = useRouter()
+        return{
+            router
         }
     }
 }
@@ -84,6 +91,12 @@ export default {
 
 .card i{
     color: #f3f3f3;
+}
+
+.card span:hover{
+    cursor: pointer;
+    color: #2b92ff;
+    transition: ease-in-out 0.5s;
 }
 
 span{

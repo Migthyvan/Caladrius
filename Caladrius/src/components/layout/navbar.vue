@@ -32,7 +32,7 @@
       </div>
 
       <div class="btn__started">
-        <startButton label="commencer"/>
+        <startButton label="commencer" @click="router.push('/services')"/>
       </div>
     </nav>
 </template>
@@ -40,6 +40,7 @@
 <script>
 import { ref } from 'vue';
 import startButton from '../button/startButton.vue';
+import { useRouter } from 'vue-router';
 
 export default {
   name: 'Navbar',
@@ -59,10 +60,12 @@ export default {
       isMenuOpen.value = false;
     };
 
+    const router = useRouter()
     return {
       isMenuOpen,
       toggleMenu,
-      closeMenu
+      closeMenu,
+      router
     };
   }
 };

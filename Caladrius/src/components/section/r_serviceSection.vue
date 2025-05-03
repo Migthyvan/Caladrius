@@ -13,7 +13,7 @@
                     Nous sommes une équipe de développeurs et de designers passionnés, et
                    nous offrons des services de freelance pour vous aider à réaliser vos projets.
                 </p>
-                <span data-aos="fade-right">En savoir plus <i class="ri-contract-right-line" style="color: #007bff;"></i> </span>
+                <span data-aos="fade-right" @click="router.push('/services')">En savoir plus <i class="ri-contract-right-line" style="color: #007bff;" ></i> </span>
             </div>
         </div>
 
@@ -24,7 +24,7 @@
                 <p data-aos="fade-up">
                     nous concevons des applications mobiles sur mesure pour répondre à vos besoins spécifiques.
                 </p>
-                <span data-aos="fade-up">En savoir plus <i class="ri-contract-right-line" style="color: #007bff;"></i> </span>
+                <span data-aos="fade-up" @click="router.push('/services')">En savoir plus <i class="ri-contract-right-line" style="color: #007bff;"></i> </span>
             </div>
         </div>
 
@@ -36,7 +36,7 @@
                     Grâce à notre expertise en développement web,
                     nous créons des sites internet modernes et personnalisés pour vous démarquer en ligne.
                 </p>
-                <span data-aos="fade-left">En savoir plus <i class="ri-contract-right-line" style="color: #007bff;"></i> </span>
+                <span data-aos="fade-left" @click="router.push('/services')">En savoir plus <i class="ri-contract-right-line" style="color: #007bff;"></i> </span>
             </div>
         </div>
     </div>
@@ -44,7 +44,14 @@
 </template>
 
 <script>
+import { useRouter } from 'vue-router';
 export default {
+    setup(){
+        const router = useRouter()
+        return {
+            router
+        }
+    },
 
 }
 </script>
@@ -65,11 +72,19 @@ export default {
     color: #47a0ff;
 }
 
+
 .card span{
     display: flex;
     align-items: center;
     gap: 1rem;
 }
+
+.card span:hover{
+    cursor: pointer;
+    color: #2b92ff;
+    transition: ease-in-out 0.5s;
+}
+
 
 .subtitle{
     font-size: 2rem;

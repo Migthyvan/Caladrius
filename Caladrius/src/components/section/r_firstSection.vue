@@ -10,8 +10,8 @@
                 Decouvrez notre panoplie de solutions digitales pour faire grandir votre business.
             </h2>
             <div class="about__btn">
-                <mainButton label = "Commencer"></mainButton>
-                <span>En savoir plus <i class="ri-contract-right-line" style="color: #fff;"></i> </span>
+                <mainButton label = "Commencer" @click = "router.push('/services')"></mainButton>
+                <span @click="router.push('/services')">En savoir plus <i class="ri-contract-right-line" style="color: #2b92ff;" @click="router.push('/services')"></i> </span>
             </div>
         </div>
 
@@ -37,10 +37,18 @@
 
 <script>
 import mainButton from '../button/mainButton.vue';
+import { useRouter } from 'vue-router';
 export default {
     components:{
         mainButton
-    }
+    },
+    setup(){
+        const router = useRouter()
+        return {
+            router
+        }
+    },
+    
 }
 </script>
 
@@ -71,6 +79,17 @@ export default {
     align-items: center;
     gap: 1rem;
     width: 100%;
+}
+
+.about__btn span, .about__btn span i{
+    cursor: pointer;
+    transition: ease-in-out 0.5s;   
+}
+
+.about__btn span:hover {
+    cursor: pointer;
+    color: #2b92ff;
+    transition: ease-in-out 0.5s;
 }
 
 span {
