@@ -25,14 +25,14 @@
         <ul @click="closeMenu">
           <li><router-link to="/"> Accueil </router-link></li>
           <li> <router-link to="/about"> A propos </router-link> </li>
-          <li><router-link to="/services">services</router-link></li>
-          <li><router-link to="/contact">contact</router-link></li>
-          <li><router-link to="/newsletter">newsletter</router-link></li>
+          <li><router-link to="/services">Services</router-link></li>
+          <li><router-link to="/contact">Contact</router-link></li>
+          <li><router-link to="/newsletter">Newsletter</router-link></li>
         </ul>
       </div>
 
       <div class="btn__started">
-        <startButton label="commencer" @click="router.push('/services')"/>
+        <startButton label="Commencer" @click="router.push('/services')"/>
       </div>
     </nav>
 </template>
