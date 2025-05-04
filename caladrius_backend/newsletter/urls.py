@@ -1,6 +1,7 @@
-from django.urls import path, include
-from .views import *
+from django.urls import path
+from .views import *  # Import explicite
 
-urlpatterns = [
-    path('',view=index, name = "index" )
+urlpatterns = [  # Correction de l'orthographe
+    path('', index, name='index'),
+    path('subscribers/', NewsletterSubscriberView.as_view(), name='newsletter_subscribers'),  # Correction de l'orthographe
 ]
