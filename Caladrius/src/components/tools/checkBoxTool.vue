@@ -8,55 +8,56 @@
         :id="'item-' + index" 
         :value="item"
         :checked="inputValue.includes(item)"
-        @change="updateValue(item)"
+        @change="updateValue"
+        v-model="inputValue"
       >
       <label :for="'item-' + index">{{ item }}</label>
-    </div>
+    </div> 
   </div>
 </template>
-  
+
 <script>
-  import { ref, watch } from 'vue';
-  
-  export default {
-    props: {
-      label: {
-        type: String,
-        default: "Tranche d'âge"
-      },
-      question: {
-        type: String,
-        default: "Quels types de produits vivriers achetez-vous le plus souvent ?"
-      },
-      options: {
-        type: Array,
-        default: () => ['0-18', '19-25', '26-35', '36-45', '46-55', '56+']
-      },
-      modelValue: {
-        type: String,
-        default: ''
-      }
+import { ref, watch } from 'vue';
+
+export default {
+  props: {
+    label: {
+      type: String,
+      default: "Tranche d'âge"
     },
-    emits: ['update:modelValue'],
-    setup(props, { emit }) {
-      const inputValue = ref(props.modelValue);
-  
-      // Met à jour la valeur parente quand inputValue change
-      const updateValue = () => {
-        emit('update:modelValue', inputValue.value);
-      };
-  
-      // Synchronise inputValue si modelValue change depuis le parent
-      watch(() => props.modelValue, (newVal) => {
-        inputValue.value = newVal;
-      });
-  
-      return {
-        inputValue,
-        updateValue
-      };
+    question: {
+      type: String,
+      default: "Quels types de produits vivriers achetez-vous le plus souvent ?"
+    },
+    options: {
+      type: Array,
+      default: () => ['0-18', '19-25', '26-35', '36-45', '46-55', '56+']
+    },
+    modelValue: {
+      type: Array,
+      default: () => []
     }
+  },
+  emits: ['update:modelValue'],
+  setup(props, { emit }) {
+    const inputValue = ref([...props.modelValue]);
+
+    // Met à jour la valeur parente quand inputValue change
+    const updateValue = () => {
+      emit('update:modelValue', [...inputValue.value]);
+    };
+
+    // Synchronise inputValue si modelValue change depuis le parent
+    watch(() => props.modelValue, (newVal) => {
+      inputValue.value = [...newVal];
+    });
+
+    return {
+      inputValue,
+      updateValue
+    };
   }
+}
 </script>
   
 <style scoped>

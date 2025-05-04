@@ -59,12 +59,19 @@
 
         <div class="center__flex__mobile my__form" v-if="step === 3">
             <checkBoxTool 
-                label="Quels types de produits achetez-vous habituellement ?" 
-                :options="kindOfProductsOptions" 
-                v-model="selectedProfession" 
+                v-model="choiceValue" 
+                :options="kindOfProductsOptions"
             />
+            <transition>
+                <inputFamily
+                    v-if="choiceValue.includes('Autre')"
+                    label="Précisez votre profession" 
+                    placeholder="Votre profession" 
+                    type="text"
+                />
+            </transition>
             <div class="about__btn">
-                <prevButton label = "précédent" @click="decrement"/>
+                <prevButton label="précédent" @click="decrement"/>
                 <nextButton label="suivant" type="submit" @click="incrementStep"/>
             </div>        
         </div>
@@ -139,8 +146,7 @@ export default {
         const kindOfAvantagesOptions = ['Gain de temps', 'Facilité et commodité', 'Accès à des produits locaux/spécifiques', 'Possibilité de comparer les prix', 'Autres']
         const deliveryDurationOptions = ['30 minutes à 1 heure', '1 à 2 heures', 'Plus de 2 heures']
         const deliveryCostOptions = ['Moins de 500 FCFA', '500 - 1000 FCFA', '1001 - 2000 FCFA', 'Plus de 2000 FCFA', 'livraison gratuite sous certaines conditions (ex: montant minimum d\'achat)']
-
-        const choiceValue = ref("")
+        const choiceValue = ref([]);
 
         function incrementStep() {
             step.value++;
@@ -154,7 +160,7 @@ export default {
             buyFrequencyOptions, buyBudgetOptions, kindOfProductsOptions,
             kindOfInterestOptions, kindOfProductsOptions, kindOfAvantagesOptions,
             deliveryDurationOptions, deliveryCostOptions,
-            selectedProfession, incrementStep, buyFrequencyOptions, decrement, choiceValue
+            selectedProfession, incrementStep, buyFrequencyOptions, decrement, choiceValue,
         }
     }
 }
