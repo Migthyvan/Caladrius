@@ -34,6 +34,7 @@
 import mainButton from '../button/mainButton.vue';
 import inputFamily from './inputFamily.vue';
 import textAreaTool from './textAreaTool.vue';
+import instance from '@/_services/api';
 import { ref } from 'vue';
 
 export default {
