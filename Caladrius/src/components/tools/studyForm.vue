@@ -5,12 +5,17 @@
                 <inputFamily label="Nom" placeholder="Entrer votre nom" type="text"></inputFamily>
                 <selectFamily label="Tranche d'âge"></selectFamily>
             </div>
+            <div class="input__group">
+                <inputFamily label="Numéro de téléphone" placeholder="Entrer votre numéro de téléphone" type="text"></inputFamily>
+                <inputFamily label="Email" placeholder="Entrer votre email" type="email"></inputFamily>
+            </div>
             <div class="input__group ">
                 <selectFamily 
                     label="Situation professionnelle" 
                     :options="professionOptions" 
                     v-model="selectedProfession" 
                 />
+                <inputFamily label="Situation géographique" placeholder="Entrer votre commune" type="text"></inputFamily>
                 <transition>
                     <inputFamily
                         v-if="selectedProfession === 'Autre'"
@@ -21,43 +26,52 @@
                 </transition>
             </div>
             <div class="about__btn">
-                <nextButton label="suivant" type="submit" @click="incrementStep"/>
+                <nextButton label="Suivant" type="submit" @click="incrementStep"/>
             </div>
         </div>
 
         <div class="center__flex__mobile my__form" v-if="step === 2">
             <div class="input__group ">
                 <selectFamily 
-                    label="Où achetez-vous habituellement vos produits vivriers?"
+                    label="De quelle manière achetez-vous habituellement vos produits vivriers ?"
                     :options="buyLocationOptions" 
                 >
                 </selectFamily>
-                <selectFamily 
-                    label="À quelle fréquence achetez-vous des produits vivriers ?"
-                    :options="buyFrequencyOptions"
-                >
-                </selectFamily>
+               <inputFamily label="Dans quelle commune faites-vous vos courses de produits vivriers ?" placeholder="Préciser la commune" type="text"></inputFamily>
             </div>
             <div class="input__group ">
                 <selectFamily 
                     label="Quel est votre budget moyen pour l'achat de produits vivriers ?" 
                     :options="buyBudgetOptions" 
-                    v-model="selectedProfession" 
+                    v-model="choiceValue" 
                 />
+                 <selectFamily 
+                    label="À quelle fréquence achetez-vous des produits vivriers ?"
+                    :options="buyFrequencyOptions"
+                >
+                </selectFamily>
             </div>
             <div class="about__btn">
-                <prevButton label = "précédent" @click="decrement"/>
-                <nextButton label="suivant" type="submit" @click="incrementStep"/>
+                <prevButton label = "Précédent" @click="decrement"/>
+                <nextButton label="Suivant" type="submit" @click="incrementStep"/>
             </div>
         </div>
 
         <div class="center__flex__mobile my__form" v-if="step === 3">
             <checkBoxTool 
-                label="Quels types de produits achetez-vous habituellement ?" 
-                :options="kindOfProductsOptions" 
+                v-model="choiceValue" 
+                :options="kindOfProductsOptions"
             />
+            <transition>
+                <inputFamily
+                    v-if="choiceValue.includes('Autre')"
+                    label="Précisez votre profession" 
+                    placeholder="Votre profession" 
+                    type="text"
+                />
+            </transition>
             <div class="about__btn">
-                <prevButton label = "précédent" @click="decrement"/>
+                <prevButton label="précédent" @click="decrement"/>
                 <nextButton label="suivant" type="submit" @click="incrementStep"/>
             </div>        
         </div>
@@ -124,7 +138,7 @@ export default {
         
         const professionOptions = ['Etudiant', 'Salarié', 'Entrepreneur', 'Chômeur', 'Retraité', 'Autre']
         const selectedProfession = ref(''); // Stocke la valeur sélectionnée
-        const buyLocationOptions = ['Supermarché', 'Marché local', 'En ligne', 'Magasin bio']
+        const buyLocationOptions = ['Au supermarché', 'Au marché local', 'En ligne', 'En magasin bio']
         const buyFrequencyOptions = ['Tous les jours', 'Plusieurs fois par semaine', 'Une fois par semaine', "Une fois chaque deux semaines", 'Une fois par mois', 'Rarement']
         const buyBudgetOptions = ['Moins de 5000 FCFA', '5 000 - 10 000 FCFA', '10 001 - 20 000 FCFA', 'Plus de 20 000 FCFA']
         const kindOfProductsOptions = ['Fruits', 'Légumes', 'Produits laitiers', 'Viande', 'Poisson', 'Produits bio', 'Produits locaux', 'Autre']
@@ -132,6 +146,7 @@ export default {
         const kindOfAvantagesOptions = ['Gain de temps', 'Facilité et commodité', 'Accès à des produits locaux/spécifiques', 'Possibilité de comparer les prix', 'Autres']
         const deliveryDurationOptions = ['30 minutes à 1 heure', '1 à 2 heures', 'Plus de 2 heures']
         const deliveryCostOptions = ['Moins de 500 FCFA', '500 - 1000 FCFA', '1001 - 2000 FCFA', 'Plus de 2000 FCFA', 'livraison gratuite sous certaines conditions (ex: montant minimum d\'achat)']
+        const choiceValue = ref([]);
 
         function incrementStep() {
             step.value++;
@@ -145,7 +160,7 @@ export default {
             buyFrequencyOptions, buyBudgetOptions, kindOfProductsOptions,
             kindOfInterestOptions, kindOfProductsOptions, kindOfAvantagesOptions,
             deliveryDurationOptions, deliveryCostOptions,
-            selectedProfession, incrementStep, buyFrequencyOptions, decrement
+            selectedProfession, incrementStep, buyFrequencyOptions, decrement, choiceValue,
         }
     }
 }
