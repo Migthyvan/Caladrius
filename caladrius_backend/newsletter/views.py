@@ -1,4 +1,4 @@
-from django.shortcuts import render, HttpResponse
+from django.shortcuts import HttpResponse
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
@@ -25,3 +25,30 @@ class NewsletterSubscriberView(APIView):
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    
+    def patch(self, request, pk):
+        """Désactive un abonné"""
+        try:
+            subscriber = NewsletterSubscribers.objects.get(pk=pk)
+            subscriber.is_active = False
+            subscriber.save()
+            serializer = NewsletterSubscribersSerializer(subscriber)
+            return Response(serializer.data)
+        except NewsletterSubscribers.DoesNotExist:
+            return Response(
+                {"error": "Abonné non trouvé"},
+                status=status.HTTP_404_NOT_FOUND
+            )
+
+    # Ou pour une suppression définitive :
+    def delete(self, request, pk):
+        """Supprime un abonné (définitif)"""
+        try:
+            subscriber = NewsletterSubscribers.objects.get(pk=pk)
+            subscriber.delete()
+            return Response(status=status.HTTP_204_NO_CONTENT)
+        except NewsletterSubscribers.DoesNotExist:
+            return Response(
+                {"error": "Abonné non trouvé"},
+                status=status.HTTP_404_NOT_FOUND
+            )
