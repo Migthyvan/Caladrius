@@ -20,4 +20,5 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('newsletter/', include('newsletter.urls')),
+    path('contact/', include('contact.urls')),  # Correction de l'orthographe
 ]
