@@ -49,7 +49,7 @@ export default {
         flex-direction: column;
         gap: 1rem;
         width: 100%;
-        max-width: 400px;
+        max-width: 600px;
     }
 
     label{

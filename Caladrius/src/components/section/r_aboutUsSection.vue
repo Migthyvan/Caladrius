@@ -17,13 +17,13 @@
 
         <div class="center__flex__mobile aboutUs__container">
             <div class="card">
-                <i class="fa-solid fa-book" data-aos="fade-right"></i>
+                <i class="fa-solid fa-book" data-aos="fade-up"></i>
                 <div class="card__info">
-                    <h4 data-aos="fade-right">Nos valeurs</h4>
-                    <p data-aos="fade-right">
+                    <h4 data-aos="fade-up">Nos valeurs</h4>
+                    <p data-aos="fade-up">
                         Chez caladrius, nous croyons en l'innovation, la créativité et l'engagement envers nos clients.
                     </p>
-                    <span data-aos="fade-right" @click="router.push('/about')">En savoir plus <i class="ri-contract-right-line" style="color: #007bff;"></i> </span>
+                    <span data-aos="fade-up" @click="router.push('/about')">En savoir plus <i class="ri-contract-right-line" style="color: #007bff;"></i> </span>
                 </div>
             </div>
             <div class="card">
@@ -37,14 +37,14 @@
                 </div>
             </div>
             <div class="card">
-                <i class="fa-solid fa-bullseye" data-aos="fade-left"></i>
+                <i class="fa-solid fa-bullseye" data-aos="fade-up"></i>
                 <div class="card__info">
-                    <h4 data-aos="fade-left">Nos objectifs</h4>
-                    <p data-aos="fade-left">
+                    <h4 data-aos="fade-up">Nos objectifs</h4>
+                    <p data-aos="fade-up">
                         Notre objectif est de transformer vos idées en réalité numérique,
                         en vous offrant des solutions sur mesure qui répondent à vos besoins spécifiques.
                     </p>
-                    <span data-aos="fade-left" @click="router.push('/about')">En savoir plus <i class="ri-contract-right-line" style="color: #007bff;"></i> </span>
+                    <span data-aos="fade-up" @click="router.push('/about')">En savoir plus <i class="ri-contract-right-line" style="color: #007bff;"></i> </span>
                 </div>
             </div>
         </div>

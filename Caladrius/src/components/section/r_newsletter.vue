@@ -1,6 +1,6 @@
 <template>
   <div class="main__container  center__flex__mobile">
-    <p class="tile">Newsletter</p>
+    <p class="title">Newsletter</p>
     <h2 class="subtitle">Restons en contact avec la newsletter</h2>
 
     <div class="center__flex__mobile newsletter__container">
@@ -26,6 +26,7 @@ export default {
 
 .subtitle{
   font-size: 2rem;
+  text-align: center;
 }
 
 .newsletter__container{
