@@ -1,5 +1,5 @@
 <template>
-    <span class="loader"></span>
+  <span class="loader"></span>
 </template>
 
 <script>
@@ -16,8 +16,8 @@ export default {
 /* From Uiverse.io by Shoh2008 */ 
 .loader {
   display: block;
-  width: 84px;
-  height: 84px;
+  width: 1.2rem;
+  height: 1.2rem;
   position: relative;
 }
 
@@ -26,8 +26,8 @@ export default {
   position: absolute;
   left: 50%;
   bottom: 0;
-  width: 64px;
-  height: 64px;
+  width: 1.2rem;
+  height: 1.2rem;
   border-radius: 50%;
   background: #FFF;
   transform: translate(-50% , -100%)  scale(0);

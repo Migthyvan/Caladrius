@@ -1,23 +1,46 @@
 <template>
-  <button class="main__button">
-    {{ label }}
+  <button 
+    class="main__button" 
+    :disabled="loading" 
+    @click="handleClick"
+  >
+    <span v-if="!loading">{{ label }}</span>
+    <loaderTools v-else />
   </button>
 </template>
 
 <script>
 import loaderTools from './loaderTools.vue';
+import secondLoader from './secondLoader.vue';
+
 export default {
   name: 'MainButton',
-  props:{
-    label:{
+  props: {
+    label: {
       type: String,
-      default: "Decouvrir"
+      default: "Découvrir"
+    },
+    loading: {
+      type: Boolean,
+      default: false
     }
   },
-  components:{
-    loaderTools
+  components: {
+    loaderTools, secondLoader
+  },
+  emits: ['click'],
+  setup(props, { emit }) {
+    const handleClick = () => {
+      if (!props.loading) {
+        emit('click');
+      }
+    };
+
+    return {
+      handleClick
+    };
   }
-}
+};
 </script>
 
 <style scoped>
@@ -31,17 +54,25 @@ export default {
   color: #f3f3f3;
   width: 50%;
   cursor: pointer;
-  /* Ajoutez la transition ici pour une meilleure pratique */
   transition: all 0.5s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.main__button:hover {
+.main__button:disabled {
+  background: #005fc4;
+  border-color: #005fc4;
+  cursor: not-allowed;
+}
+
+.main__button:hover:enabled {
   background: #005fc4;
   border-color: #007bff;
 }
 
 @media (min-width: 768px) {
-  .main__button{
+  .main__button {
     max-width: 300px;
   }
 }
