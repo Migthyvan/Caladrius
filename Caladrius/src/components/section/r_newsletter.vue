@@ -10,11 +10,10 @@
 </template>
 
 <script>
-import formTool from '../tools/formTool.vue';
 import newsletterTools from '../tools/newsletterTools.vue';
 export default {
   components:{
-    formTool, newsletterTools
+    newsletterTools
   }
 }
 </script>
@@ -29,4 +28,12 @@ export default {
   font-size: 2rem;
 }
 
+.newsletter__container{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  flex-direction: column;
+}
 </style>

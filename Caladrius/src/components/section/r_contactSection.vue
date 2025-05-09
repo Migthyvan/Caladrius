@@ -43,6 +43,7 @@
 
 <script>
 import formTool from '../tools/formTool.vue';
+
 export default {
     components:{
         formTool,
@@ -59,7 +60,6 @@ export default {
     display: flex;
     gap: 1rem;
 }
-
 
 .coordinates__item{
     display: flex;

@@ -1,33 +1,38 @@
 <template>
-    <div class="">
-        <div class="center__flex__mobile my__form">
-            <div class="input__group ">
-                <inputFamily label="Nom" 
-                    placeholder="Votre nom" type="text" 
-                    v-model="form.firstname">
-                </inputFamily>
-                <inputFamily label="Prenoms" 
-                    placeholder="Votre prenom" 
-                    type="text"
-                    v-model="form.lastname">
-                </inputFamily>
-            </div>
-            <div class="about__email">
-                <inputFamily label="Email" 
-                    placeholder="votre email" 
-                    type="email"
-                    v-model="form.email"
-                ></inputFamily>
-            </div>
-            <transition>
-                <p v-if = 'attempts > 0' class="error__message">
-                    {{aboutMessage.errorMessages}}
-                </p>
-            </transition>
-            <mainButton label="souscrire" type="submit" @click="submitForm"></mainButton>
 
+    <div class="center__flex__mobile my__form">
+        <div class="about__email ">
+            <inputFamily label="Prenoms" 
+                placeholder="Votre prenom" 
+                type="text"
+                v-model="form.name">
+            </inputFamily>
         </div>
-    </div>   
+        <div class="about__email">
+            <inputFamily label="Email" 
+                placeholder="votre email" 
+                type="email"
+                v-model="form.email"
+            ></inputFamily>
+        </div>
+        <transition>
+            <p v-if = 'attempts > 0' class="error__message">
+                {{aboutMessage.errorMessages}}
+            </p>
+        </transition>
+        <transition>
+            <p v-if = 'step === 2'>
+                {{aboutMessage.successMessage}}
+            </p>
+        </transition>
+        <mainButton 
+            label="souscrire" type="submit" 
+            @click="submitForm"
+            :loading="isLoading"
+        ></mainButton>
+
+    </div>
+
 </template>
 
 <script>
@@ -44,36 +49,46 @@ export default {
     },
 
     setup(){
+        const isLoading = ref(false);
+        
         const form = ref({
-            firstname: '',
-            lastname: '',
+            name: '',
             email: '',
         });
+        
         const aboutMessage = ref({
             errorMessages:'',
             successMessage:'',
         });
+        
         const attempts = ref(0);
 
         const step = ref(1)
-        const incrementStep = () => {
-            step.value++;
-        };
-
-        const submitForm = () => {
-            if (form.value.firstname === '' || form.value.lastname === '' || form.value.email === '') {
-                aboutMessage.value.errorMessages = 'Veuillez remplir tous les champs.';
-                console.log(aboutMessage.value);
+        
+        const submitForm = async () => {
+            isLoading.value = true;
+            if (!form.value.email || !form.value.name) {
+                aboutMessage.value.errorMessages = 'Veuillez remplir tous les champs';
                 attempts.value++;
+                isLoading.value = false;
                 return;
-            } else {
-                console.log('Form submitted:', form.value);
-                attempts.value = 0;
+            }
+            try {
+                const response = await instance.post('/newsletter/subscribers/', form.value);
+                aboutMessage.value.successMessage = 'Inscription réussie !';
+                step.value = 2;
+                attempts.value = 0; // Réinitialiser le nombre de tentatives
+                aboutMessage.value.errorMessages = ''; // Effacer l'erreur précédente
+            } catch (error) {
+                aboutMessage.value.errorMessages = 'Une erreur est survenue lors de l\'envoi du formulaire';
+                attempts.value++;
+            } finally {
+                isLoading.value = false;
             }
         };
 
         return {
-            form, submitForm, aboutMessage, attempts, incrementStep, step,
+            isLoading, form, submitForm, aboutMessage, attempts, step,
         };
     }
 }
@@ -84,6 +99,8 @@ export default {
 .my__form{
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     gap: 1rem;
     width: 100%;
 }
@@ -97,6 +114,9 @@ export default {
 
 .about__email{
     width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .error__message{

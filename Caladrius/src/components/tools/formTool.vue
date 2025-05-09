@@ -68,7 +68,7 @@ export default {
 
         // About stepper
         const isLoading = ref(false);
-        const step = ref(1);
+        const step = ref(2);
 
         const firstname = ref('');
         const lastname = ref('');
@@ -104,6 +104,7 @@ export default {
 
                 errorMessages.value = [];
                 successMessage.value = "Formulaire envoyé avec succès";
+                form.value = {};
                 firstname.value = '';
                 lastname.value = '';
                 email.value = '';
