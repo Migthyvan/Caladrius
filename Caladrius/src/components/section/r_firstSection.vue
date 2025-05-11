@@ -6,30 +6,12 @@
                 Entrons ensemble dans un univers de transformation et
                 d'innovation.
             </h1>
-            <h2>
+            <h3>
                 Decouvrez notre panoplie de solutions digitales pour faire grandir votre business.
-            </h2>
+            </h3>
             <div class="about__btn">
                 <mainButton label = "Commencer" @click = "router.push('/services')"></mainButton>
                 <span @click="router.push('/services')">En savoir plus <i class="ri-contract-right-line" style="color: #2b92ff;" @click="router.push('/services')"></i> </span>
-            </div>
-        </div>
-
-        <div class="main__content center__flex__mobile">
-            <div class="title-line-second "></div>
-            <div class="center__flex__mobile">
-                <span class="coordinates__item">
-                    <i class="ri-map-pin-2-line"></i>
-                    <p>Abidjan, Côte d'Ivoire</p>
-                </span>
-                <span class="coordinates__item">
-                    <i class="ri-mail-line"></i>
-                    <a href="mailto:caladriusllc@gmail.com">caladriusllc@gmail.com</a>
-                </span>
-                <span class="coordinates__item">
-                    <i class="ri-phone-line"></i>
-                    <a href="tel:+225 0140008192">+225 0140008192</a>
-                </span>
             </div>
         </div>
     </div>

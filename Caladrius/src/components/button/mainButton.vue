@@ -45,7 +45,7 @@ export default {
 
 <style scoped>
 .main__button {
-  padding: 0.9rem;
+  padding: 0.5rem;
   border: 1px solid #007bff;
   border-radius: 0.6rem;
   font-size: 1rem;
@@ -73,7 +73,7 @@ export default {
 
 @media (min-width: 768px) {
   .main__button {
-    max-width: 300px;
+    width: 250px;
   }
 }
 </style>
