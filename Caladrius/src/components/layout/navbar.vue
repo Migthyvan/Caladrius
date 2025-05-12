@@ -1,7 +1,7 @@
 <template>
     <nav class="nav__container">
       <div class="div__logo">
-        <h3>caladrius</h3>
+        <h3><router-link to="/">Caladrius </router-link></h3>
       </div>
       
       <!-- Bouton Hamburger -->
@@ -97,6 +97,12 @@ color: #f3f3f3;
 margin: 0;
 }
 
+.div__logo h3 a:hover{
+  cursor: pointer;
+  color: #5baaff;
+  transition: ease-in-out 0.5s;
+}
+
 .div__menu ul {
 display: flex;
 list-style: none;
@@ -145,6 +151,7 @@ transition: all 0.3s ease;
 
 /* Responsive - Menu Hamburger */
 @media (max-width: 1280px) {
+
 .nav__container {
     padding: 1rem;
 }

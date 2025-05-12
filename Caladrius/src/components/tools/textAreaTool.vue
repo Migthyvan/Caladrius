@@ -5,6 +5,7 @@
             id="textarea-id"
             :placeholder="placeholder"
             v-model="textValue"
+            :class="{ filled: textValue }"
         ></textarea>
     </div>
 </template>
@@ -65,5 +66,10 @@ textarea:focus {
     outline: #007bff;
     border: 1px solid #007bff;
     transition: all 0.3s ease-in-out;
+}
+
+.filled{
+    outline: #007bff;
+    border: 1px solid #007bff;
 }
 </style>

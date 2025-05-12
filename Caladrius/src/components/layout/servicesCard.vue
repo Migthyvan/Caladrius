@@ -15,7 +15,8 @@
     />
 
     <ul>
-      <li v-for="(item, index) in features" :key="index">        {{ item }}
+      <li v-for="(item, index) in features" :key="index">        
+        {{ item }}
       </li>
     </ul>
   </div>
@@ -42,9 +43,9 @@ export default {
     features:{
       type: Array,
       default:[
-        '5 products',
-        'Up to 1,000 subscribers',
-        'Basic analytics',
+        'Site vitrine (1-5 pages)',
+        'Formulaire de contact basique.',
+        'Hébergement inclus',
         '48-hour support response time'
       ]
     }
@@ -74,7 +75,7 @@ export default {
 .card__services{
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: normal;
   align-items: center;
   gap: 1rem;
 }
@@ -99,8 +100,9 @@ span i {
 ul{
   color: #f3f3f3;
   line-height: 2.5;
-  list-style-type: "✓ ";
+  /*list-style-type: "✓ ";*/
   padding-left: 1rem;
+  text-align: center;
 }
 
 .subtitle, title{

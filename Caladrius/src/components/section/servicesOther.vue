@@ -66,10 +66,14 @@
                 <servicesCard
                     title = 'formule Intermédiaire'
                     price = 599
+                    :features = intermediaireFeatures
+                    payment-methods="3 mois de maintenance"
                 />
                 <servicesCard
                     title = 'formule Professionel'
                     price = 999
+                    :features = proFeatures
+                    payment-methods="Maintenance 6 mois + analytics mensuels."
                 />
 
             </div>
@@ -128,6 +132,20 @@ export default {
     components:{
         mainButton, servicesCard
     },
+    setup(){
+        const intermediaireFeatures = [
+            'Site dynamique', 'SEO avancé','Hébergement inclus', 
+            'Intégration API', 'Design semi-personnalisé'
+        ]
+        const proFeatures = [
+            'Développement full-stack','SEO avancé','Hébergement inclus',
+            'Design semi-personnalisé','Base de données sécurisée', 
+            'Paiements multi-gateways', 'Tests automatisés'
+        ]
+
+        return {intermediaireFeatures, proFeatures}
+    }
+
 }
 </script>
 
