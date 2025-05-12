@@ -38,7 +38,9 @@ export default {
 
 .main__container{
     padding: 4rem 1rem 1rem 1rem;
-    background: #111111;
+    background-image: url('../../assets/pictures/antiquities-6973196_1920.jpg');
+    background-size: cover;
+    /*background: #111111;*/
     box-sizing: border-box; /* Inclut padding/border dans la largeur */
     min-height: 100vh;
     overflow-y: hidden ;

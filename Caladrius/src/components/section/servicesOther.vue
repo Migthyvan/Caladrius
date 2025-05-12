@@ -49,76 +49,29 @@
         </div>
 
         <div class="about__website" >
-            <p class="title" >pricing</p>
-            <h2 class="subtitle" >Pricing that grows with you</h2>
-            <h4 class="subsubtile">Choose an affordable plan that's packed with 
-                the best features for engaging your audience,
-                creating customer loyalty, and driving sales.
+            <p class="title" >Nos prix</p>
+            <h2 class="subtitle" >Prix adaptés en fonction de vos besoins</h2>
+            <h4 class="subsubtile">
+                Choisissez la meilleure formule avec les meilleures qui
+                vont susciter l'engagment de votre audience en créant une
+                fidélisation de vos clients et l'augmentation de vos ventes.
             </h4>
 
             <div class="card__family">
-                <div class="card__services" data-aos="fade-up"
-                data-aos-duration="3000">
-                    <h4>
-                        basic
-                    </h4>
-                    <h2>
-                        $19.99/mo
-                    </h2>
-                    <p>
-                        $15 per month if paid annually
-                    </p>
-                    <mainButton label="Get started"/>
+            
+                <servicesCard
+                    title = ' formule basic'
+                    price = 299
+                />
+                <servicesCard
+                    title = 'formule Intermédiaire'
+                    price = 599
+                />
+                <servicesCard
+                    title = 'formule Professionel'
+                    price = 999
+                />
 
-                    <ul>
-                        <li>5 products</li>
-                        <li>Up to 1,000 subscribers</li>
-                        <li>Basic analytics</li>
-                        <li>48-hour support response time</li>
-                    </ul>
-                </div>
-
-                <div class="card__services" data-aos="fade-up"
-                data-aos-duration="3000">
-                    <h4>
-                        basic
-                    </h4>
-                    <h2>
-                        $19.99/mo
-                    </h2>
-                    <p>
-                        $15 per month if paid annually
-                    </p>
-                    <mainButton label="Get started"/>
-
-                    <ul>
-                        <li>5 products</li>
-                        <li>Up to 1,000 subscribers</li>
-                        <li>Basic analytics</li>
-                        <li>48-hour support response time</li>
-                    </ul>
-                </div>
-
-                <div class="card__services" data-aos="fade-up"
-                data-aos-duration="3000">
-                    <h4>
-                        basic
-                    </h4>
-                    <h2>
-                        $19.99/mo
-                    </h2>
-                    <p>
-                        $15 per month if paid annually
-                    </p>
-                    <mainButton label="Get started"/>
-
-                    <ul>
-                        <li>5 products</li>
-                        <li>Up to 1,000 subscribers</li>
-                        <li>Basic analytics</li>
-                        <li>48-hour support response time</li>
-                    </ul>
-                </div>
             </div>
 
             
@@ -148,68 +101,9 @@
             </h4>
 
             <div class="card__family">
-                <div class="card__services" data-aos="fade-up"
-                data-aos-duration="3000">
-                    <h4>
-                        basic
-                    </h4>
-                    <h2>
-                        $19.99/mo
-                    </h2>
-                    <p>
-                        $15 per month if paid annually
-                    </p>
-                    <mainButton label="Get started"/>
-
-                    <ul>
-                        <li>5 products</li>
-                        <li>Up to 1,000 subscribers</li>
-                        <li>Basic analytics</li>
-                        <li>48-hour support response time</li>
-                    </ul>
-                </div>
-
-                <div class="card__services" data-aos="fade-up"
-                data-aos-duration="3000">
-                    <h4>
-                        basic
-                    </h4>
-                    <h2>
-                        $19.99/mo
-                    </h2>
-                    <p>
-                        $15 per month if paid annually
-                    </p>
-                    <mainButton label="Get started"/>
-
-                    <ul>
-                        <li>5 products</li>
-                        <li>Up to 1,000 subscribers</li>
-                        <li>Basic analytics</li>
-                        <li>48-hour support response time</li>
-                    </ul>
-                </div>
-
-                <div class="card__services" data-aos="fade-up"
-                data-aos-duration="3000">
-                    <h4>
-                        basic
-                    </h4>
-                    <h2>
-                        $19.99/mo
-                    </h2>
-                    <p>
-                        $15 per month if paid annually
-                    </p>
-                    <mainButton label="Get started"/>
-
-                    <ul>
-                        <li>5 products</li>
-                        <li>Up to 1,000 subscribers</li>
-                        <li>Basic analytics</li>
-                        <li>48-hour support response time</li>
-                    </ul>
-                </div>
+                <servicesCard/>
+                <servicesCard/>
+                <servicesCard/>
             </div>
 
             
@@ -219,6 +113,7 @@
 
 <script>
 import mainButton from '../button/mainButton.vue';
+import servicesCard from '../layout/servicesCard.vue';
 export default {
     props: {
         title :{
@@ -231,7 +126,7 @@ export default {
         }
     },
     components:{
-        mainButton
+        mainButton, servicesCard
     },
 }
 </script>
@@ -244,6 +139,13 @@ export default {
 .card{
     display: flex;
     gap: 1rem;
+}
+
+.card__family{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
 }
 
 .card h4{
