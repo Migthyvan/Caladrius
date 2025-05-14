@@ -10,11 +10,11 @@
         <div class="sub__container ">
             <h4 class="subtitle">Liens utiles</h4>
             <ul>
-              <li>Accueil</li>
-              <li>A propos</li>
-              <li>Services</li>
-              <li>Contact</li>
-              <li>Newsletter</li>
+              <li><router-link to="/"> Accueil </router-link></li>
+              <li><router-link to="/about"> A propos </router-link></li>
+              <li><router-link to="/services">Services</router-link></li>
+              <li><router-link to="/contact">Contact</router-link></li>
+              <li><router-link to="/newsletter">Newsletter</router-link></li> 
             </ul>
         </div>
   
@@ -71,6 +71,10 @@ footer{
 ul {
     list-style: none;
     line-height: 2;
+}
+
+ul li a{
+    color: #111111;
 }
 
 .sub__container{
