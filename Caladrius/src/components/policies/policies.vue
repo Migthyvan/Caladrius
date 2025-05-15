@@ -1,14 +1,17 @@
 <template>
     <div class="main__container  center__flex__mobile">
-        <h3>
-            Conditions d'utilisations
-        </h3>
-        <p>
-            Veuillez lire attentivement les présentes Conditions d'Utilisation 
-            (ci-après dénommées les "Conditions") avant d'utiliser les services 
-            de conception de site web et d'application (ci-après dénommés les "Services") 
-            proposés par Caladrius (ci-après dénommé "le Prestataire").
-        </p>
+        
+        <div class="center__flex__mobile policy">
+            <h3>
+                Conditions d'utilisations
+            </h3>
+            <p>
+                Veuillez lire attentivement les présentes Conditions d'Utilisation 
+                (ci-après dénommées les "Conditions") avant d'utiliser les services 
+                de conception de site web et d'application (ci-après dénommés les "Services") 
+                proposés par Caladrius (ci-après dénommé "le Prestataire").
+            </p>
+        </div>
 
         <div class="center__flex__mobile policy">
 
@@ -232,6 +235,10 @@ ul{
   list-style-type: "✓ ";
   padding-left: 1rem;
   text-align: left;
+}
+
+li{
+    line-height: 1.5;
 }
 
 @media (min-width: 768px) {

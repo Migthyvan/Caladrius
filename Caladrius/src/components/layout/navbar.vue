@@ -1,5 +1,5 @@
 <template>
-    <nav class="nav__container">
+    <nav class="nav__container" :class="{ 'scrolled': isScrolled }">
       <div class="div__logo">
         <h3><router-link to="/">Caladrius </router-link></h3>
       </div>
@@ -38,7 +38,7 @@
 </template>
   
 <script>
-import { ref } from 'vue';
+import { ref, onMounted, onUnmounted } from 'vue';
 import startButton from '../button/startButton.vue';
 import { useRouter } from 'vue-router';
 
@@ -60,12 +60,27 @@ export default {
       isMenuOpen.value = false;
     };
 
+    const isScrolled = ref(false);
+
+    const handleScroll = () => {
+      isScrolled.value = window.scrollY > 10;
+    };
+
+    onMounted(() => {
+      window.addEventListener('scroll', handleScroll);
+    });
+
+    onUnmounted(() => {
+      window.removeEventListener('scroll', handleScroll);
+    });
+
     const router = useRouter()
     return {
       isMenuOpen,
       toggleMenu,
       closeMenu,
-      router
+      isScrolled,
+      router,
     };
   }
 };
@@ -79,7 +94,8 @@ display: flex;
 justify-content: space-between;
 align-items: center;
 padding: 1rem 2rem;
-background-color:#222222;
+background-color: transparent;
+transition: background-color 0.5s ease;
 color: #f3f3f3;
 position: fixed;
 top: 0;
@@ -88,6 +104,11 @@ width: 100%;
 z-index: 1000;
 box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 overflow-x: hidden; /* Empêche le débordement horizontal */
+}
+
+.nav__container.scrolled {
+  background-color: #252525f8; /* ou la couleur noire de votre choix */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
 .div__logo h3 {
@@ -153,11 +174,11 @@ transition: all 0.3s ease;
 @media (max-width: 1280px) {
 
 .nav__container {
-    padding: 1rem;
+  padding: 1rem;
 }
 
 .hamburger {
-    display: block;
+  display: block;
 }
 
 .div__menu {
@@ -166,7 +187,7 @@ transition: all 0.3s ease;
   left: 0;
   width: 100%;
   height: calc(100vh - 70px);
-  background-color: #222222;
+  background-color: #1a1a1a;
   padding: 2rem 1rem;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
   transform: translateX(-100%);

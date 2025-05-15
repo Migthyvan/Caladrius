@@ -10,8 +10,8 @@
         <div class="sub__container ">
             <h4 class="subtitle">Liens utiles</h4>
             <ul>
-              <li><router-link to="/"> Accueil </router-link></li>
-              <li><router-link to="/about"> A propos </router-link></li>
+              <li><router-link to="/">Accueil</router-link></li>
+              <li><router-link to="/about">A propos</router-link></li>
               <li><router-link to="/services">Services</router-link></li>
               <li><router-link to="/contact">Contact</router-link></li>
               <li><router-link to="/newsletter">Newsletter</router-link></li> 
@@ -24,6 +24,7 @@
             <li class="footer_li">Conditions générales</li>
             <li class="footer_li">Politique de confidentialité</li>
             <li class="footer_li">Valeurs morales et éthiques</li>
+            <li class="footer_li">Mentions de copyright</li>
             <li class="footer_li">Droits d'auteurs</li>
           </ul>
         </div>
@@ -71,6 +72,7 @@ footer{
 ul {
     list-style: none;
     line-height: 2;
+    padding-top: 1rem ;
 }
 
 ul li a{
@@ -80,17 +82,22 @@ ul li a{
 .sub__container{
     display: flex;
     flex-direction: column;
-    justify-content: start;
+    justify-content: normal;
     gap: 1rem;
 }
 
 @media (min-width: 580px) {
 
     .my__footer{
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 1rem;
+        display: flex;
     }
+
+    .sub__container{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    gap: 1rem;
+}
 }
 
 @media (min-width: 980px) {
@@ -99,6 +106,12 @@ ul li a{
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         gap: 1rem;
+    }
+
+    .sub__container{
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
     }
 }
 
