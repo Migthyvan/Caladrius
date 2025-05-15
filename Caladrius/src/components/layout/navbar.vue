@@ -202,6 +202,7 @@ transition: all 0.3s ease;
 }
 
 .div__menu ul {
+  display: flex;
   flex-direction: column;
   align-items: center;
   gap: 1.5rem;
