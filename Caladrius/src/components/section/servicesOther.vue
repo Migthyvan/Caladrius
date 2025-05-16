@@ -58,6 +58,7 @@
                 <servicesCard
                     title = ' formule basique'
                     price = 299
+                    @commande="modal.openModal()"
                 />
                 <servicesCard
                     title = 'formule Intermédiaire'
@@ -121,12 +122,20 @@
 
             
         </div>
+        <modalTool
+            ref="modal"
+            title="Modale avec setup()"
+            @confirm="onConfirm"
+            @close="onClose"
+        />
     </div>
 </template>
 
 <script>
 import mainButton from '../button/mainButton.vue';
 import servicesCard from '../layout/servicesCard.vue';
+import modalTool from '../tools/modalTool.vue';
+import { ref } from 'vue';
 export default {
     props: {
         title :{
@@ -139,7 +148,7 @@ export default {
         }
     },
     components:{
-        mainButton, servicesCard
+        mainButton, servicesCard, modalTool
     },
     setup(){
         const intermediaireFeatures = [
@@ -165,8 +174,13 @@ export default {
 
         ]
 
+        const modal = ref(null); // Référence vers la modale
+
+        const onConfirm = () => console.log('Confirmé !');
+        const onClose = () => console.log('Fermé');
+
         return {intermediaireFeatures, proFeatures, mobileAppFeatures, mobileAppInter_Features,
-            mobileProFeature
+            mobileProFeature, onConfirm, onClose, modal
         }
     }
 

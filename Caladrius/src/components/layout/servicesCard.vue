@@ -33,8 +33,8 @@ export default {
     },
 
     price:{
-      type: Number,
-      default: 599
+      type:String,
+      default: '599'
     },
     paymentMethods:{
       type: String,
