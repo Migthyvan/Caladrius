@@ -56,9 +56,8 @@
             <div class="card__family">
             
                 <servicesCard
-                    title = ' formule basique'
+                    title = 'formule basique'
                     price = 299
-                    @commande="modal.openModal()"
                 />
                 <servicesCard
                     title = 'formule Intermédiaire'
@@ -122,9 +121,9 @@
 
             
         </div>
-        <modalTool
+        <modalServicesTool
             ref="modal"
-            title="Modale avec setup()"
+            title="Commander"
             @confirm="onConfirm"
             @close="onClose"
         />
@@ -134,7 +133,7 @@
 <script>
 import mainButton from '../button/mainButton.vue';
 import servicesCard from '../layout/servicesCard.vue';
-import modalTool from '../tools/modalTool.vue';
+import modalServicesTool from '../tools/modalServicesTool.vue';
 import { ref } from 'vue';
 export default {
     props: {
@@ -148,7 +147,7 @@ export default {
         }
     },
     components:{
-        mainButton, servicesCard, modalTool
+        mainButton, servicesCard, modalServicesTool
     },
     setup(){
         const intermediaireFeatures = [
@@ -178,9 +177,10 @@ export default {
 
         const onConfirm = () => console.log('Confirmé !');
         const onClose = () => console.log('Fermé');
+        const voir = console.log("Voir ce qui se passe")
 
         return {intermediaireFeatures, proFeatures, mobileAppFeatures, mobileAppInter_Features,
-            mobileProFeature, onConfirm, onClose, modal
+            mobileProFeature, onConfirm, onClose, modal, voir
         }
     }
 

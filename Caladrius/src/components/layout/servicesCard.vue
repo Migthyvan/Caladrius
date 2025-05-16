@@ -11,7 +11,7 @@
       {{ paymentMethods }}
     </p>
     <mainButton label="commander"
-      @click="handleClick"
+      @click="openModal"
     />
 
     <ul>
@@ -19,56 +19,66 @@
         {{ item }}
       </li>
     </ul>
+
+    <modalServicesTool
+      ref="modal"
+      :title="title"
+      :subtitle="paymentMethods"
+      :price="price"
+      @confirm="onConfirm"
+      @close="onClose"
+    />
   </div>
 </template>
 
 <script>
 import mainButton from '../button/mainButton.vue';
+import modalServicesTool from '../tools/modalServicesTool.vue';
+import { ref } from 'vue';
+
 export default {
-  props:{
-
-    title:{
-      type:String,
-      default:'basic'
-    },
-
-    price:{
-      type:String,
-      default: '599'
-    },
-    paymentMethods:{
-      type: String,
-      default:'2 mois de maintenance gratuite'
-    },
-    features:{
-      type: Array,
-      default:[
+  props: {
+    title: { type: String, default: 'basic' },
+    price: { type: String, default: '599' },
+    paymentMethods: { type: String, default: '2 mois de maintenance gratuite' },
+    features: { 
+      type: Array, 
+      default: () => [
         'Site vitrine (1-5 pages)',
         'Formulaire de contact basique.',
         'Hébergement inclus',
         '48-hour support response time'
       ]
     }
-
   },
+  emits: ['commande'],
+  components: { mainButton, modalServicesTool },
+  setup(props, { emit }) {
+    const modal = ref(null);
 
-  emits:['commande'],
-
-  components:{
-    mainButton
-  },
-
-  setup(props, {emit}) {
-    
-    const handleClick = () =>{
-      emit('commande')
-    }
-    
-    return {
-      handleClick
+    const openModal = () => {
+      modal.value.openModal();
+      // Émets également les données si nécessaire
+      emit('commande', {
+        title: props.title,
+        price: props.price,
+        paymentMethods: props.paymentMethods,
+        features: props.features
+      });
     };
+
+    const onConfirm = () => {
+      console.log('Commande confirmée !', props.title);
+      // Logique de confirmation...
+    };
+
+    const onClose = () => {
+      console.log('Modale fermée');
+    };
+
+    return { openModal, onConfirm, onClose, modal };
   }
-}
+};
 </script>
 
 <style scoped>
