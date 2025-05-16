@@ -2,11 +2,10 @@
     <div class="main__container center__flex__mobile">
         <div class="main__content center__flex__mobile ">
             <div class="title-line"></div>
-            <h1>
-                Entrons ensemble dans un univers de transformation et
-                d'innovation.
+            <h1 class="animated-title">
+                Allions la technologie de l'avenir à la sagesse éternelle de nos terres.
             </h1>
-            <h3>
+            <h3 class="animated-subtitle">
                 Decouvrez notre panoplie de solutions digitales pour faire grandir votre business.
             </h3>
             <div class="about__btn">
@@ -20,12 +19,25 @@
 <script>
 import mainButton from '../button/mainButton.vue';
 import { useRouter } from 'vue-router';
+import { onMounted } from 'vue';
+
 export default {
     components:{
         mainButton
     },
     setup(){
-        const router = useRouter()
+        const router = useRouter();
+        
+        onMounted(() => {
+            // Ajoute les classes pour déclencher les animations après le rendu
+            setTimeout(() => {
+                const title = document.querySelector('.animated-title');
+                const subtitle = document.querySelector('.animated-subtitle');
+                if (title) title.classList.add('animate');
+                if (subtitle) subtitle.classList.add('animate');
+            }, 100);
+        });
+        
         return {
             router
         }
@@ -35,15 +47,32 @@ export default {
 </script>
 
 <style scoped>
-
 .main__container{
     padding: 4rem 1rem 1rem 1rem;
     background-image: url('../../assets/pictures/antiquities-6973196_1920.jpg');
     background-size: cover;
-    /*background: #111111;*/
-    box-sizing: border-box; /* Inclut padding/border dans la largeur */
+    box-sizing: border-box;
     min-height: 100vh;
-    overflow-y: hidden ;
+    overflow-y: hidden;
+}
+
+/* Animations */
+.animated-title {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.animated-subtitle {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease-out 0.3s, transform 1s ease-out 0.3s;
+}
+
+.animated-title.animate,
+.animated-subtitle.animate {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .coordinates__item{
@@ -84,24 +113,23 @@ span {
 }
 
 @media (min-width: 768px) {
-
     h1,h2{
         text-align: center;
     }
     
     .about__btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
-    width: 100%;
-}
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+        width: 100%;
+    }
 }
 
 @media (min-width: 1024px) {
     .main__container{
-    padding: 4rem 4rem 1rem 4rem;
-    min-height: 100vh;
+        padding: 4rem 4rem 1rem 4rem;
+        min-height: 100vh;
     }
 
     h2{

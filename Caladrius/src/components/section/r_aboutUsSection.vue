@@ -61,7 +61,7 @@ export default {
         },
         description :{
             type: String,
-            default: "Nous concevons des sites web modernes, des applications mobiles intuitives et offrons des solutions freelance adaptées à vos besoins.Chez Caladrius, une équipe passionnée vous accompagne pour donner vie à vos projets avec un design soigné, des technologies performantes et une approche personnalisée."
+            default: "Nous concevons des sites web modernes, des applications mobiles intuitives et offrons des solutions freelance adaptées à vos besoins. Chez Caladrius, une équipe passionnée vous accompagne pour donner vie à vos projets avec un design soigné, des technologies performantes et une approche personnalisée."
         }
     },
     setup(){
@@ -76,6 +76,7 @@ export default {
 <style scoped>
 .main__container{
     padding-top: 6rem;
+    background: #16120F;
 }
 
 .card{

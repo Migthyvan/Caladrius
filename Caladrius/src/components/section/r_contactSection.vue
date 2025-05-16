@@ -55,6 +55,7 @@ export default {
 
 .main__container{
     padding: 6rem 1rem 1rem 1rem;
+    background: #16120F;
 }
 .card{
     display: flex;

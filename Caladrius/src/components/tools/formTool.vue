@@ -116,6 +116,7 @@ export default {
             } catch (error) {
                 const serverError = error.response?.data?.message || "Erreur serveur";
                 errorMessages.value.push(`Échec de l'envoi : ${serverError}`);
+                isLoading.value = false;
                 throw error;
             }
         };

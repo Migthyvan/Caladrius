@@ -21,7 +21,7 @@
         <div class="sub__container ">
           <h4 class="subtitle">Mentions légales</h4>
           <ul>
-            <li class="footer_li">Conditions générales</li>
+            <li><router-link to="/conditions">Conditions générales</router-link></li>
             <li class="footer_li">Politique de confidentialité</li>
             <li class="footer_li">Valeurs morales et éthiques</li>
             <li class="footer_li">Mentions de copyright</li>

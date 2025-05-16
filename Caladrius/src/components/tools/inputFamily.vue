@@ -63,7 +63,7 @@ export default {
 
     input{
         padding: 0.4rem 1rem;  
-        background: #111111;
+        background: #16120F;
         border: 1px solid #f3f3f3;
         outline: #f3f3f3;
         color: #f3f3f3;

@@ -176,6 +176,7 @@ export default {
 <style scoped>
 .main__container{
     padding-top: 6rem;
+    background: #16120F;
 }
 
 .card__family{

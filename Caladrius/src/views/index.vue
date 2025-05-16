@@ -33,6 +33,6 @@ export default {
     flex-direction: column;
     gap: 2rem;
     height: auto;
-    background: #111111;
+    background: #16120F;
 }
 </style>
