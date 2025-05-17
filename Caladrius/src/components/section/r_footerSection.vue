@@ -22,10 +22,10 @@
           <h4 class="subtitle">Mentions légales</h4>
           <ul>
             <li><router-link to="/conditions">Conditions générales</router-link></li>
-            <li class="footer_li">Politique de confidentialité</li>
-            <li class="footer_li">Valeurs morales et éthiques</li>
-            <li class="footer_li">Mentions de copyright</li>
-            <li class="footer_li">Droits d'auteurs</li>
+            <li><router-link to="/confidentialité">Politique de confidentialité</router-link></li>
+            <li><router-link to="/valeurs_morales_et_éthique">Valeurs morales et éthiques</router-link></li>
+            <li><router-link to="/mentions_de_copyright">Mentions de copyright</router-link></li>
+            <li><router-link to="droits_auteurs">Droits d'auteurs</router-link></li>
           </ul>
         </div>
   
