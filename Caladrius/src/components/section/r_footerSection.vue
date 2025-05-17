@@ -32,9 +32,8 @@
         <div class="sub__container ">
           <h4 class="subtitle">Réseaux sociaux</h4>
           <ul>
-            <li class="footer_li"><i class="ri-facebook-circle-fill"></i></li>
-            <li class="footer_li"><i class="ri-instagram-line"></i></li>
-            <li class="footer_li"><i class="ri-twitter-x-line"></i></li>
+            <li class="footer_li"><i class="ri-facebook-circle-fill"></i> Caladrius </li>
+            <li class="footer_li"><i class="ri-instagram-line"></i> Caladriusllc </li>
           </ul>
         </div>
   
@@ -87,6 +86,7 @@ ul li a{
     display: flex;
     flex-direction: column;
     justify-content: normal;
+    color: #007bff;
     gap: 1rem;
 }
 
