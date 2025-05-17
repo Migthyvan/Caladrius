@@ -3,34 +3,29 @@
         
         <div class="center__flex__mobile policy">
             <h3>
-                Conditions d'utilisations
+                Politique de Confidentialité
             </h3>
             <p>
-                Veuillez lire attentivement les présentes Conditions d'Utilisation 
-                (ci-après dénommées les "Conditions") avant d'utiliser les services 
-                de conception de site web et d'application (ci-après dénommés les "Services") 
-                proposés par Caladrius (ci-après dénommé "le Prestataire").
+                Dans le cadre de son activité, le site www.caladrius.com collecte et traite certaines données personnelles de ses utilisateurs.
+                Cette politique de confidentialité a pour but de vous informer sur les données que nous collectons, leur traitement, et vos droits.
             </p>
         </div>
 
         <div class="center__flex__mobile policy">
 
             <h3>
-                1. Description du Site et des Services Proposés
+                1. Responsable du traitement
             </h3>
 
             <p>
-                Le Site www.caladrius.com a pour objet de présenter
-                les services de freelance proposés par Caladrius 
-                dans les domaines de: développement web, développement mobile, 
-                et services de freelance. Le site permet de:
+                Le responsable du traitement est :
             </p>
 
             <ul>
-                <li>Consulter une présentation des services proposés.</li>
-                <li>Visualiser un portfolio de réalisations (le cas échéant).</li>
-                <li>Prendre contact avec le Freelance pour solliciter des informations ou un devis.</li>
-                <li>S'inscrire à une newsletter</li>
+                <li>[Ton prénom et nom / nom de ton entreprise]</li>
+                <li>Adresse : [Ton adresse postale]</li>
+                <li>Email : [Ton adresse e-mail professionnelle]</li>
+                <li>Numéro SIRET : [Ton SIRET]</li>
             </ul>
 
         </div>
@@ -38,113 +33,97 @@
         <div class="center__flex__mobile policy">
 
             <h3>
-                2. Accès et Utilisation du Site
+                2. Données collectées
             </h3>
 
             <p>
-                L'accès au Site est libre et gratuit pour 
-                tout Utilisateur disposant d'une connexion internet. 
-                Le Freelance s'efforce de maintenir le Site accessible 
-                24 heures sur 24 et 7 jours sur 7, mais ne saurait être 
-                tenu responsable des interruptions d'accès dues notamment 
-                à des opérations de maintenance, des problèmes techniques, 
-                des pannes de réseau ou des cas de force majeure. <br>
-                L'Utilisateur s'engage à utiliser le Site conformément 
-                aux présentes CGU, aux lois et réglementations en vigueur, 
-                et de manière responsable et respectueuse des droits des 
-                tiers et du Freelance. Il est notamment interdit de :
+               Nous pouvons collecter les données suivantes :
             </p>
 
             <ul>
-                <li>Utiliser le Site à des fins illicites ou nuisibles.</li>
-                <li>Porter atteinte au bon fonctionnement du Site, notamment 
-                    en y introduisant des virus ou tout autre code malveillant.
-                </li>
-                <li>Collecter ou utiliser des informations personnelles d'autres 
-                    utilisateurs sans leur consentement.
-                </li>
-                <li>Diffuser des contenus illégaux, diffamatoires, injurieux, obscènes 
-                    ou portant atteinte aux droits de propriété intellectuelle de tiers.
-                </li>
+                 <li>Nom et prénom</li>
+                <li>Adresse e-mail</li>
+                <li>Numéro de téléphone</li>
+                <li>Message ou informations transmises via le formulaire de contact</li>
+                <li>Adresse IP (à des fins de statistiques et de sécurité)</li>
             </ul>
         </div>
 
         <div class="center__flex__mobile policy">
 
             <h3>
-                3. Propriété Intellectuelle
+                3. Finalité de la collecte
             </h3>
 
             <p>
-                Le contenu du Site (textes, images, logos, vidéos, etc.) 
-                est la propriété exclusive du Freelance ou de ses concédants
-                et est protégé par les lois relatives à la propriété intellectuelle
-                en vigueur en Côte d'Ivoire et à l'étranger.Toute reproduction, 
-                distribution, modification, adaptation, traduction, représentation
-                ou exploitation, intégrale ou partielle, du contenu du Site, par 
-                quelque procédé et sur quelque support que ce soit, sans l'autorisation 
-                écrite préalable du Freelance, est strictement interdite et constituerait 
-                une contrefaçon susceptible d'entraîner des poursuites judiciaires. 
-                Les marques et logos présents sur le Site sont déposés et protégés. 
-                Toute utilisation non autorisée de ces marques et logos est interdite. <br>
+                Les données personnelles sont collectées uniquement pour :
             </p>
+             <ul>
+                 <li>Répondre à vos demandes via le formulaire de contact</li>
+                <li>Établir un devis ou une proposition commerciale</li>
+                <li>Gérer la relation client</li>
+                <li>Produire des statistiques anonymes sur la fréquentation du site</li>
+            </ul>
 
         </div>
 
         <div class="center__flex__mobile policy">
 
             <h3>
-                4. Liens Hypertextes
+                4. Base légale du traitement
             </h3>
 
             <p>
-                Le Site peut contenir des liens hypertextes renvoyant 
-                vers des sites internet tiers. Ces liens sont fournis 
-                uniquement à titre de commodité et le Freelance n'exerce 
-                aucun contrôle sur le contenu de ces sites tiers et décline 
-                toute responsabilité quant à leur contenu, leur exactitude, 
-                leur fiabilité et leur disponibilité. L'accès à ces sites tiers 
-                relève de la seule responsabilité de l'Utilisateur.<br>
-                Le Freelance se réserve le droit de supprimer tout lien 
-                hypertexte présent sur le Site à tout moment. 
+                La collecte repose sur :
             </p>
+              <ul>
+                 <li>L'intérêt légitime (communication et prospection)</li>
+                <li>Le consentement (formulaire de contact)</li>
+                <li>L'exécution d'un contrat (en cas de commande)</li>
+            </ul>
+        </div>
+
+        <div class="center__flex__mobile policy">
+
+            <h3>
+                5. Durée de conservation
+            </h3>
+
+            <p>
+               Les données sont conservées :
+            </p>
+             <ul>
+                 <li>Jusqu'à 3 ans à compter du dernier contact pour les prospects</li>
+                <li>Jusqu'à 10 ans pour les clients (obligations comptables)</li>
+            </ul>
 
         </div>
 
         <div class="center__flex__mobile policy">
 
             <h3>
-                5. Limitation de Responsabilité
+                6. Destinataires
             </h3>
 
             <p>
-                Le Freelance s'efforce de fournir des informations 
-                exactes et à jour sur le Site, mais ne garantit pas l'exactitude, 
-                l'exhaustivité ou la pertinence de ces informations. L'utilisation
-                des informations et du contenu du Site se fait sous la seule responsabilité 
-                de l'Utilisateur. <br>
-                Dans toute la mesure permise par la loi applicable, le Freelance ne saurait 
-                être tenu responsable des dommages directs ou indirects, de quelque nature 
-                que ce soit, résultant de l'accès, de l'utilisation ou de l'impossibilité 
-                d'accéder ou d'utiliser le Site, y compris, sans limitation, les pertes de profits, 
-                les pertes de données, les interruptions d'activité ou les dommages causés 
-                aux systèmes informatiques de l'Utilisateur.
+                Les données collectées ne sont transmises à aucun tiers sauf :
             </p>
+            <ul>
+                 <li>obligation légale (autorités judiciaires, etc.)</li>
+                <li>sous-traitants techniques (hébergeur, outils de messagerie)</li>
+            </ul>
+            <p>Tous les sous-traitants respectent également le RGPD.</p>
 
         </div>
 
         <div class="center__flex__mobile policy">
 
             <h3>
-                6. Protection des Données Personnelles
+                7. Sécurité
             </h3>
 
             <p>
-                Le Freelance s'engage à respecter la législation en vigueur 
-                en matière de protection des données personnelles. 
-                Les modalités de collecte et de traitement des données 
-                personnelles des Utilisateurs sont détaillées dans notre 
-                [Lien vers votre Politique de Confidentialité, si vous en avez une]. <br>
+               Nous mettons en œuvre toutes les mesures de sécurité raisonnables pour protéger vos données (protocole HTTPS, pare-feu, accès restreint, etc.).
                 
             </p>
 
@@ -153,36 +132,22 @@
         <div class="center__flex__mobile policy">
 
             <h3>
-                7. modification des CGU
+                8. Vos droits
             </h3>
 
             <p>
-                Le Freelance s'engage à respecter la législation en vigueur 
-                en matière de protection des données personnelles. 
-                Les modalités de collecte et de traitement des données 
-                personnelles des Utilisateurs sont détaillées dans notre 
-                [Lien vers votre Politique de Confidentialité, si vous en avez une]. <br>
-                
+                Conformément au RGPD, vous disposez des droits suivants :
             </p>
-
-        </div>
-
-        <div class="center__flex__mobile policy">
-
-            <h3>
-                8. Droit Applicable et Règlement des Différends
-            </h3>
-
-            <p>
-                Les présentes CGU sont régies et interprétées conformément au droit ivoirien.
-                En cas de différend relatif à l'interprétation, l'exécution ou la validité 
-                des présentes CGU, les parties s'efforceront de le régler à l'amiable. 
-                À défaut d'accord amiable dans un délai de [Préciser le délai, par exemple : 
-                trente (30) jours] à compter de la notification du différend par l'une des 
-                parties à l'autre, le litige sera soumis à la compétence exclusive des 
-                tribunaux compétents d'Abidjan, Côte d'Ivoire. <br>
-                
-            </p>
+            <ul>
+                 <li>Droit d'accès</li>
+                <li>Droit de rectification</li>
+                <li>Droit à l'effacement</li>
+                <li>Droit à la limitation du traitement</li>
+                <li>Droit à la portabilité</li>
+                <li>Droit d'opposition</li>
+                <li>Droit d'introduire une réclamation auprès de la CNIL</li>
+            </ul>
+            <p>Pour exercer ces droits, vous pouvez nous contacter à : Caladrius@gmail.com</p>
 
         </div>
 
