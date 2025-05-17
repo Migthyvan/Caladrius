@@ -75,6 +75,10 @@ ul {
     padding-top: 1rem ;
 }
 
+li{
+    cursor: pointer;
+}
+
 ul li a{
     color: #111111;
 }
