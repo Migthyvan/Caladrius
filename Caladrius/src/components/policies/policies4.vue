@@ -67,8 +67,12 @@
             </h3>
 
             <p> Toute copie, même partielle, du contenu de ce site (ex. : extrait d'article, capture d'écran, ligne de code) doit :</p>
+            
+            <ul>
                 <li>être accompagnée de la source claire et visible (www.caladrius.com)</li>
                 <li>et faire l'objet d'une demande préalable d'autorisation à l'adresse : caladrius@gmail.com</li>
+            </ul>
+            
             <p>Toute utilisation non autorisée constitue une contrefaçon (article L335-2 du CPI) 
                 passible de 3 ans d'emprisonnement et 300 000 € d'amende.
             </p>
@@ -139,14 +143,9 @@
 </template>
 
 <script>
-import navbar from '../layout/navbar.vue';
-import r_footerSection from '../section/r_footerSection.vue';
-
 
 export default{
-    components:{
-        navbar, r_footerSection
-    },
+    
     props:{
         title:{
             type:String,

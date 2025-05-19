@@ -25,7 +25,6 @@
             <li><router-link to="/confidentialité">Politique de confidentialité</router-link></li>
             <li><router-link to="/valeurs_morales_et_éthique">Valeurs morales et éthiques</router-link></li>
             <li><router-link to="/mentions_de_copyright">Mentions de copyright</router-link></li>
-            <li><router-link to="droits_auteurs">Droits d'auteurs</router-link></li>
           </ul>
         </div>
   

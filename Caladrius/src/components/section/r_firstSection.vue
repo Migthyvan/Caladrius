@@ -49,7 +49,12 @@ export default {
 <style scoped>
 .main__container{
     padding: 4rem 1rem 1rem 1rem;
-    background-image: url('../../assets/pictures/antiquities-6973196_1920.jpg');
+    background: 
+    linear-gradient(to bottom, 
+        rgba(22, 18, 15, 0.4) 0%, 
+        rgba(22, 18, 15, 0.7) 70%, 
+        #16120F 100%),
+    url('../../assets/pictures/antiquities-6973196_1920.jpg');
     background-size: cover;
     box-sizing: border-box;
     min-height: 100vh;
