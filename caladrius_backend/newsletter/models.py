@@ -4,7 +4,7 @@ from django.db import models
 
 class NewsletterSubscribers(models.Model):
     name = models.CharField(max_length=255)
-    email =models.EmailField(unique=True)
+    email =models.EmailField(unique=False) #False just for the test
     created_at = models.DateTimeField(auto_now_add=True)
     is_active = models.BooleanField(default=True)
 

@@ -4,6 +4,10 @@ from rest_framework.response import Response
 from rest_framework import status
 from .models import NewsletterSubscribers
 from .serializers import NewsletterSubscribersSerializer
+from django.conf import settings
+from django.core.mail import EmailMultiAlternatives
+from django.template.loader import render_to_string
+from django.utils.html import strip_tags
 
 # Create your views here.
 def index(request):
@@ -22,7 +26,34 @@ class NewsletterSubscriberView(APIView):
     def post(self, request):
         serializer = NewsletterSubscribersSerializer(data=request.data)
         if serializer.is_valid():
-            serializer.save()
+            subscriber = serializer.save()
+            
+            # Préparation du contenu de l'email
+            subject = "Bienvenue dans notre newsletter !"
+            
+            # Chargement du template HTML
+            html_content = render_to_string(
+                'newsletter/newsletter.html',
+                {
+                    'subscriber_name': subscriber.name if subscriber.name else 'abonné',
+                    'company_name': settings.COMPANY_NAME,
+                    #'unsubscribe_link': f"{settings.SITE_URL}/newsletter/unsubscribe/{subscriber.id}/"
+                }
+            )
+            
+            # Version texte brut du contenu
+            text_content = strip_tags(html_content)
+            
+            # Envoi de l'email
+            msg = EmailMultiAlternatives(
+                subject,
+                text_content,
+                settings.DEFAULT_FROM_EMAIL,
+                [subscriber.email]
+            )
+            msg.attach_alternative(html_content, "text/html")
+            msg.send()
+            
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
     

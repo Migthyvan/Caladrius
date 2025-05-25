@@ -210,7 +210,7 @@ export default {
 }
 
 /* Responsive Design */
-@media (max-width: 1280px) {
+@media (max-width: 1150px) {
   .nav__container {
     padding: 1rem;
   }

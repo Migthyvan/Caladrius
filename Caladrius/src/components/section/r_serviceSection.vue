@@ -2,8 +2,12 @@
   <div class="main__container center__flex__mobile">
     <p class="title" data-aos="fade-up">Nos services</p>
     <h2 class="subtitle" data-aos="fade-up">
-        Trouvez tout ce dont vous avez besoin
+        Trouvez tout ce dont vous avez besoin pour une présence effective en ligne
     </h2>
+    <h3 style="font-size: 1.4rem; text-align: center; max-width: 600px;" data-aos="fade-up">
+        Nous vous proposérons une panoplie de solution adapatées à vos besoins et surtout qui
+        qui répondent aux normes de votre audience.
+    </h3 >
     <div class="center__flex__mobile service__container ">
         <div class="card">
             <i class="fa-solid fa-code" data-aos="fade-up"></i>
