@@ -14,8 +14,8 @@
       @click="openModal"
     />
 
-    <ul>
-      <li v-for="(item, index) in features" :key="index">        
+    <ul class="features">
+      <li class="features__items" v-for="(item, index) in features" :key="index">        
         {{ item }}
       </li>
     </ul>
@@ -107,12 +107,16 @@ span i {
   color:#f3f3f3;
 }
 
-ul{
+.features{
   color: #f3f3f3;
   line-height: 2.5;
   /*list-style-type: "✓ ";*/
   padding-left: 1rem;
   text-align: center;
+}
+
+.features__items{
+  padding-top: 1rem;
 }
 
 .subtitle, title{

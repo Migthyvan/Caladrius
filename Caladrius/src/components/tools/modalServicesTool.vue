@@ -10,24 +10,25 @@
         <h3>€{{ price }}</h3>
       </div>
       <div class="modal-body">
-        <inputFamily />
-        <ul v-if="features && features.length" class="features-list">
-          <li v-for="(item, index) in features" :key="index">
-            {{ item }}
-          </li>
-        </ul>
+        <inputFamily 
+          label="Entrer votre nom" 
+        />
+        <inputFamily 
+          label="Entrer une email"
+          type="email"
+        />
       </div>
       <div v-if="showFooter" class="modal-footer">
-        <mainButton 
-          @click="confirmAction" 
-          class="confirm-button"
-          label="Confirmer"
-        />
-        <mainButton 
+        <secondButton 
           @click="closeModal" 
           class="cancel-button"
           label="Annuler"
           variant="outline"
+        />
+        <mainButton 
+          @click="confirmAction" 
+          class="confirm-button"
+          label="Confirmer"
         />
       </div>
     </div>
@@ -38,13 +39,13 @@
 import { ref, onMounted, onUnmounted } from 'vue'
 import inputFamily from './inputFamily.vue';
 import mainButton from '../button/mainButton.vue';
+import secondButton from '../button/secondButton.vue';
 
 export default {
   name: 'ModalServicesTool',
 
   components: {
-    inputFamily, 
-    mainButton
+    inputFamily, mainButton, secondButton
   },
 
   props: {
@@ -174,6 +175,9 @@ export default {
 
 .modal-body {
   padding: 16px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
 .features-list {

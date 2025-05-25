@@ -1,7 +1,6 @@
 <template>
     <button class="services__button">
        {{ label }}
-        <i class="ri-contract-right-line"></i>
     </button>
 </template>
 
@@ -20,8 +19,8 @@ export default {
 
 <style scoped>
 .services__button {
-  padding: 0.8rem;
-  border: 2px solid #007bff;
+  padding: 0.5rem;
+  border: 1px solid #007bff;
   border-radius: 0.6rem;
   font-size: 1rem;
   font-weight: 600;

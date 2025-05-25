@@ -21,5 +21,6 @@ class NewsletterSubscribersSerializer(serializers.ModelSerializer):
     #        instance.save()
     #        return True
     #    return False
-    
+
+
 
