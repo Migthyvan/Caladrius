@@ -9,10 +9,12 @@
       /* Reset spécifiques clients email */
       body, table, td, a { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
       table, td { mso-table-lspace: 0pt; mso-table-rspace: 0pt; }
-      img { -ms-interpolation-mode: bicubic; border: 0; height: auto; line-height: 100%; outline: none; text-decoration: none; }
+      img { -ms-interpolation-mode: bicubic; border: 0; height: auto; line-height: 100%;
+         outline: none; text-decoration: none; }
       
       /* Styles principaux */
-      body { font-family: 'Inter', Arial, sans-serif; line-height: 1.5; margin: 0 !important; padding: 0 !important; width: 100% !important; color: #333333; }
+      body { font-family: 'Inter', Arial, sans-serif; line-height: 1.5; margin: 0 !important; 
+            padding: 0 !important; width: 100% !important; color: #333333; }
       
       /* Styles mobile */
       @media screen and (max-width: 600px) {
@@ -52,32 +54,55 @@
         <tr>
             <td align="center" valign="top">
                 <!-- Conteneur -->
-                <table class="responsive-table" border="0" cellpadding="0" cellspacing="0" width="600" style="margin-top: 30px;">
+                <table class="responsive-table" border="0" cellpadding="0" cellspacing="0" 
+                    width="600" style="margin-top: 30px;">
                     <!-- En-tête -->
                     <tr>
                         <td align="center" valign="top" style="padding: 30px 0 20px 0;">
-                            <h2 style="margin: 0; color: #1E40AF; font-size: 24px; font-weight: 700;">Caladrius</h2>
-                            <p style="margin: 5px 0 0 0; color: #6B7280; font-size: 14px;">Solutions Technologiques Innovantes</p>
+                            <h2 style="margin: 0; color: #1E40AF; font-size: 24px; 
+                                font-weight: 700;">Caladrius Technologies
+                            </h2>
+                            <p style="margin: 5px 0 0 0; color: #6B7280; font-size: 14px;">
+                                Solutions Technologiques Innovantes
+                            </p>
                         </td>
                     </tr>
                     
                     <!-- Carte de confirmation -->
                     <tr>
                         <td class="mobile-padding" style="padding: 0 40px 30px 40px; background-color: #ffffff;">
-                            <h1 style="color: #1E40AF; margin-top: 0; font-size: 22px; font-weight: 600;">Confirmation de votre demande</h1>
+                            <h1 style="color: #1E40AF; margin-top: 0; font-size: 22px; 
+                                font-weight: 600;">Confirmation de votre demande
+                            </h1>
                             
                             <p style="font-size: 16px; margin-bottom: 5px;">Bonjour {{ subscriber_name }},</p>
                             
-                            <p style="font-size: 16px;">Nous accusons réception de votre demande concernant <strong>{{ service_name }}</strong> et vous en remercions.</p>
+                            <p style="font-size: 16px;">
+                                Nous accusons réception de votre demande concernant 
+                                <strong>{{ service_name }}</strong>
+                                et vous en remercions.
+                            </p>
                             
                             <div class="service-card">
-                                <h3 style="margin-top: 0; color: #2563EB; font-size: 18px;">Détails de votre demande :</h3>
-                                <p style="margin-bottom: 8px;"><strong>Référence :</strong> #{{ request_id }}</p>
-                                <p style="margin-bottom: 8px;"><strong>Date :</strong> {{ request_date }}</p>
-                                <p style="margin-bottom: 0;"><strong>Statut :</strong> <span style="color: #2563EB;">En traitement</span></p>
+                                <h3 style="margin-top: 0; color: #2563EB; font-size: 18px;">
+                                    Détails de votre demande :
+                                </h3>
+                                <p style="margin-bottom: 8px;">
+                                    <strong>Date :</strong> 
+                                    {{ created_at }}
+                                </p>
+                                <p style="margin-bottom: 0;">
+                                    <strong>Statut :</strong> 
+                                    <span style="color: #2563EB;">En traitement</span>
+                                </p>
                             </div>
                             
-                            <p style="font-size: 16px;">Notre équipe examine actuellement votre demande et vous contactera sous <strong>48 heures ouvrables</strong> pour :</p>
+                            <p style="font-size: 16px;">
+                                Notre équipe examine actuellement votre demande et vous 
+                                contactera sous 
+                                <strong>48 heures ouvrables</strong> 
+                                pour :
+                            </p>
                             <ul style="font-size: 16px; padding-left: 20px;">
                                 <li>Préciser les prochaines étapes</li>
                                 <li>Vous proposer un éventuel rendez-vous</li>
@@ -88,20 +113,33 @@
                             <table border="0" cellpadding="0" cellspacing="0" style="margin: 30px 0 20px 0;">
                                 <tr>
                                     <td align="center">
-                                        <a href="{{ website_url }}" class="button button-responsive">Accéder à votre espace client</a>
+                                        <a href="{{ website_url }}" class="button button-responsive">
+                                            Revenir sur le site
+                                        </a>
                                     </td>
                                 </tr>
                             </table>
                             
-                            <p style="font-size: 15px; color: #6B7280;">Besoin d'une réponse urgente ? Contactez-nous directement :</p>
-                            <p style="font-size: 15px; margin-bottom: 5px;"><strong>📞 Par téléphone :</strong> {{ contact_phone }}</p>
-                            <p style="font-size: 15px; margin-top: 0;"><strong>✉ Par email :</strong> <a href="mailto:{{ contact_email }}" style="color: #2563EB; text-decoration: underline;">{{ contact_email }}</a></p>
+                            <p style="font-size: 15px; color: #6B7280;">
+                                Besoin d'une réponse urgente ? Contactez-nous directement :
+                            </p>
+                            <p style="font-size: 15px; margin-bottom: 5px;">
+                                <strong>📞 Par téléphone :</strong> 
+                                {{ contact_phone }}
+                            </p>
+                            <p style="font-size: 15px; margin-top: 0;">
+                                <strong>✉ Par email :</strong> 
+                                <a href="mailto:{{ contact_email }}" style="color: #2563EB;
+                                    text-decoration: underline;">{{ contact_email }}
+                                </a>
+                            </p>
                         </td>
                     </tr>
                     
                     <!-- Signature -->
                     <tr>
-                        <td class="mobile-padding" style="padding: 20px 40px 30px 40px; background-color: #ffffff; border-top: 1px solid #E5E7EB;">
+                        <td class="mobile-padding" style="padding: 20px 40px 30px 40px; 
+                            background-color: #ffffff; border-top: 1px solid #E5E7EB;">
                             <p style="font-size: 16px; margin-bottom: 5px;">Cordialement,</p>
                             <p style="font-size: 16px; margin-top: 0; font-weight: 600;">L'équipe Caladrius</p>
                             <img src="{{ logo_url }}" alt="Caladrius" width="120" style="margin-top: 20px;" />
