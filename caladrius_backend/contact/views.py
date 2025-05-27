@@ -109,7 +109,7 @@ class ServicesView(APIView):
                     'subscriber_name': service.name if service.name else 'abonné',
                     'created_at': service.created_at,
                     'contact_phone': settings.CONTACT_PHONE,
-                    'contact_email': settings.DEFAULT_FROM_EMAIL,
+                    'contact_email': settings.EMAIL_HOST_USER,
                 }
             )
             text_content = strip_tags(html_content)

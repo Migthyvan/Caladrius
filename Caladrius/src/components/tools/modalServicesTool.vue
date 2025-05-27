@@ -11,24 +11,39 @@
       </div>
       <div class="modal-body">
         <inputFamily 
-          label="Entrer votre nom" 
+          label="Entrer votre nom"
+          v-model="customer.name" 
         />
         <inputFamily 
           label="Entrer une email"
           type="email"
+          v-model="customer.email"
         />
       </div>
+      <transition>
+        <p v-if = 'attempts > 0' class="error__message">
+          {{message.errorMessages}}
+        </p>
+      </transition>
+      <transition>
+        <p v-if = 'succes === true'>
+          {{message.successMessage}}
+        </p>
+      </transition>
       <div v-if="showFooter" class="modal-footer">
         <secondButton 
           @click="closeModal" 
           class="cancel-button"
           label="Annuler"
           variant="outline"
+          v-if="!succes"
         />
         <mainButton 
           @click="confirmAction" 
           class="confirm-button"
           label="Confirmer"
+          :loading="isLoading"
+          v-if="!succes"
         />
       </div>
     </div>
@@ -40,41 +55,38 @@ import { ref, onMounted, onUnmounted } from 'vue'
 import inputFamily from './inputFamily.vue';
 import mainButton from '../button/mainButton.vue';
 import secondButton from '../button/secondButton.vue';
+import instance from '@/_services/api';
 
 export default {
   name: 'ModalServicesTool',
-
-  components: {
-    inputFamily, mainButton, secondButton
-  },
-
+  components: { inputFamily, mainButton, secondButton },
+  
   props: {
-    title: { 
-      type: String, 
-      default: 'Commander' 
-    },
-    subtitle: {
-      type: String, 
-      default: 'Description'
-    },
-    price: {
-      type: String, 
-      default: '0'
-    },
-    features: {
-      type: Array,
-      default: () => []
-    },
-    showFooter: { 
-      type: Boolean, 
-      default: true 
-    }
+    title: { type: String, default: 'Commander' },
+    subtitle: { type: String, default: 'Description' },
+    price: { type: String, default: '0' },
+    features: { type: Array, default: () => [] },
+    showFooter: { type: Boolean, default: true }
   },
 
   emits: ['confirm', 'close'],
 
   setup(props, { emit }) {
     const isOpen = ref(false);
+    const message = ref({ errorMessages: '', successMessage: '' });
+    const attempts = ref(0);
+    const isLoading = ref(false);
+    const succes = ref(false);
+
+    const initialCustomerState = {
+      name: '',
+      email: '',
+      services: props.title,
+      price: props.price,
+      message: `J'aimerais commander le service ${props.title} pour le prix de ${props.price} €`
+    };
+
+    const customer = ref({...initialCustomerState});
 
     const openModal = () => {
       isOpen.value = true;
@@ -85,15 +97,47 @@ export default {
       isOpen.value = false;
       document.body.style.overflow = 'auto';
       emit('close');
+      resetForm();
     };
 
-    const confirmAction = () => {
-      emit('confirm');
-      closeModal();
+    const resetForm = () => {
+      customer.value = {...initialCustomerState};
+      message.value = { errorMessages: '', successMessage: '' };
+      succes.value = false;
+      isLoading.value = false;
     };
 
     const handleKeydown = (e) => {
-      if (e.key === 'Escape') closeModal();
+      if (e.key === 'Escape' && isOpen.value) closeModal();
+    };
+
+    const confirmAction = async () => {
+      if (!customer.value.name || !customer.value.email) {
+        message.value.errorMessages = 'Veuillez remplir tous les champs.';
+        attempts.value++;
+        return;
+      }
+
+      isLoading.value = true;
+      message.value.errorMessages = '';
+
+      try {
+        await instance.post('/contact/service/', customer.value);
+        emit('confirm');
+        message.value.successMessage = 'Formulaire envoyé avec succès! Consultez votre boîte mail.';
+        succes.value = true;
+        attempts.value = 0;
+        
+        setTimeout(() => {
+          closeModal();
+        }, 7000);
+      } catch (error) {
+        console.error('Erreur lors de l\'envoi:', error);
+        message.value.errorMessages = 'Une erreur est survenue. Veuillez réessayer.';
+        attempts.value++;
+      } finally {
+        isLoading.value = false;
+      }
     };
 
     onMounted(() => window.addEventListener('keydown', handleKeydown));
@@ -101,9 +145,14 @@ export default {
 
     return {
       isOpen,
+      attempts,
+      message,
+      isLoading,
+      succes,
       openModal,
       closeModal,
-      confirmAction
+      confirmAction,
+      customer
     };
   }
 };
@@ -219,5 +268,21 @@ export default {
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
+}
+
+.error__message{
+  color: #ff2323;
+  font-size: 1rem;
+  text-align: center;
+}
+
+.v-enter-active,
+.v-leave-active {
+  transition: opacity 0.7s ease;
+}
+
+.v-enter-from,
+.v-leave-to {
+  opacity: 0;
 }
 </style>
