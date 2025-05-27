@@ -7,7 +7,7 @@
         
         <div class="service__container">
             
-            <img src="../../assets/pictures/african__students__2.jpeg" data-aos="fade-left" alt="african students">
+            <img src="../../assets/pictures/Africain service.png" data-aos="fade-left" alt="african students">
 
             <p>
                 {{ description }}
