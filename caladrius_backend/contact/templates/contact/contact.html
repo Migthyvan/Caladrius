@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -25,7 +26,7 @@
       }
       
       .button {
-          background-color: #2563EB; /* Bleu plus vif */
+          background-color: #2563EB;
           color: #ffffff !important;
           display: inline-block;
           font-weight: 600;
@@ -53,14 +54,14 @@
     <table border="0" cellpadding="0" cellspacing="0" width="100%" bgcolor="#f7f7f7">
         <tr>
             <td align="center" valign="top">
-                <!-- Conteneur -->
-                <table class="responsive-table" border="0" cellpadding="0" cellspacing="0" 
-                    width="600" style="margin-top: 30px;">
-                    <!-- En-tête -->
+                <!-- Conteneur principal (600px de large) -->
+                <table class="responsive-table" border="0" cellpadding="0" cellspacing="0" width="600" style="margin-top: 30px;">
+                    
+                    <!-- 2. Titre et slogan -->
                     <tr>
-                        <td align="center" valign="top" style="padding: 30px 0 20px 0;">
-                            <h2 style="margin: 0; color: #1E40AF; font-size: 24px; 
-                                font-weight: 700;">Caladrius Technologies
+                        <td align="center" valign="top" style="padding: 30px 0 20px 0; background-color: #ffffff;">
+                            <h2 style="margin: 0; color: #1E40AF; font-size: 24px; font-weight: 700;">
+                                Caladrius Technologies
                             </h2>
                             <p style="margin: 5px 0 0 0; color: #6B7280; font-size: 14px;">
                                 Solutions Technologiques Innovantes
@@ -68,11 +69,11 @@
                         </td>
                     </tr>
                     
-                    <!-- Carte de confirmation -->
+                    <!-- 3. Contenu principal -->
                     <tr>
                         <td class="mobile-padding" style="padding: 0 40px 30px 40px; background-color: #ffffff;">
-                            <h1 style="color: #1E40AF; margin-top: 0; font-size: 22px; 
-                                font-weight: 600;">Confirmation de votre demande
+                            <h1 style="color: #1E40AF; margin-top: 0; font-size: 22px; font-weight: 600;">
+                                Confirmation de votre demande
                             </h1>
                             
                             <p style="font-size: 16px; margin-bottom: 5px;">Bonjour {{ subscriber_name }},</p>
@@ -88,8 +89,7 @@
                                     Détails de votre demande :
                                 </h3>
                                 <p style="margin-bottom: 8px;">
-                                    <strong>Date :</strong> 
-                                    {{ created_at }}
+                                    <strong>Date :</strong> {{ created_at }}
                                 </p>
                                 <p style="margin-bottom: 0;">
                                     <strong>Statut :</strong> 
@@ -99,9 +99,7 @@
                             
                             <p style="font-size: 16px;">
                                 Notre équipe examine actuellement votre demande et vous 
-                                contactera sous 
-                                <strong>48 heures ouvrables</strong> 
-                                pour :
+                                contactera sous <strong>48 heures ouvrables</strong> pour :
                             </p>
                             <ul style="font-size: 16px; padding-left: 20px;">
                                 <li>Préciser les prochaines étapes</li>
@@ -124,29 +122,27 @@
                                 Besoin d'une réponse urgente ? Contactez-nous directement :
                             </p>
                             <p style="font-size: 15px; margin-bottom: 5px;">
-                                <strong>📞 Par téléphone :</strong> 
-                                {{ contact_phone }}
+                                <strong>📞 Par téléphone :</strong> {{ contact_phone }}
                             </p>
                             <p style="font-size: 15px; margin-top: 0;">
                                 <strong>✉ Par email :</strong> 
-                                <a href="mailto:{{ contact_email }}" style="color: #2563EB;
-                                    text-decoration: underline;">{{ contact_email }}
+                                <a href="mailto:{{ contact_email }}" style="color: #2563EB; text-decoration: underline;">
+                                    {{ contact_email }}
                                 </a>
                             </p>
                         </td>
                     </tr>
                     
-                    <!-- Signature -->
+                    <!-- 4. Signature -->
                     <tr>
-                        <td class="mobile-padding" style="padding: 20px 40px 30px 40px; 
-                            background-color: #ffffff; border-top: 1px solid #E5E7EB;">
+                        <td class="mobile-padding" style="padding: 20px 40px 30px 40px; background-color: #ffffff; border-top: 1px solid #E5E7EB;">
                             <p style="font-size: 16px; margin-bottom: 5px;">Cordialement,</p>
                             <p style="font-size: 16px; margin-top: 0; font-weight: 600;">L'équipe Caladrius</p>
                             <img src="{{ logo_url }}" alt="Caladrius" width="120" style="margin-top: 20px;" />
                         </td>
                     </tr>
                     
-                    <!-- Pied de page -->
+                    <!-- 5. Pied de page -->
                     <tr>
                         <td align="center" valign="top" style="padding: 20px; background-color: #F3F4F6;">
                             <table border="0" cellpadding="0" cellspacing="0" width="100%">

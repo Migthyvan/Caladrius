@@ -11,11 +11,15 @@ from django.conf import settings
 from django.utils.html import strip_tags
 from django.core.mail import EmailMultiAlternatives
 import logging
+from django.shortcuts import render
 
 # Initialisation du manager newsletter
 newsletter_mgr = NewsletterManager()
 
 logger = logging.getLogger(__name__)
+
+def voir(request):
+    return render(request, 'contact/contact.html')
 
 class ContactView(APIView):
     """
