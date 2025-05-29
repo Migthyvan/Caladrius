@@ -3,7 +3,7 @@
 
         <div class="logo">
             <h3>
-                CALADRIUS
+                Caladrius Technologies
             </h3>
         </div>
       
@@ -70,11 +70,12 @@ footer{
 ul {
     list-style: none;
     line-height: 2;
-    padding-top: 1rem ;
+    
 }
 
 li{
     cursor: pointer;
+    padding-top: 1rem ;
 }
 
 ul li a{
@@ -114,7 +115,8 @@ ul li a{
     .sub__container{
         display: flex;
         flex-direction: column;
-        justify-content: start;
+        justify-content: normal;
+        align-items: start;
     }
 }
 

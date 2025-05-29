@@ -125,7 +125,6 @@
             ref="modal"
             title="Commander"
             @confirm="onConfirm"
-            @close="onClose"
         />
     </div>
 </template>
@@ -134,6 +133,7 @@
 import mainButton from '../button/mainButton.vue';
 import servicesCard from '../layout/servicesCard.vue';
 import modalServicesTool from '../tools/modalServicesTool.vue';
+import instance from '@/_services/api';
 import { ref } from 'vue';
 export default {
     props: {
@@ -175,12 +175,12 @@ export default {
 
         const modal = ref(null); // Référence vers la modale
 
-        const onConfirm = () => console.log('Confirmé !');
-        const onClose = () => console.log('Fermé');
-        const voir = console.log("Voir ce qui se passe")
-
+        const onConfirm = () => {
+            console.log('Confirmé')
+        };
+        
         return {intermediaireFeatures, proFeatures, mobileAppFeatures, mobileAppInter_Features,
-            mobileProFeature, onConfirm, onClose, modal, voir
+            mobileProFeature, onConfirm, modal,
         }
     }
 

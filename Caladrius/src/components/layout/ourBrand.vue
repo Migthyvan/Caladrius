@@ -1,6 +1,6 @@
 <template>
   <footer>
-    <p>Provided by Caladrius Digital</p>
+    <p>Provided by Caladrius Technologies</p>
   </footer>
 </template>
 
@@ -12,7 +12,7 @@ export default {
 
 <style scoped>
   footer {
-    background: #111111;
+    background: #16120F;;
     padding: 1rem;
   }
   
