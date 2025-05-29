@@ -67,21 +67,35 @@ export default {
         
         const submitForm = async () => {
             isLoading.value = true;
+            aboutMessage.value.errorMessages = '';
+            aboutMessage.value.successMessage = '';
+
             if (!form.value.email || !form.value.name) {
                 aboutMessage.value.errorMessages = 'Veuillez remplir tous les champs';
                 attempts.value++;
                 isLoading.value = false;
                 return;
             }
+
             try {
                 const response = await instance.post('/newsletter/subscribers/', form.value);
                 aboutMessage.value.successMessage = 'Inscription réussie !';
                 step.value = 2;
-                attempts.value = 0; // Réinitialiser le nombre de tentatives
-                aboutMessage.value.errorMessages = ''; // Effacer l'erreur précédente
+                attempts.value = 0;
+                
+                // Réinitialiser après succès
+                setTimeout(() => {
+                    aboutMessage.value.successMessage = '';
+                }, 4000);
             } catch (error) {
-                aboutMessage.value.errorMessages = 'Une erreur est survenue lors de l\'envoi du formulaire';
+                aboutMessage.value.errorMessages = error.response?.data?.message || 
+                                                'Une erreur est survenue lors de l\'envoi du formulaire';
                 attempts.value++;
+                
+                // Effacer l'erreur après 4s
+                setTimeout(() => {
+                    aboutMessage.value.errorMessages = '';
+                }, 4000);
             } finally {
                 isLoading.value = false;
             }

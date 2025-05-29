@@ -107,9 +107,11 @@ ul li a{
 @media (min-width: 980px) {
 
     .my__footer{
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        gap: 1rem;
+        display: flex;
+        flex-direction: row;
+        align-items: start;
+        justify-content: space-between;
+        gap: 4rem;
     }
 
     .sub__container{
