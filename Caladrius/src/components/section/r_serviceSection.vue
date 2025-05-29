@@ -28,7 +28,7 @@
                 <p data-aos="fade-up">
                     nous concevons des applications mobiles sur mesure 
                     pour répondre à vos besoins spécifiques en veuillant à
-                    exécuter toute vos idées.
+                    exécuter toute vos idées à la lettre.
                 </p>
                 <span data-aos="fade-up" @click="router.push('/services')">En savoir plus <i class="ri-contract-right-line" style="color: #007bff;"></i> </span>
             </div>
@@ -70,6 +70,8 @@ export default {
 
 .card{
     display: flex;
+    justify-content: normal;
+    align-items: start;
     gap: 1rem;
 }
 
@@ -82,7 +84,7 @@ export default {
 
 .card span{
     display: flex;
-    align-items: center;
+    align-items: normal;
     gap: 1rem;
 }
 
@@ -91,7 +93,6 @@ export default {
     color: #2b92ff;
     transition: ease-in-out 0.5s;
 }
-
 
 .subtitle{
     font-size: 2rem;
