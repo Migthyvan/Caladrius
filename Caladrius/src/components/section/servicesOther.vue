@@ -57,17 +57,17 @@
             
                 <servicesCard
                     title = 'formule basique'
-                    price = 299
+                    price = 499
                 />
                 <servicesCard
                     title = 'formule Intermédiaire'
-                    price = 599
+                    price = 799
                     :features = intermediaireFeatures
                     payment-methods="3 mois de maintenance"
                 />
                 <servicesCard
                     title = 'formule Professionelle'
-                    price = 999
+                    price = 1499
                     :features = proFeatures
                     payment-methods="Maintenance 6 mois + analytics mensuels."
                 />
@@ -104,17 +104,17 @@
             <div class="card__family">
                 <servicesCard
                     title="application basique"
-                    price= 499
+                    price= 1499
                     :features="mobileAppFeatures"
                 />
                 <servicesCard
                     title="application intermédiaire"
-                    price = 999
+                    price = 2999
                     :features="mobileAppInter_Features"
                 />
                 <servicesCard
                     title="application pro"
-                    price= 1499
+                    price= 3499
                     :features="proFeatures"
                 />
             </div>
@@ -151,11 +151,11 @@ export default {
     },
     setup(){
         const intermediaireFeatures = [
-            'Site dynamique', 'SEO avancé','Hébergement inclus', 
+            'Site dynamique', 'SEO avancé','Aide à l\'hébergement', 
             'Intégration API', 'Design semi-personnalisé'
         ]
         const proFeatures = [
-            'Développement full-stack','SEO avancé','Hébergement inclus',
+            'Développement full-stack','SEO avancé','Aide à l\'hébergement',
             'Design semi-personnalisé','Base de données sécurisée', 
             'Paiements multi-gateways', 'Tests automatisés'
         ]
