@@ -46,7 +46,7 @@ export default {
       default: () => [
         'Site vitrine (1-5 pages)',
         'Formulaire de contact basique.',
-        'Hébergement inclus',
+        'Aide à l\'hébergement',
         '48-hour support response time'
       ]
     }

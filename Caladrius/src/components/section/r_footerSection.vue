@@ -32,7 +32,11 @@
           <h4 class="subtitle">Réseaux sociaux</h4>
           <ul>
             <li class="footer_li"><i class="ri-facebook-circle-fill"></i> Caladrius </li>
-            <li class="footer_li"><i class="ri-instagram-line"></i> Caladriusllc </li>
+            <li class="footer_li">
+                <a href="https://www.instagram.com/caladriusllc/" target="_blank">
+                    <i class="ri-instagram-line"></i> Caladriusllc
+                </a> 
+            </li>
           </ul>
         </div>
   
@@ -86,7 +90,7 @@ ul li a{
     display: flex;
     flex-direction: column;
     justify-content: normal;
-    color: #007bff;
+    color: #111111;
     gap: 1rem;
 }
 
