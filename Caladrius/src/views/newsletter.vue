@@ -19,6 +19,6 @@ export default {
 
 <style>
 .newsletter{
-    background: #111111;
+    background: #16120F;
 }
 </style>

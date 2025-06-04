@@ -23,25 +23,21 @@
 
         <div class="service__container ">
             
-            <p data-aos="fade-up"
-                data-aos-duration="3000"
-            >
+            <p data-aos="fade-up" data-aos-duration="3000">
                 {{ description }}
             </p>
 
-            <img src="../../assets/pictures/holdman.jpeg" data-aos="fade-right" alt="african students">
+            <img src="../../assets/pictures/freelancer.jfif" data-aos="fade-right" alt="african students">
 
         </div>
 
-        <h2 class="subtitle" data-aos="fade-up"
-            data-aos-duration="3000"
-        >
+        <h2 class="subtitle" data-aos="fade-up" data-aos-duration="3000">
             Conception de site web
         </h2>
 
         <div class="service__container ">
 
-            <img src="../../assets/pictures/valeur.jpg" data-aos="fade-left" alt="african students">
+            <img src="../../assets/pictures/site_conception.jfif" data-aos="fade-left" alt="african students">
 
             <p data-aos="fade-right">
                 {{ description }}
@@ -49,76 +45,33 @@
         </div>
 
         <div class="about__website" >
-            <p class="title" >pricing</p>
-            <h2 class="subtitle" >Pricing that grows with you</h2>
-            <h4 class="subsubtile">Choose an affordable plan that's packed with 
-                the best features for engaging your audience,
-                creating customer loyalty, and driving sales.
+            <p class="title" >Nos prix</p>
+            <h2 class="subtitle" >Prix adaptés en fonction de vos besoins</h2>
+            <h4 class="subsubtile">
+                Choisissez la meilleure formule avec les meilleures qui
+                vont susciter l'engagment de votre audience en créant une
+                fidélisation de vos clients et l'augmentation de vos ventes.
             </h4>
 
             <div class="card__family">
-                <div class="card__services" data-aos="fade-up"
-                data-aos-duration="3000">
-                    <h4>
-                        basic
-                    </h4>
-                    <h2>
-                        $19.99/mo
-                    </h2>
-                    <p>
-                        $15 per month if paid annually
-                    </p>
-                    <mainButton label="Get started"/>
+            
+                <servicesCard
+                    title = ' formule basique'
+                    price = 299
+                />
+                <servicesCard
+                    title = 'formule Intermédiaire'
+                    price = 599
+                    :features = intermediaireFeatures
+                    payment-methods="3 mois de maintenance"
+                />
+                <servicesCard
+                    title = 'formule Professionelle'
+                    price = 999
+                    :features = proFeatures
+                    payment-methods="Maintenance 6 mois + analytics mensuels."
+                />
 
-                    <ul>
-                        <li>5 products</li>
-                        <li>Up to 1,000 subscribers</li>
-                        <li>Basic analytics</li>
-                        <li>48-hour support response time</li>
-                    </ul>
-                </div>
-
-                <div class="card__services" data-aos="fade-up"
-                data-aos-duration="3000">
-                    <h4>
-                        basic
-                    </h4>
-                    <h2>
-                        $19.99/mo
-                    </h2>
-                    <p>
-                        $15 per month if paid annually
-                    </p>
-                    <mainButton label="Get started"/>
-
-                    <ul>
-                        <li>5 products</li>
-                        <li>Up to 1,000 subscribers</li>
-                        <li>Basic analytics</li>
-                        <li>48-hour support response time</li>
-                    </ul>
-                </div>
-
-                <div class="card__services" data-aos="fade-up"
-                data-aos-duration="3000">
-                    <h4>
-                        basic
-                    </h4>
-                    <h2>
-                        $19.99/mo
-                    </h2>
-                    <p>
-                        $15 per month if paid annually
-                    </p>
-                    <mainButton label="Get started"/>
-
-                    <ul>
-                        <li>5 products</li>
-                        <li>Up to 1,000 subscribers</li>
-                        <li>Basic analytics</li>
-                        <li>48-hour support response time</li>
-                    </ul>
-                </div>
             </div>
 
             
@@ -140,76 +93,30 @@
         </div>
 
         <div class="about__website" >
-            <p class="title" >pricing</p>
-            <h2 class="subtitle" >Pricing that grows with you</h2>
-            <h4 class="subsubtile">Choose an affordable plan that's packed with 
-                the best features for engaging your audience,
-                creating customer loyalty, and driving sales.
+            <p class="title" >Nos prix</p>
+            <h2 class="subtitle" >Prix adaptés en fonction de vos besoins</h2>
+            <h4 class="subsubtile">
+                Choisissez la meilleure formule avec les meilleures qui
+                vont susciter l'engagment de votre audience en créant une
+                fidélisation de vos clients et l'augmentation de vos ventes.
             </h4>
 
             <div class="card__family">
-                <div class="card__services" data-aos="fade-up"
-                data-aos-duration="3000">
-                    <h4>
-                        basic
-                    </h4>
-                    <h2>
-                        $19.99/mo
-                    </h2>
-                    <p>
-                        $15 per month if paid annually
-                    </p>
-                    <mainButton label="Get started"/>
-
-                    <ul>
-                        <li>5 products</li>
-                        <li>Up to 1,000 subscribers</li>
-                        <li>Basic analytics</li>
-                        <li>48-hour support response time</li>
-                    </ul>
-                </div>
-
-                <div class="card__services" data-aos="fade-up"
-                data-aos-duration="3000">
-                    <h4>
-                        basic
-                    </h4>
-                    <h2>
-                        $19.99/mo
-                    </h2>
-                    <p>
-                        $15 per month if paid annually
-                    </p>
-                    <mainButton label="Get started"/>
-
-                    <ul>
-                        <li>5 products</li>
-                        <li>Up to 1,000 subscribers</li>
-                        <li>Basic analytics</li>
-                        <li>48-hour support response time</li>
-                    </ul>
-                </div>
-
-                <div class="card__services" data-aos="fade-up"
-                data-aos-duration="3000">
-                    <h4>
-                        basic
-                    </h4>
-                    <h2>
-                        $19.99/mo
-                    </h2>
-                    <p>
-                        $15 per month if paid annually
-                    </p>
-                    <mainButton label="Get started"/>
-
-                    <ul>
-                        <li>5 products</li>
-                        <li>Up to 1,000 subscribers</li>
-                        <li>Basic analytics</li>
-                        <li>48-hour support response time</li>
-                    </ul>
-                </div>
+                <servicesCard
+                    title="application basique"
+                    price= 499
+                    :features="mobileAppFeatures"
+                />
+                <servicesCard
+                    title="application intermédiaire"
+                    price = 999
+                    :features="mobileAppInter_Features"
+                />
+                <servicesCard
+                    title="application pro"
+                    price= 1499
+                    :features="proFeatures"
+                />
             </div>
 
             
@@ -219,6 +126,7 @@
 
 <script>
 import mainButton from '../button/mainButton.vue';
+import servicesCard from '../layout/servicesCard.vue';
 export default {
     props: {
         title :{
@@ -231,19 +139,51 @@ export default {
         }
     },
     components:{
-        mainButton
+        mainButton, servicesCard
     },
+    setup(){
+        const intermediaireFeatures = [
+            'Site dynamique', 'SEO avancé','Hébergement inclus', 
+            'Intégration API', 'Design semi-personnalisé'
+        ]
+        const proFeatures = [
+            'Développement full-stack','SEO avancé','Hébergement inclus',
+            'Design semi-personnalisé','Base de données sécurisée', 
+            'Paiements multi-gateways', 'Tests automatisés'
+        ]
+        const mobileAppFeatures = [
+            '3-5 écrans max', 'Authentification basique', 'API REST simple',
+            '1 mois de correctifs mineurs'
+        ]
+        const mobileAppInter_Features = [
+            '5-10 écrans', 'Paiements in-app', 'Synchronisation offline',
+            'Analytics', 'Publication sur les stores'
+        ]
+        const mobileProFeature = [
+            'Architecture modulaire', 'CI/CD automatisé', 'Sécurité renforcée',
+            'Intégration WebSockets/API temps réel', 'Maintenance 6 mois + livraison des sources',
+
+        ]
+
+        return {intermediaireFeatures, proFeatures, mobileAppFeatures, mobileAppInter_Features,
+            mobileProFeature
+        }
+    }
+
 }
 </script>
 
 <style scoped>
 .main__container{
     padding-top: 6rem;
+    background: #16120F;
 }
 
-.card{
+.card__family{
     display: flex;
-    gap: 1rem;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
 }
 
 .card h4{
@@ -275,32 +215,6 @@ export default {
     gap: 1rem;
     padding: 2rem 0;
     justify-content: center;
-}
-
-.card__services{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
-}
-
-span{
-    display: flex;
-    align-items: center;
-    width: 100%;
-    gap: 1rem;
-}
-
-span i {
-    color:#f3f3f3;
-}
-
-ul{
-    color: #f3f3f3;
-    line-height: 2.5;
-    list-style-type: "✓ ";
-    padding-left: 1rem;
 }
 
 .subtitle{

@@ -20,9 +20,11 @@
         <div class="card">
             <i class="fa-solid fa-mobile-screen-button" data-aos="fade-up"></i>
             <div class="card__info">
-                <h4 data-aos="fade-down">conception d'application mobile</h4>
+                <h4 data-aos="fade-up">conception d'application mobile</h4>
                 <p data-aos="fade-up">
-                    nous concevons des applications mobiles sur mesure pour répondre à vos besoins spécifiques.
+                    nous concevons des applications mobiles sur mesure 
+                    pour répondre à vos besoins spécifiques en veuillant à
+                    exécuter toute vos idées.
                 </p>
                 <span data-aos="fade-up" @click="router.push('/services')">En savoir plus <i class="ri-contract-right-line" style="color: #007bff;"></i> </span>
             </div>
@@ -59,6 +61,7 @@ export default {
 <style scoped>
 .main__container{
     padding-top: 6rem;
+    background: #16120F;
 }
 
 .card{

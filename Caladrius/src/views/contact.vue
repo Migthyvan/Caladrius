@@ -22,6 +22,6 @@ components:{
     
 <style scoped>
 .contact{
-    background: #111111;
+    background: #16120F;
 }
 </style>

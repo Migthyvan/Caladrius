@@ -10,7 +10,7 @@
 }
 
 .body{
-  background: #111111;
+  background: #16120F;
 }
 
 h1 {
@@ -62,12 +62,17 @@ a{
   color: #f3f3f3;
 }
 
+li {
+  line-height: 1.5;
+  padding-top: 1.5rem ;
+}
+
 span{
   color: #f3f3f3;
 }
 
 section{
-  background: #111111;
+  background: #16120F;
 }
 
 img{

@@ -1,7 +1,12 @@
 <template>
   <div class="input__family">
     <label for="name">{{ label }}</label>
-    <input :type="type" :placeholder="placeholder" :value="inputValue" @input="updateValue" />
+    <input :type="type" 
+        :placeholder="placeholder" 
+        :value="inputValue" 
+        @input="updateValue" 
+        :class="{ filled: inputValue }"
+    />
   </div>
 </template>
 
@@ -58,7 +63,7 @@ export default {
 
     input{
         padding: 0.4rem 1rem;  
-        background: #111111;
+        background: #16120F;
         border: 1px solid #f3f3f3;
         outline: #f3f3f3;
         color: #f3f3f3;
@@ -72,9 +77,9 @@ export default {
         transition: all 0.3s ease-in-out;
     }
 
-    @media (min-width: 768px) {
-
-       
+    .filled{
+        outline: #007bff;
+        border: 1px solid #007bff;
     }
 
 </style>

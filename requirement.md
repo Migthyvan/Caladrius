@@ -1,6 +1,8 @@
+All requirement for our Python backend
+
 Django
 python-decouple
 djangorestframework
-djangorestframework-simplejwt
 django-cors-headers
 pillow
+pandas
