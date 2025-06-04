@@ -11,64 +11,74 @@
       {{ paymentMethods }}
     </p>
     <mainButton label="commander"
-      @click="handleClick"
+      @click="openModal"
     />
 
-    <ul>
-      <li v-for="(item, index) in features" :key="index">        
+    <ul class="features">
+      <li class="features__items" v-for="(item, index) in features" :key="index">        
         {{ item }}
       </li>
     </ul>
+
+    <modalServicesTool
+      ref="modal"
+      :title="title"
+      :subtitle="paymentMethods"
+      :price="price"
+      @confirm="onConfirm"
+      @close="onClose"
+    />
   </div>
 </template>
 
 <script>
 import mainButton from '../button/mainButton.vue';
+import modalServicesTool from '../tools/modalServicesTool.vue';
+import { ref } from 'vue';
+
 export default {
-  props:{
-
-    title:{
-      type:String,
-      default:'basic'
-    },
-
-    price:{
-      type: Number,
-      default: 599
-    },
-    paymentMethods:{
-      type: String,
-      default:'2 mois de maintenance gratuite'
-    },
-    features:{
-      type: Array,
-      default:[
+  props: {
+    title: { type: String, default: 'basic' },
+    price: { type: String, default: '599' },
+    paymentMethods: { type: String, default: '2 mois de maintenance gratuite' },
+    features: { 
+      type: Array, 
+      default: () => [
         'Site vitrine (1-5 pages)',
         'Formulaire de contact basique.',
-        'Hébergement inclus',
+        'Aide à l\'hébergement',
         '48-hour support response time'
       ]
     }
-
   },
+  emits: ['commande'],
+  components: { mainButton, modalServicesTool },
+  setup(props, { emit }) {
+    const modal = ref(null);
 
-  emits:['commande'],
-
-  components:{
-    mainButton
-  },
-
-  setup(props, {emit}) {
-    
-    const handleClick = () =>{
-      emit('commande')
-    }
-    
-    return {
-      handleClick
+    const openModal = () => {
+      modal.value.openModal();
+      // Émets également les données si nécessaire
+      emit('commande', {
+        title: props.title,
+        price: props.price,
+        paymentMethods: props.paymentMethods,
+        features: props.features
+      });
     };
+
+    const onConfirm = () => {
+      console.log('Commande confirmée !', props.title);
+      // Logique de confirmation...
+    };
+
+    const onClose = () => {
+      console.log('Modale fermée');
+    };
+
+    return { openModal, onConfirm, onClose, modal };
   }
-}
+};
 </script>
 
 <style scoped>
@@ -97,12 +107,16 @@ span i {
   color:#f3f3f3;
 }
 
-ul{
+.features{
   color: #f3f3f3;
   line-height: 2.5;
   /*list-style-type: "✓ ";*/
   padding-left: 1rem;
   text-align: center;
+}
+
+.features__items{
+  padding-top: 1rem;
 }
 
 .subtitle, title{

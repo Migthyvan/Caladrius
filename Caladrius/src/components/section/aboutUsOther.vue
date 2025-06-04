@@ -11,7 +11,7 @@
 
             <p data-aos="fade-right"
                 data-aos-duration="3000">
-                Nous sommes une entreprise de trois amis passionnée de développement spécialisée dans la création de sites internet modernes 
+                Nous sommes une entreprise passionnée de développement spécialisée dans la création de sites internet modernes 
                 et d'applications mobiles intuitives. Notre équipe passionnée met son expertise à votre service pour concevoir des 
                 site internet sur-mesure qui répondent à vos besoins spécifiques. Que vous soyez un particulier; une petite entreprise ou une grande organisation,
                 nous avons les compétences nécessaires pour vous permettre de débuter votre transformation numérique en toute sérénité

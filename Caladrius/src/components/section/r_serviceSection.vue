@@ -2,8 +2,12 @@
   <div class="main__container center__flex__mobile">
     <p class="title" data-aos="fade-up">Nos services</p>
     <h2 class="subtitle" data-aos="fade-up">
-        Trouvez tout ce dont vous avez besoin
+        Trouvez tout ce dont vous avez besoin pour une présence effective en ligne
     </h2>
+    <h3 style="font-size: 1.4rem; text-align: center; max-width: 600px;" data-aos="fade-up">
+        Nous vous proposérons une panoplie de solution adapatées à vos besoins et surtout qui
+        qui répondent aux normes de votre audience.
+    </h3 >
     <div class="center__flex__mobile service__container ">
         <div class="card">
             <i class="fa-solid fa-code" data-aos="fade-up"></i>
@@ -24,7 +28,7 @@
                 <p data-aos="fade-up">
                     nous concevons des applications mobiles sur mesure 
                     pour répondre à vos besoins spécifiques en veuillant à
-                    exécuter toute vos idées.
+                    exécuter toute vos idées à la lettre.
                 </p>
                 <span data-aos="fade-up" @click="router.push('/services')">En savoir plus <i class="ri-contract-right-line" style="color: #007bff;"></i> </span>
             </div>
@@ -66,6 +70,8 @@ export default {
 
 .card{
     display: flex;
+    justify-content: normal;
+    align-items: start;
     gap: 1rem;
 }
 
@@ -78,7 +84,7 @@ export default {
 
 .card span{
     display: flex;
-    align-items: center;
+    align-items: normal;
     gap: 1rem;
 }
 
@@ -87,7 +93,6 @@ export default {
     color: #2b92ff;
     transition: ease-in-out 0.5s;
 }
-
 
 .subtitle{
     font-size: 2rem;

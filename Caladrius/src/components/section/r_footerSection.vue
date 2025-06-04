@@ -3,7 +3,7 @@
 
         <div class="logo">
             <h3>
-                CALADRIUS
+                Caladrius Technologies
             </h3>
         </div>
       
@@ -22,19 +22,21 @@
           <h4 class="subtitle">Mentions légales</h4>
           <ul>
             <li><router-link to="/conditions">Conditions générales</router-link></li>
-            <li class="footer_li">Politique de confidentialité</li>
-            <li class="footer_li">Valeurs morales et éthiques</li>
-            <li class="footer_li">Mentions de copyright</li>
-            <li class="footer_li">Droits d'auteurs</li>
+            <li><router-link to="/confidentialité">Politique de confidentialité</router-link></li>
+            <li><router-link to="/valeurs_morales_et_éthique">Valeurs morales et éthiques</router-link></li>
+            <li><router-link to="/mentions_de_copyright">Mentions de copyright</router-link></li>
           </ul>
         </div>
   
         <div class="sub__container ">
           <h4 class="subtitle">Réseaux sociaux</h4>
           <ul>
-            <li class="footer_li"><i class="ri-facebook-circle-fill"></i></li>
-            <li class="footer_li"><i class="ri-instagram-line"></i></li>
-            <li class="footer_li"><i class="ri-twitter-x-line"></i></li>
+            <li class="footer_li"><i class="ri-facebook-circle-fill"></i> Caladrius </li>
+            <li class="footer_li">
+                <a href="https://www.instagram.com/caladriusllc/" target="_blank">
+                    <i class="ri-instagram-line"></i> Caladriusllc
+                </a> 
+            </li>
           </ul>
         </div>
   
@@ -72,6 +74,11 @@ footer{
 ul {
     list-style: none;
     line-height: 2;
+    
+}
+
+li{
+    cursor: pointer;
     padding-top: 1rem ;
 }
 
@@ -83,6 +90,7 @@ ul li a{
     display: flex;
     flex-direction: column;
     justify-content: normal;
+    color: #111111;
     gap: 1rem;
 }
 
@@ -103,15 +111,18 @@ ul li a{
 @media (min-width: 980px) {
 
     .my__footer{
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        gap: 1rem;
+        display: flex;
+        flex-direction: row;
+        align-items: start;
+        justify-content: space-between;
+        gap: 4rem;
     }
 
     .sub__container{
         display: flex;
         flex-direction: column;
-        justify-content: start;
+        justify-content: normal;
+        align-items: start;
     }
 }
 

@@ -25,11 +25,11 @@
             </span>
             <span class="coordinates__item" data-aos="fade-right">
                 <i class="ri-whatsapp-line"></i>
-                <a href="https://wa.me/2250140008192">+225 0140008192</a>
+                <a href="https://wa.me/2250586070612">+225 0586070612</a>
             </span>
             <span class="coordinates__item" data-aos="fade-right">
                 <i class="ri-telegram-2-line"></i>
-                <a href="https://t.me/2250140008192"> +225 0140008192</a>
+                <a href="https://t.me/2250586070612"> +225 0586070612</a>
             </span>
         </div>
 
