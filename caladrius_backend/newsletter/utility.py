@@ -6,13 +6,24 @@ from .models import NewsletterSubscribers
 
 class NewsletterManager:
     def __init__(self):
+        self.subscribers_df = pd.DataFrame()
+        self.active_emails = set()
+        # Ne chargez pas les données immédiatement
+    
+    def refresh_data(self):
+        """Met à jour les données des abonnés (à appeler explicitement)"""
         self._update_subscribers_data()
     
     def _update_subscribers_data(self):
         """Met à jour le DataFrame des abonnés"""
-        queryset = NewsletterSubscribers.objects.filter(is_active=True)
-        self.subscribers_df = pd.DataFrame.from_records(queryset.values())
-        self.active_emails = set(self.subscribers_df['email']) if not self.subscribers_df.empty else set()
+        try:
+            queryset = NewsletterSubscribers.objects.all()
+            self.subscribers_df = pd.DataFrame.from_records(queryset.values())
+            self.active_emails = set(self.subscribers_df['email']) if not self.subscribers_df.empty else set()
+        except Exception as e:
+            # Gestion d'erreur si la table n'existe pas encore
+            self.subscribers_df = pd.DataFrame()
+            self.active_emails = set()
     
     @transaction.atomic
     def add_subscriber(self, name, email):

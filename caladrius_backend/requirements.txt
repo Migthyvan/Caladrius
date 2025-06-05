@@ -1,0 +1,22 @@
+# Core
+Django==4.2.*
+python-decouple==3.8
+
+# REST API
+djangorestframework==3.14.0
+django-cors-headers==4.3.1
+
+# Database
+psycopg2-binary==2.9.7
+
+# Media processing
+pillow==10.1.0
+
+# Data analysis
+pandas==2.1.1
+
+# Production server
+gunicorn==21.2.0
+
+# Static files (production)
+whitenoise==6.5.0

@@ -78,12 +78,31 @@ WSGI_APPLICATION = 'caladrius_backend.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
+# settings.py
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': config("POSTGRES_DB"),
+        'USER': config("POSTGRES_USER"),
+        'PASSWORD': config("POSTGRES_PASSWORD"),
+        'HOST': config("POSTGRES_HOST", default="localhost"),
+        'PORT': config("POSTGRE_PORT", default="5432"),
+        'OPTIONS': {
+            'connect_timeout': 3,  # Timeout de connexion en secondes
+            'client_encoding': 'UTF8',
+            'options': '-c client_encoding=UTF8'
+        },
+        # Pour le pooling de connexions en production
+        'CONN_MAX_AGE': 300,  # 5 minutes (ou 0 en développement)
     }
 }
+
+
+# Configuration supplémentaire recommandée pour PostgreSQL
+if 'postgresql' in DATABASES['default']['ENGINE']:
+    # Optimise le comportement des champs text pour PostgreSQL
+    DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 # Password validation
@@ -139,7 +158,7 @@ CONTACT_PHONE = config("CONTACT_PHONE")
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:8100",  # Exemple pour le serveur de développement Ionic (port par défaut)
-    "https://votre-application-ionic.com",  # Exemple pour votre application Ionic en production
+    "https://caladriustech.com",  # Exemple pour votre application Ionic en production
     # Ajoutez d'autres origines autorisées ici
     "http://localhost:5173"
 ]

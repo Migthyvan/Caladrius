@@ -5,7 +5,7 @@ from rest_framework.throttling import AnonRateThrottle
 from django.db import transaction
 from .models import Contact, ContactService
 from .serializers import ContactSerializer, ContactServicesSerializer
-from newsletter.utility import NewsletterManager
+from Caladrius.caladrius_backend.newsletter.utility import NewsletterManager
 from django.template.loader import render_to_string
 from django.conf import settings
 from django.utils.html import strip_tags

@@ -1,5 +1,5 @@
 from django.http import JsonResponse
-from ..caladrius_backend.newsletter.utility import NewsletterManager
+from .newsletter.utility import NewsletterManager
 
 newsletter_mgr = NewsletterManager()
 
