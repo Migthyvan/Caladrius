@@ -24,7 +24,7 @@
         <div class="service__container ">
             
             <p data-aos="fade-up" data-aos-duration="3000">
-                {{ description }}
+                {{ descriptionFreelance }}
             </p>
 
             <img src="../../assets/pictures/freelancer.jfif" data-aos="fade-right" alt="african students">
@@ -40,7 +40,7 @@
             <img src="../../assets/pictures/site_conception.jfif" data-aos="fade-left" alt="african students">
 
             <p data-aos="fade-right">
-                {{ description }}
+                {{ descriptionWebsite }}
             </p>
         </div>
 
@@ -85,7 +85,7 @@
         <div class="service__container ">
 
             <p>
-                {{ description }}
+                {{ descriptionMobileapp }}
             </p>
 
             <img src="../../assets/pictures/objectif.jpg" data-aos="fade-left" alt="african students">
@@ -143,7 +143,7 @@ export default {
         },
         description :{
             type: String,
-            default: "Nous concevons des sites web modernes, des applications mobiles intuitives et offrons des solutions freelance adaptées à vos besoins.Chez Caladrius, une équipe passionnée vous accompagne pour donner vie à vos projets avec un design soigné, des technologies performantes et une approche personnalisée."
+            default: "Nous concevons des sites web modernes, des applications mobiles intuitives et offrons des solutions freelance adaptées à vos besoins. Chez Caladrius, une équipe passionnée vous accompagne pour donner vie à vos projets avec un design soigné, des technologies performantes et une approche personnalisée."
         }
     },
     components:{
@@ -178,9 +178,12 @@ export default {
         const onConfirm = () => {
             console.log('Confirmé')
         };
-        
+
+        const descriptionFreelance = "Nous offrons des services de freelance pour répondre à vos besoins spécifiques. Que ce soit pour du développement web, de la conception graphique ou d'autres compétences, notre équipe est prête à vous accompagner dans vos projets.";
+        const descriptionWebsite = "Nous concevons des sites web modernes, qui répondrons à vos besoins. Chez Caladrius, une équipe passionnée vous accompagne pour donner vie à vos projets avec un design soigné, des technologies performantes et une approche personnalisée.";
+        const descriptionMobileapp = "Nous développons des applications mobiles intuitives et performantes qui sauront faire votre bonheur. Notre équipe s'assure que chaque application offre une expérience utilisateur fluide et engageante, tout en intégrant les dernières technologies pour garantir la performance et la sécurité.";
         return {intermediaireFeatures, proFeatures, mobileAppFeatures, mobileAppInter_Features,
-            mobileProFeature, onConfirm, modal,
+            mobileProFeature, onConfirm, modal, descriptionFreelance, descriptionWebsite, descriptionMobileapp
         }
     }
 
