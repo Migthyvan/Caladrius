@@ -16,6 +16,16 @@
             <mainButton label="Suivant" @click="moveToNextStep"></mainButton>
           </div>
         </div>
+        
+        <div class="step" v-else-if="step === 3" key="step 3">
+          <h2 class="animated-title">Je créé mon devis gratuitement</h2>
+          <h4>Je choisis mon type de projet</h4>
+          <choicesBox @selected="handleSelectedItem" />
+          <div class="about__btn">
+            <secondButton label="précédent" @click="step--"></secondButton>
+            <mainButton label="Suivant" @click="moveToNextStep"></mainButton>
+          </div>
+        </div>
       </transition>
     </div>
   </template>
