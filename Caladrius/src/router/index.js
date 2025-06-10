@@ -127,6 +127,11 @@ const routes = [
     path:'/quote',
     name: 'quote',
     component: () => import('../views/quote.vue')
+  },
+  {
+    path:'/external-quote',
+    name: 'external-quote',
+    component: () => import('../components/section/deepSeekquoteSection.vue')
   }
 ];
 
