@@ -180,10 +180,10 @@
         </div>
       </div>
     </div>
-  </template>
-  
-  <script>
-  export default {
+</template>
+
+<script>
+export default {
     data() {
       return {
         etape: 1,
@@ -266,7 +266,6 @@
     methods: {
       selectService(id) {
         this.selectedService = id
-        // Réinitialiser les options quand on change de service
         this.resetOptions()
       },
       resetOptions() {
@@ -315,11 +314,6 @@
         
         console.log('Devis généré:', devis)
         alert(`Devis généré pour ${this.client.nom} (${this.estimation} €)\nÀ implémenter: envoi par email/génération PDF`)
-        
-        // Ici vous pourriez:
-        // 1. Envoyer les données à un serveur
-        // 2. Générer un PDF avec jsPDF/pdfmake
-        // 3. Envoyer un email avec les détails
       },
       resetDevis() {
         this.etape = 1
@@ -332,141 +326,168 @@
         }
       }
     }
-  }
-  </script>
-  
-  <style scoped>
-  .devis-container {
+}
+</script>
+
+<style scoped>
+.devis-container {
     max-width: 900px;
     margin: 0 auto;
     padding: 20px;
-    color: #111111
-  }
-  
-  .service-selection {
+    background-color: #111111;
+    color: #ffffff;
+    min-height: 100vh;
+}
+
+.service-selection {
     text-align: center;
-  }
-  
-  .service-options {
+}
+
+.service-options {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     gap: 20px;
     margin: 30px 0;
-  }
-  
-  .service-card {
-    border: 2px solid #ddd;
+}
+
+.service-card {
+    border: 2px solid #2b92ff;
     border-radius: 10px;
     padding: 20px;
     width: 250px;
     cursor: pointer;
     transition: all 0.3s;
-  }
-  
-  .service-card:hover {
-    border-color: #007bff;
-  }
-  
-  .service-card.selected {
-    border-color: #28a745;
-    background-color: #f8f9fa;
-  }
-  
-  .service-card h3 {
-    color: #007bff;
+    background-color: #1a1a1a;
+}
+
+.service-card:hover {
+    border-color: #4aa8ff;
+    box-shadow: 0 0 15px rgba(43, 146, 255, 0.5);
+}
+
+.service-card.selected {
+    border-color: #2b92ff;
+    background-color: #1e2a3a;
+    box-shadow: 0 0 20px rgba(43, 146, 255, 0.7);
+}
+
+.service-card h3 {
+    color: #2b92ff;
     margin-top: 0;
-  }
-  
-  .price-range {
+}
+
+.price-range {
     font-weight: bold;
-    color: #28a745;
+    color: #2b92ff;
     margin-top: 15px;
-  }
-  
-  .section {
+}
+
+.section {
     margin-bottom: 30px;
     padding: 20px;
-    border: 1px solid #eee;
+    border: 1px solid #2b92ff;
     border-radius: 5px;
-  }
-  
-  .form-group {
+    background-color: #1a1a1a;
+}
+
+.form-group {
     margin-bottom: 15px;
-  }
-  
-  .form-control {
+}
+
+label {
+    color: #ffffff;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-control {
     width: 100%;
     padding: 8px;
-    border: 1px solid #ddd;
+    border: 1px solid #2b92ff;
     border-radius: 4px;
-  }
-  
-  select.form-control[multiple] {
+    background-color: #222222;
+    color: #ffffff;
+}
+
+select.form-control[multiple] {
     height: auto;
-  }
-  
-  .recap {
+}
+
+.recap {
     padding: 15px;
-    background-color: #f8f9fa;
+    background-color: #1e2a3a;
     border-radius: 5px;
-  }
-  
-  .total {
+    border: 1px solid #2b92ff;
+}
+
+.total {
     font-size: 1.3em;
     margin-top: 15px;
     padding-top: 10px;
-    border-top: 1px solid #ddd;
-  }
-  
-  .actions {
+    border-top: 1px solid #2b92ff;
+    color: #2b92ff;
+}
+
+.actions {
     margin-top: 20px;
     text-align: center;
-  }
-  
-  .btn {
+}
+
+.btn {
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     margin-right: 10px;
     transition: all 0.3s;
-  }
-  
-  .btn-primary {
-    background-color: #007bff;
+    font-weight: bold;
+}
+
+.btn-primary {
+    background-color: #2b92ff;
     color: white;
-  }
-  
-  .btn-success {
+}
+
+.btn-primary:hover {
+    background-color: #4aa8ff;
+    box-shadow: 0 0 10px rgba(43, 146, 255, 0.7);
+}
+
+.btn-success {
     background-color: #28a745;
     color: white;
-  }
-  
-  .btn-secondary {
+}
+
+.btn-secondary {
     background-color: #6c757d;
     color: white;
-  }
-  
-  .btn-outline-secondary {
+}
+
+.btn-outline-secondary {
     background-color: transparent;
     border: 1px solid #6c757d;
     color: #6c757d;
-  }
-  
-  .btn:disabled {
+}
+
+.btn:disabled {
     opacity: 0.6;
     cursor: not-allowed;
-  }
-  
-  @media (max-width: 768px) {
+}
+
+input[type="checkbox"] {
+    accent-color: #2b92ff;
+    margin-right: 8px;
+}
+
+@media (max-width: 768px) {
     .service-options {
-      flex-direction: column;
-      align-items: center;
+        flex-direction: column;
+        align-items: center;
     }
     
     .service-card {
-      width: 100%;
+        width: 100%;
     }
-  }
-  </style>
+}
+</style>

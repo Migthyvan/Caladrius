@@ -61,8 +61,6 @@
           />
         </div>
 
-        <!-- Informations personnelles -->
-
         <div class="navigation-buttons">
           <second-button label="Précédent" @click="step--" />
           <main-button 
@@ -76,13 +74,20 @@
       <div class="step" v-else-if="step === 4" key="step4">
         <h2 class="animated-title">Je crée mon devis gratuitement</h2>
         <h3>Informations personnelles</h3>
-        <div class="information-container" v-if="step === 4">
+        <div class="information-container">
           <input-family
             v-for="(value, key) in informations"
             :key="key"
             :label="key"
             :placeholder="`Entrez votre ${key}`"
             v-model="informations[key]"
+          />
+        </div>
+        <div class="navigation-buttons">
+          <second-button label="Précédent" @click="step--" />
+          <main-button 
+            label="Terminer" 
+            @click="moveToNextStep" 
           />
         </div>
       </div>
@@ -198,8 +203,6 @@ export default {
 </script>
 
 <style>
-/* ... (vos styles existants) ... */
-
 .features-container {
   width: 100%;
   display: flex;
@@ -253,7 +256,7 @@ export default {
   .main__container {
     padding: 3rem 1rem 1rem 1rem;
   }
-  h2 , h4 {
+  h2, h4 {
     width: 100%;
     text-align: center;
   }
