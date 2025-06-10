@@ -121,6 +121,7 @@ span {
     h1,h2{
         text-align: center;
     }
+
     
     .about__btn {
         display: flex;
@@ -135,10 +136,6 @@ span {
     .main__container{
         padding: 4rem 4rem 1rem 4rem;
         min-height: 100vh;
-    }
-
-    h2{
-        font-size: 2rem;
     }
 
     p, a, i{

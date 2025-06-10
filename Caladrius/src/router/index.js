@@ -122,6 +122,11 @@ const routes = [
     path:'/zakistudy',
     name: 'zakistudy',
     component: () => import('../views/secondViews/zakiStudy.vue')
+  },
+  {
+    path:'/quote',
+    name: 'quote',
+    component: () => import('../views/quote.vue')
   }
 ];
 
