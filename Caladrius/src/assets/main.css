@@ -14,7 +14,7 @@
 }
 
 h1 {
-  font-size: 3rem;
+  font-size: 2.5rem;
   font-weight: 600;
   color: #f3f3f3;
   margin-bottom: 1rem;
@@ -124,6 +124,14 @@ img{
   h1, h2{
     width: 60%;
   }
+
+  h1 {
+    font-size: 3rem;
+    font-weight: 600;
+    color: #f3f3f3;
+    margin-bottom: 1rem;
+  }
+  
 
   .center__flex__mobile{
     display: flex;
