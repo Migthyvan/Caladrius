@@ -6,7 +6,7 @@
         v-model="inputValue"
         @change="updateValue"
       >
-        <option value="">Sélectionnez...</option>
+        <option value="">Sélectionner</option>
         <option 
           v-for="(item, index) in options" 
           :key="index" 
@@ -64,6 +64,7 @@
     flex-direction: column;
     gap: 1rem;
     width: 100%;
+    max-width: 600px;
   }
 
   label{
@@ -78,6 +79,7 @@
     color: #f3f3f3;
     width: 100%;
     border-radius: 0.2rem;
+    font-family: 'Inter';
   }
     
   select:focus{
