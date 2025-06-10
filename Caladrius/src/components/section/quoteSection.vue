@@ -10,10 +10,7 @@
         <div class="step" v-else-if="step === 2" key="step2">
           <h2 class="animated-title">Je créé mon devis gratuitement</h2>
           <h4>Je choisis mon type de projet</h4>
-          <selectFamily
-            label="Type de projet"
-            :options="['Site web', 'Application mobile', 'Application desktop', 'Service']"
-          ></selectFamily>
+          <choicesBox @selected="handleSelectedItem" />
           <div class="about__btn">
             <secondButton label="précédent" @click="step--"></secondButton>
             <mainButton label="Suivant" @click="moveToNextStep"></mainButton>
@@ -28,20 +25,25 @@
   import mainButton from '../button/mainButton.vue';
   import secondButton from '../button/secondButton.vue';
   import selectFamily from '../tools/selectFamily.vue';
+  import choicesBox from '../tools/choicesBox.vue';
   import { ref } from 'vue';
   export default {
       components:{
-          navbar, mainButton, secondButton, selectFamily
+          navbar, mainButton, secondButton, selectFamily, choicesBox
       },
       setup(){
           const step = ref(1);
           const moveToNextStep = () => {
               step.value++;
           }
+          const handleSelectedItem = (item) => {
+            projectType.value = item;
+          }
           return {
               step,
               moveToNextStep,
-              projectType: ref('')
+              projectType: ref(''),
+              handleSelectedItem
           }
       }
   }
