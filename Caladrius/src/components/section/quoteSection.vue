@@ -168,9 +168,9 @@ export default {
     });
 
     const informations = ref({
-      name: '',
+      nom: '',
       email: '',
-      phone: '',
+      telephone: '',
       message: ''
     });
 
@@ -198,6 +198,24 @@ export default {
       console.log('Features sélectionnées:', selectedFeatures.value);
     };
 
+    const quote = ref({
+      nom: '',
+      email: '',
+      telephone: '',
+      message: '',
+      type: '',
+      pages: '',
+      backend: '',
+      specific: '',
+      platform: '',
+      features: '',
+    });
+
+    const handleQuote = () => {
+      quote.type = projectType.value;
+      console.log('Quote:', quote.value);
+    };
+
     return {
       step,
       projectType,
@@ -207,7 +225,9 @@ export default {
       moveToNextStep,
       handleSelectedItem,
       handleSelectedFeature,
-      informations
+      informations,
+      quote,
+      handleQuote
     };
   }
 };
@@ -229,6 +249,15 @@ export default {
   flex-direction: column;
   align-items: start;
   justify-content: center;
+  background: 
+    linear-gradient(to bottom, 
+        rgba(22, 18, 15, 0.4) 0%, 
+        rgba(22, 18, 15, 0.7) 70%, 
+        #16120F 100%),
+    url('../../assets/pictures/antiquities-6973196_1920.jpg');
+    background-size: cover;
+    box-sizing: border-box;
+    overflow-y: hidden;
 }
 
 .step {
