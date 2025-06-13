@@ -25,16 +25,20 @@
 
       <!-- Étape 3 - Configuration spécifique -->
       <div class="step" v-else-if="step === 3" key="step3">
-        <h2 class="animated-title">Je crée mon devis gratuitement</h2>
         <h3>Configuration pour {{ projectType }}</h3>
         
         <!-- Site Web -->
         <div v-if="projectType === 'Site web'" class="features-container">
           <selectFamily
-            v-for="(options, key) in projectFeatures['Site web']"
-            :key="key"
+            v-for="([key, options], index) in Object.entries(projectFeatures['Site web']).slice(0, 3)"
+            :key="index"
             :label="labels['Site web'][key]"
             :options="options"
+            @update:modelValue="handleSelectedFeature"
+          />
+          <checkBoxTool
+            :question="labels['Site web']['specific']"
+            :options="projectFeatures['Site web']['specific']"
             @update:modelValue="handleSelectedFeature"
           />
         </div>
@@ -72,15 +76,18 @@
 
       <!-- Étape 4 - Informations personnelles -->
       <div class="step" v-else-if="step === 4" key="step4">
-        <h2 class="animated-title">Je crée mon devis gratuitement</h2>
         <h3>Informations personnelles</h3>
         <div class="information-container">
           <input-family
-            v-for="(value, key) in informations"
-            :key="key"
-            :label="key"
-            :placeholder="`Entrez votre ${key}`"
+            v-for="([value, key], index) in Object.entries(informations).slice(0, 3)"
+            :key="index"
+            :label="value"
+            :placeholder="`Entrez votre ${value}`"
             v-model="informations[key]"
+          />
+          <text-area-tool
+            :label="labels['message']"
+            v-model="informations.message"
           />
         </div>
         <div class="navigation-buttons">
@@ -102,6 +109,8 @@ import SecondButton from '../button/secondButton.vue';
 import ChoicesBox from '../tools/choicesBox.vue';
 import SelectFamily from '../tools/selectFamily.vue';
 import inputFamily from '../tools/inputFamily.vue';
+import checkBoxTool from '../tools/checkBoxTool.vue';
+import textAreaTool from '../tools/textAreaTool.vue';
 
 export default {
   name: 'DevisCreator',
@@ -110,7 +119,9 @@ export default {
     SecondButton,
     ChoicesBox,
     SelectFamily,
-    inputFamily
+    inputFamily,
+    checkBoxTool,
+    textAreaTool
   },
   setup() {
     const step = ref(1);
@@ -122,8 +133,8 @@ export default {
       'Site web': {
         type: ['Site vitrine', 'Site e-commerce', 'Site blog', 'Site portfolio'],
         pages: ['1-5 pages', '5-10 pages', 'Plus de 10 pages'],
+        backend: ['Léger', 'Moyen', 'Robuste'],
         specific: ['SEO', 'Blog intégré', 'Multilingue'],
-        backend: ['Léger', 'Moyen', 'Robuste']
       },
       'Application mobile': {
         platform: ['iOS', 'Android', 'Cross-platform'],
@@ -141,8 +152,8 @@ export default {
       'Site web': {
         type: 'Type de site web',
         pages: 'Nombre de pages',
+        backend: 'Solution backend',
         specific: 'Fonctionnalités spécifiques',
-        backend: 'Solution backend'
       },
       'Application mobile': {
         platform: 'Plateforme cible',
@@ -202,7 +213,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .features-container {
   width: 100%;
   display: flex;
@@ -212,7 +223,7 @@ export default {
 }
 
 .main__container {
-  padding: 4rem 1rem 1rem 1rem;
+  padding: 6rem 1rem 1rem 1rem;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -226,7 +237,6 @@ export default {
   align-items: start;
   justify-content: center;
   gap: 1rem;
-  width: 100%;
 }
 
 .navigation-buttons {
@@ -236,6 +246,14 @@ export default {
   gap: 1rem;
   width: 100%;
   margin-top: 1rem;
+}
+.information-container{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
 }
 
 /* Transition styles */
@@ -266,6 +284,7 @@ export default {
     align-items: center;
     justify-content: center;
     width: 100%;
+    padding-top: 4rem;
   }
   .features-container {
     display: flex;
@@ -273,6 +292,15 @@ export default {
     align-items: center;
     justify-content: center;
     width: 100%;
+  }
+
+  .information-container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
   }
 }
 </style>
