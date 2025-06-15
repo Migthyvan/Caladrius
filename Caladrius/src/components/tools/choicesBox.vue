@@ -5,7 +5,7 @@
             :key="index"
             class="choices__box__item"
             :class="{ 'active': activeIndex === index }"
-            @click="setActive(index), voirFeatures(item)"
+            @click="selectItem(item, index)"
         >
             <h4>{{ item.title }}</h4>
         </div>
@@ -19,10 +19,14 @@ export default {
     props: {
         projectType: {
             type: String,
-            required: true 
+            required: true
+        },
+        modelValue: {
+            type: String,
+            default: ''
         }
     },
-    emits: ['selected'],
+    emits: ['update:modelValue', 'selected'],
     setup(props, { emit }) {
         const activeIndex = ref(null);
         const items = ref([
@@ -31,20 +35,17 @@ export default {
             { title: 'Service Freelance' }
         ]);
 
-        const setActive = (index) => {
+        const selectItem = (item, index) => {
             activeIndex.value = index;
-        };
-
-        const voirFeatures = (item) => {
+            emit('update:modelValue', item.title);
             emit('selected', item);
-            console.log(item);
+            console.log('Feature sélectionnée:', item);
         };
 
         return {
             activeIndex,
             items,
-            setActive,
-            voirFeatures
+            selectItem
         };
     }
 }
