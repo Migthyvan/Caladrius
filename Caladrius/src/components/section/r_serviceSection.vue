@@ -5,7 +5,7 @@
         Trouvez tout ce dont vous avez besoin pour une présence effective en ligne
     </h2>
     <h3 style="font-size: 1.4rem; text-align: center; max-width: 600px;" data-aos="fade-up">
-        Nous vous proposérons une panoplie de solution adapatées à vos besoins et surtout qui
+        Nous vous proposérons un éventail de solution adapatées à vos besoins et surtout qui
         qui répondent aux normes de votre audience.
     </h3 >
     <div class="center__flex__mobile service__container ">
@@ -24,7 +24,7 @@
         <div class="card">
             <i class="fa-solid fa-mobile-screen-button" data-aos="fade-up"></i>
             <div class="card__info">
-                <h4 data-aos="fade-up">conception d'application mobile</h4>
+                <h4 data-aos="fade-up">Conception d'application mobile</h4>
                 <p data-aos="fade-up">
                     nous concevons des applications mobiles sur mesure 
                     pour répondre à vos besoins spécifiques en veuillant à
@@ -37,7 +37,7 @@
         <div class="card">
             <i class="fa-solid fa-laptop" data-aos="fade-up"></i>
             <div class="card__info">
-                <h4 data-aos="fade-up">conception de site internet</h4>
+                <h4 data-aos="fade-up">Conception de site internet</h4>
                 <p data-aos="fade-up">
                     Grâce à notre expertise en développement web,
                     nous créons des sites internet modernes et personnalisés pour vous démarquer en ligne.
