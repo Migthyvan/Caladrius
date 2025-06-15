@@ -43,6 +43,7 @@
       // Met à jour la valeur parente quand inputValue change
       const updateValue = () => {
         emit('update:modelValue', inputValue.value);
+        console.log(inputValue.value);
       };
   
       // Synchronise inputValue si modelValue change depuis le parent

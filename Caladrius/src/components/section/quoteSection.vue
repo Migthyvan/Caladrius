@@ -35,11 +35,13 @@
             :label="labels['Site web'][key]"
             :options="options"
             @update:modelValue="handleSelectedFeature"
+            :modelValue="selectedFeatures"
           />
           <checkBoxTool
             :question="labels['Site web']['specific']"
             :options="projectFeatures['Site web']['specific']"
             @update:modelValue="handleSelectedFeature"
+            :modelValue="selectedFeatures"
           />
         </div>
         
@@ -51,6 +53,7 @@
             :label="labels['Application mobile'][key]"
             :options="options"
             @update:modelValue="handleSelectedFeature"
+            :modelValue="selectedFeatures"
           />
         </div>
         
@@ -62,6 +65,7 @@
             :label="labels['Service Freelance'][key]"
             :options="options"
             @update:modelValue="handleSelectedFeature"
+            :modelValue="selectedFeatures"
           />
         </div>
 
@@ -174,9 +178,24 @@ export default {
       message: ''
     });
 
+    const quote = ref({
+      nom: '',
+      email: '',
+      telephone: '',
+      message: '',
+      type: '',
+      pages: '',
+      backend: '',
+      specific: [],
+      platform: '',
+      features: '',
+    });
+
     const moveToNextStep = () => {
       if ((step.value === 2 && !projectType.value) || (step.value === 3 && !featureType.value)) {
+        quote.value = informations.value;
         console.log('Veuillez sélectionner un type de projet et des fonctionnalités');
+        console.log(quote.value);
         return;
       };
       console.log('Passage à l\'étape suivante');
@@ -197,19 +216,6 @@ export default {
       featureType.value = Object.keys(selectedFeatures.value).length > 0;
       console.log('Features sélectionnées:', selectedFeatures.value);
     };
-
-    const quote = ref({
-      nom: '',
-      email: '',
-      telephone: '',
-      message: '',
-      type: '',
-      pages: '',
-      backend: '',
-      specific: '',
-      platform: '',
-      features: '',
-    });
 
     const handleQuote = () => {
       quote.type = projectType.value;
