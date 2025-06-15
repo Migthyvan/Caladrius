@@ -12,7 +12,9 @@
       <div class="step" v-else-if="step === 2" key="step2">
         <h2 class="animated-title">Je crée mon devis gratuitement</h2>
         <h4>Je choisis mon type de projet</h4>
-        <choices-box @selected="handleSelectedItem" />
+        <choices-box 
+        :modelValue="quote.type"
+        @selected="handleSelectedItem" />
         <div class="navigation-buttons">
           <second-button label="Précédent" @click="step--" />
           <main-button 
@@ -198,7 +200,7 @@ export default {
         console.log(quote.value);
         return;
       };
-      console.log('Passage à l\'étape suivante');
+      console.log(quote.value);
       step.value++;
     };
 
