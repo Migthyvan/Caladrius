@@ -9,7 +9,7 @@
                 Decouvrez notre panoplie de solutions digitales pour faire grandir votre business.
             </h3>
             <div class="about__btn">
-                <mainButton label = "Commencer" @click = "router.push('/services')"></mainButton>
+                <mainButton label = "Commencer" @click = "router.push('/quote')"></mainButton>
                 <span @click="router.push('/services')">En savoir plus <i class="ri-contract-right-line" style="color: #2b92ff;" @click="router.push('/services')"></i> </span>
             </div>
         </div>
