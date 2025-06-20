@@ -589,6 +589,7 @@ export default {
   padding-top: 1rem;
   border-top: 2px solid #ddd;
   font-size: 1.2rem;
+  color: #ddd;
 }
 
 .disclaimer {

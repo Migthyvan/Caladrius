@@ -59,7 +59,7 @@ export default {
       { path: '/about', name: 'A propos' },
       { path: '/services', name: 'Services' },
       { path: '/contact', name: 'Contact' },
-      { path: '/newsletter', name: 'Newsletter' }
+      { path: '/newsletter', name: 'Newsletter' },
     ];
 
     const isActive = (link) => {
@@ -79,7 +79,7 @@ export default {
 
     const navigateToServices = () => {
       closeMenu();
-      router.push('/services');
+      router.push('/quote');
     };
 
     const handleScroll = () => {
