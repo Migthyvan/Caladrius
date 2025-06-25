@@ -26,7 +26,7 @@ export default {
   font-weight: 600;
   background: #111111;
   color: #f3f3f3;
-  width: 70%;
+  width: 50%;
   cursor: pointer;
   /* Ajoutez la transition ici pour une meilleure pratique */
   transition: all 0.5s ease;

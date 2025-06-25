@@ -123,11 +123,20 @@ const routes = [
     name: 'zakistudy',
     component: () => import('../views/secondViews/zakiStudy.vue')
   },
+
+  /* The differents routes for our quotes */
   {
     path:'/quote',
     name: 'quote',
     component: () => import('../views/quote.vue')
   },
+
+  {
+    path:'/quote/website',
+    name: 'quoteWebsite',
+    component: () => import('../components/quote/quoteWebsite.vue')
+  }, 
+  
   {
     path:'/external-quote',
     name: 'external-quote',

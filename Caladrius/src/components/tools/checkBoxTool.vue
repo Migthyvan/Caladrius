@@ -1,23 +1,23 @@
 <template>
   <div class="input__family">
     <label for="">{{ question }}</label>
-    <div v-for="(item, index) in options" :key="index" class="checkbox__item">
+    <div v-for="(item, index) in processedOptions" :key="index" class="checkbox__item">
       <input 
         type="checkbox" 
-        :name="item" 
+        :name="getOptionValue(item)" 
         :id="'item-' + index" 
-        :value="item"
-        :checked="inputValue.includes(item)"
+        :value="getOptionValue(item)"
+        :checked="inputValue.includes(getOptionValue(item))"
         @change="updateValue"
         v-model="inputValue"
       >
-      <label :for="'item-' + index">{{ item }}</label>
+      <label :for="'item-' + index">{{ getOptionLabel(item) }}</label>
     </div> 
   </div>
 </template>
 
 <script>
-import { ref, watch } from 'vue';
+import { ref, watch, computed } from 'vue';
 
 export default {
   props: {
@@ -42,6 +42,29 @@ export default {
   setup(props, { emit }) {
     const inputValue = ref([...props.modelValue]);
 
+    // Fonction pour obtenir le label d'une option (supporte les objets et strings)
+    const getOptionLabel = (option) => {
+      return typeof option === 'object' ? option.label : option;
+    };
+
+    // Fonction pour obtenir la valeur d'une option (supporte les objets et strings)
+    const getOptionValue = (option) => {
+      return typeof option === 'object' ? option.value : option;
+    };
+
+    // Options traitées pour être compatibles avec les deux formats
+    const processedOptions = computed(() => {
+      return props.options.map(option => {
+        if (typeof option === 'object') {
+          return option;
+        }
+        return {
+          label: option,
+          value: option
+        };
+      });
+    });
+
     // Met à jour la valeur parente quand inputValue change
     const updateValue = () => {
       emit('update:modelValue', [...inputValue.value]);
@@ -54,7 +77,10 @@ export default {
 
     return {
       inputValue,
-      updateValue
+      updateValue,
+      getOptionLabel,
+      getOptionValue,
+      processedOptions
     };
   }
 }
