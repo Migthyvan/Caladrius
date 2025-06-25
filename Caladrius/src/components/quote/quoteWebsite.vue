@@ -102,7 +102,8 @@
             
             <div class="navigation-buttons">
               <secondButton label="Précédent" @click="goToPrevStep"/>
-              <mainButton label="Télécharger" @click="submitQuote"/>
+              <second-button label="Télécharger PDF" @click="generatePDF" class="pdf-button" />
+              <mainButton label="Envoyer" @click="submitQuote"/>
             </div>
           </div>
         </transition>
@@ -119,6 +120,8 @@ import { ref, computed } from 'vue';
 import InputFamily from '../tools/inputFamily.vue';
 import TextAreaTool from '../tools/textAreaTool.vue';
 import { types, pagesNumber, specifics, backends, calculateQuote } from './quote';
+import { jsPDF } from 'jspdf';
+import html2canvas from 'html2canvas';
 
 export default {
     components: {
@@ -127,7 +130,66 @@ export default {
     },
 
     setup() {
-        /* About the differents steps */
+        /* About the PDF generation */
+        const generatePDF = async () => {
+      try {
+        // Création du PDF en mode paysage pour plus d'espace
+        const pdf = new jsPDF('p', 'pt', 'a4');
+        
+        // Options pour html2canvas
+        const options = {
+          scale: 3, // Qualité plus élevée
+          useCORS: true,
+          logging: false,
+          backgroundColor: '#16120F',
+          windowWidth: 1000 // Largeur de rendu plus grande
+        };
+
+        // Capture des trois sections séparément
+        const sections = document.querySelectorAll('.summary-section');
+        
+        let positionY = 40;
+        
+        // Ajout du titre principal
+        pdf.setFontSize(22);
+        pdf.setTextColor(255, 255, 255);
+        pdf.text('Récapitulatif de votre devis', 40, positionY);
+        positionY += 40;
+        
+        // Style pour les sections
+        pdf.setDrawColor(100, 100, 100);
+        pdf.setFillColor(30, 30, 30);
+        
+        for (const section of sections) {
+          const canvas = await html2canvas(section, options);
+          const imgData = canvas.toDataURL('image/png');
+          
+          // Ajout de l'image avec un fond et une bordure
+          pdf.rect(30, positionY - 10, 535, canvas.height / 3 + 20, 'F');
+          pdf.addImage(imgData, 'PNG', 40, positionY, canvas.width / 3, canvas.height / 3);
+          
+          positionY += canvas.height / 3 + 40;
+          
+          // Nouvelle page si nécessaire
+          if (positionY > 700) {
+            pdf.addPage();
+            positionY = 40;
+          }
+        }
+        
+        // Pied de page
+        pdf.setFontSize(10);
+        pdf.setTextColor(150, 150, 150);
+        pdf.text('Devis généré le ' + new Date().toLocaleDateString(), 40, pdf.internal.pageSize.height - 20);
+        
+        pdf.save(`devis-${myQuote.value.name || 'client'}.pdf`);
+        
+      } catch (error) {
+        console.error('Erreur génération PDF:', error);
+        alert('Erreur lors de la génération du PDF');
+      }
+    };
+      /* About the differents steps */
         const step = ref(1);
         const goToNextStep = () => {
             if (step.value === 1 && !myQuote.value.types) {
@@ -176,13 +238,21 @@ export default {
           pageNumber,
           backend,
           specific,
-          totalPrice
+          totalPrice,
+          generatePDF,
         }
     }
 }
 </script>
 
 <style scoped>
+.pdf-button {
+  background-color: #213597e8 !important;
+}
+.pdf-button:hover {
+  background-color:#213597e8 !important;
+}
+
 .main__container {
   padding: 6rem 1rem 1rem 1rem;
   min-height: 100vh;
@@ -256,6 +326,7 @@ export default {
   border-radius: 8px;
   padding: 1.5rem;
   margin-bottom: 1.5rem;
+  width: 500px;
 }
 
 .summary-section h3 {
@@ -330,6 +401,30 @@ export default {
     justify-content: center;
     align-items: center;
     gap: 1.5rem;
+  }
+}
+/* Style spécifique pour le rendu PDF */
+@media print, (min-resolution: 120dpi) {
+  .summary-section {
+    background-color: #1a1a1a !important;
+    border: 1px solid #444 !important;
+    color: white !important;
+    width: 100% !important;
+    max-width: 800px !important;
+    margin: 0 auto 20px !important;
+  }
+  .summary-label {
+    color: #4dabf7 !important;
+    font-weight: bold !important;
+  }
+  .summary-value {
+    color: #e9ecef !important;
+  }
+  .total-price {
+    color: #40c057 !important;
+  }
+  .price-note {
+    color: #adb5bd !important;
   }
 }
 </style>
