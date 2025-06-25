@@ -148,13 +148,14 @@
             </div>
           </div>
         </div>
-
-        <div class="navigation-buttons">
+        <div class="navigation-buttons">  
           <second-button label="Précédent" @click="step--" />
-          <main-button 
-            label="Envoyer la demande" 
-            @click="submitQuote" 
-          />
+          <second-button 
+          label="Télécharger PDF" 
+          @click="generatePDF" />
+        <main-button 
+        label="Envoyer la demande" 
+        @click="submitQuote" />
         </div>
       </div>
     </transition>
@@ -170,6 +171,8 @@ import SelectFamily from '../tools/selectFamily.vue';
 import inputFamily from '../tools/inputFamily.vue';
 import checkBoxTool from '../tools/checkBoxTool.vue';
 import textAreaTool from '../tools/textAreaTool.vue';
+import { jsPDF } from 'jspdf';
+import html2canvas from 'html2canvas';
 
 // Prix de base pour chaque type de projet
 const BASE_PRICES = {
@@ -253,6 +256,50 @@ export default {
     textAreaTool
   },
   setup() {
+
+    const generatePDF = async () => {
+  try {
+    // Sélectionnez l'élément à convertir en PDF
+    const element = document.querySelector('.quote-summary');
+    
+    // Utilisez html2canvas pour capturer l'élément
+    const canvas = await html2canvas(element, {
+      scale: 2, // Améliore la qualité
+      logging: false,
+      useCORS: true,
+    });
+    
+    // Créez un nouveau PDF
+    const pdf = new jsPDF('p', 'mm', 'a4');
+    const imgData = canvas.toDataURL('image/png');
+    
+    // Calculez les dimensions pour centrer l'image
+    const imgWidth = 210; // Largeur A4 en mm
+    const pageHeight = 295; // Hauteur A4 en mm
+    const imgHeight = (canvas.height * imgWidth) / canvas.width;
+    let heightLeft = imgHeight;
+    let position = 0;
+    
+    pdf.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
+    heightLeft -= pageHeight;
+    
+    // Ajoutez des pages supplémentaires si nécessaire
+    while (heightLeft >= 0) {
+      position = heightLeft - imgHeight;
+      pdf.addPage();
+      pdf.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
+      heightLeft -= pageHeight;
+    }
+    
+    // Téléchargez le PDF
+    pdf.save(`devis-${quote.value.nom || 'sans-nom'}.pdf`);
+    
+  } catch (error) {
+    console.error('Erreur lors de la génération du PDF:', error);
+    alert('Une erreur est survenue lors de la génération du PDF');
+  }
+};
+
     const step = ref(1);
     const projectType = ref('');
     const selectedFeatures = ref({});
@@ -457,6 +504,7 @@ export default {
       return new Intl.NumberFormat('fr-FR', { style: 'currency', currency: 'EUR' }).format(price);
     };
 
+
     return {
       step,
       projectType,
@@ -475,7 +523,8 @@ export default {
       submitQuote,
       formatLabel,
       formatFeatureValue,
-      formatPrice
+      formatPrice,
+      generatePDF,
     };
   }
 };
@@ -671,6 +720,24 @@ export default {
   
   .quote-section {
     max-width: calc(33% - 1rem);
+  }
+}
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  .quote-summary, .quote-summary * {
+    visibility: visible;
+  }
+  .quote-summary {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    background: white;
+    color: black;
+    padding: 20px;
+    box-shadow: none;
   }
 }
 </style>
