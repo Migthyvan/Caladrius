@@ -52,6 +52,7 @@ export default {
     .input__family{
         display: flex;
         flex-direction: column;
+        
         gap: 1rem;
         width: 100%;
         max-width: 600px;

@@ -288,10 +288,10 @@ export default {
 }
 
 .total-price {
-    font-size: 2rem;
-    font-weight: bold;
-    color: #007bff;
-    margin: 1rem 0;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #007bff;
+  margin: 1rem 0;
 }
 
 .price-note {
@@ -301,8 +301,14 @@ export default {
   opacity: 0.8;
 }
 
-@media (max-width: 768px) {
+@media (min-width: 768px) {
+
+  h2{
+    text-align: center;
+  }
+
   .summary-item {
+    display: flex;
     flex-direction: column;
   }
   
@@ -311,18 +317,11 @@ export default {
     margin-bottom: 0.3rem;
   }
 
-  .features-container{
-    width: 100%;
+  .price-display{
     display: flex;
+    width: 100%;
     justify-content: center;
     align-items: center;
-    gap: 1.5rem;
-  }
-}
-
-@media (max-width: 1024px) {
-  h2{
-    text-align: center;
   }
 
   .features-container{
