@@ -6,13 +6,12 @@
         v-model="inputValue"
         @change="updateValue"
       >
-        <option value="">Sélectionner</option>
         <option 
           v-for="(item, index) in options" 
           :key="index" 
-          :value="item"
+          :value="getOptionValue(item)"
         >
-          {{ item }}
+          {{ getOptionLabel(item) }}
         </option>
       </select>
     </div>
@@ -32,28 +31,39 @@
         default: () => ['0-18', '19-25', '26-35', '36-45', '46-55', '56+']
       },
       modelValue: {
-        type: String,
+        type: [String, Number, Object],
         default: ''
       }
     },
     emits: ['update:modelValue'],
     setup(props, { emit }) {
       const inputValue = ref(props.modelValue);
-  
+
+      // Fonction pour gérer à la fois les options simples (string) et complexes (objets)
+      const getOptionLabel = (option) => {
+        return typeof option === 'object' ? option.label : option;
+      };
+
+      // Fonction pour obtenir la valeur de l'option
+      const getOptionValue = (option) => {
+        return typeof option === 'object' ? option.value : option;
+      };
+
       // Met à jour la valeur parente quand inputValue change
       const updateValue = () => {
         emit('update:modelValue', inputValue.value);
-        console.log(inputValue.value);
       };
-  
+
       // Synchronise inputValue si modelValue change depuis le parent
       watch(() => props.modelValue, (newVal) => {
         inputValue.value = newVal;
       });
-  
+
       return {
         inputValue,
-        updateValue
+        updateValue,
+        getOptionLabel,
+        getOptionValue
       };
     }
   }
