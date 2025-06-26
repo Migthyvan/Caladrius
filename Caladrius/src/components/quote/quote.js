@@ -1,8 +1,10 @@
+// just for the website
 export const types = [
-  { label: 'Site vitrine', value: 'Site vitrine', basePrice: 500 },
-  { label: 'Site e-commerce', value: 'Site e-commerce', basePrice: 1500 },
+  { label: 'Site vitrine', value: 'Site vitrine', basePrice: 499 },
+  { label: 'Site e-commerce', value: 'Site e-commerce', basePrice: 1499 },
   { label: 'Site blog', value: 'Site blog', basePrice: 800 },
-  { label: 'Site portfolio', value: 'Site portfolio', basePrice: 600 },
+  { label: 'Site portfolio', value: 'Site portfolio', basePrice: 499 },
+  { label: 'Site professionnel', value : 'Site professionnel', basePrice: 1500}
 ];
 
 export const pagesNumber = [

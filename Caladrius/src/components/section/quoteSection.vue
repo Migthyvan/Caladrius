@@ -495,7 +495,7 @@ export default {
 
     const formatFeatureValue = (value) => {
       if (Array.isArray(value)) {
-        return value.join(', ');
+        return value.join(', '); 
       }
       return value;
     };
