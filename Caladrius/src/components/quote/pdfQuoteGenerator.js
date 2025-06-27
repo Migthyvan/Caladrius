@@ -23,6 +23,7 @@ export function generateDevisPDF(params) {
     availableOptions, // Ceci sera 'specifics'
     clientEmail,
     phoneNumber,
+    totalDevis,
   } = params;
 
   // Trouver le projet sélectionné
@@ -34,100 +35,100 @@ export function generateDevisPDF(params) {
     return;
   }
 
-  // Calcul des prix
-  const optionsTotal = availableOptions
-      .filter(opt => selectedOptions.includes(opt.id))
-      .reduce((sum, opt) => sum + opt.price, 0);
+    // Calcul des prix
+    const optionsTotal = availableOptions
+        .filter(opt => selectedOptions.includes(opt.id))
+        .reduce((sum, opt) => sum + opt.price, 0);
 
-  const pagesExtraCost = Math.max(0, pageCount - pagesNumber) * currentProject.pricePerPage;
+    const pagesExtraCost = Math.max(0, pageCount - pagesNumber) * currentProject.pricePerPage;
 
-  const subtotal = currentProject.basePrice + pagesExtraCost + optionsTotal;
-  const tva = subtotal * 0.2;
-  const total = subtotal + tva;
+    const subtotal = totalDevis;
+    const tva = subtotal * 0.18;
+    const total = subtotal + tva;
 
-  // Création du PDF
-  const doc = new jsPDF(); // Utiliser jspdf.jsPDF car importé via UMD
+    // Création du PDF
+    const doc = new jsPDF(); // Utiliser jspdf.jsPDF car importé via UMD
 
-  // ===== CONTENU DU PDF ===== //
-  // En-tête
-  doc.setFontSize(18).setTextColor(40, 40, 40)
-      .text("Caladrius Technologies", 105, 20, { align: 'center' })
-      .setFontSize(12).setTextColor(100, 100, 100)
-      .text(`Devis pour ${projectType}`, 105, 30, { align: 'center' });
+    // ===== CONTENU DU PDF ===== //
+    // En-tête
+    doc.setFontSize(18).setTextColor(40, 40, 40)
+        .text("Caladrius Technologies", 105, 20, { align: 'center' })
+        .setFontSize(12).setTextColor(100, 100, 100)
+        .text(`Devis pour ${projectType}`, 105, 30, { align: 'center' });
 
-  // Informations société
-  doc.setFontSize(10).setTextColor(100, 100, 100)
-      .text("Adjamé paillet, Rue de l'aménagement | Abidjan", 105, 40, { align: 'center' })
-      .text("(+225) 010140008192 / 0757240274 / 0586070612", 105, 50, { align: 'center' })
-      .text("caladriusllc@gmail.com | www.caladriustech.com", 105, 60, { align: 'center' });
+    // Informations société
+    doc.setFontSize(10).setTextColor(100, 100, 100)
+        .text("Adjamé paillet, Rue de l'aménagement | Abidjan", 105, 40, { align: 'center' })
+        .text("(+225) 010140008192 / 0757240274 / 0586070612", 105, 50, { align: 'center' })
+        .text("caladriusllc@gmail.com | www.caladriustech.com", 105, 60, { align: 'center' });
 
-  // Date et client
-  doc.setTextColor(100, 100, 100)
-      .text(`Date: ${new Date().toLocaleDateString('fr-FR')}`, 14, 70)
-      .setFontSize(10)
-      .text(`Nom: ${clientName}`, 14, 80)
-      .text(`Email: ${clientEmail}`, 81, 80)
-      .text(`Numero de Tel: ${phoneNumber}`, 141, 80);
+    // Date et client
+    doc.setTextColor(100, 100, 100)
+        .text(`Date: ${new Date().toLocaleDateString('fr-FR')}`, 14, 70)
+        .setFontSize(10)
+        .text(`Nom: ${clientName}`, 14, 80)
+        .text(`Email: ${clientEmail}`, 81, 80)
+        .text(`Numero de Tel: ${phoneNumber}`, 141, 80);
 
-  // Détails du projet
-  doc.setFontSize(10).setTextColor(100, 100, 100).text("Détails du Projet:", 14, 90)
-      .setFontSize(10)
-      .text(`Type de projet: ${currentProject.label}`, 14, 100)
-      .text(`Nombre de ages: ${pageCount}`, 81, 100)
-      .text('Options',144, 100);
+    // Détails du projet
+    doc.setFontSize(10).setTextColor(100, 100, 100).text("Détails du Projet:", 14, 90)
+        .setFontSize(10)
+        .text(`Type de projet: ${currentProject.label}`, 14, 100)
+        .text(`Nombre de pages: ${pageCount}`, 81, 100)
+        .text('Options',144, 100);
 
-  // Options
-  let optionsYStart = 100;
-  if (selectedOptions.length > 0) {
-      let y = optionsYStart + 5;
-      availableOptions.forEach(opt => {
-          if (selectedOptions.includes(opt.id)) {
-              doc.text(`- ${opt.label}`, 144, y+5);
-              y += 5;
-          }
-      });
-      optionsYStart = y + 5; // Ajuste la position de départ du tableau si des options sont présentes
-  }
+    // Options
+    let optionsYStart = 100;
+    if (selectedOptions.length > 0) {
+        let y = optionsYStart + 5;
+        availableOptions.forEach(opt => {
+            if (selectedOptions.includes(opt.id)) {
+                doc.text(`- ${opt.label}`, 144, y+5);
+                y += 5;
+            }
+        });
+        optionsYStart = y + 5; // Ajuste la position de départ du tableau si des options sont présentes
+    }
 
     // Tableau des prix
     autoTable(doc,{
-      startY: optionsYStart,
-      head: [['Description', 'Prix HT']],
-      body: [
-          [`${currentProject.label} (base)`, `${currentProject.basePrice.toFixed(2)} €`],
-          [`Pages supplémentaires (${Math.max(0, pageCount - pagesNumber)})`, 
-          `${pagesExtraCost.toFixed(2)} €`],
-          ...availableOptions
-              .filter(opt => selectedOptions.includes(opt.id))
-              .map(opt => [opt.label, `${opt.price.toFixed(2)} €`]),
-          ['Total HT', `${subtotal.toFixed(2)} €`],
-          ['TVA (20%)', `${tva.toFixed(2)} €`],
-          ['Total TTC', `${total.toFixed(2)} €`]
-      ],
-      styles: { 
-          cellPadding: 3, 
-          fontSize: 10,
-          valign: 'middle',
-          halign: 'left' // Alignement horizontal par défaut pour les cellules
-      },
-      columnStyles: {
-          1: { halign: 'right' } // Aligne la deuxième colonne (Prix HT) à droite
-      },
-      headStyles: { 
-          fillColor: [70, 130, 180],
-          textColor: [255, 255, 255],
-          fontStyle: 'bold',
-          halign: 'left'
-      },
-      footStyles: { // Appliquer des styles aux totaux si nécessaire
-          fillColor: [240, 240, 240],
-          fontStyle: 'bold'
-      },
-      didDrawPage: function (data) {
-          // Pied de page : numéro de page
-          doc.setFontSize(8);
-          doc.text(`Page ${doc.internal.getNumberOfPages()}`, data.settings.margin.left, doc.internal.pageSize.height - 10);
-      }
+        startY: optionsYStart,
+        head: [['Description', 'Prix HT']],
+        body: [
+            [`${currentProject.label} (base)`, `${currentProject.basePrice.toFixed(2)} €`],
+            [`Pages supplémentaires (${Math.max(0, pageCount - pagesNumber)})`, 
+            `${pagesExtraCost.toFixed(2)} €`],
+            ...availableOptions
+                .filter(opt => selectedOptions.includes(opt.id))
+                .map(opt => [opt.label, `${opt.price.toFixed(2)} €`]),
+            ['Total HT', `${totalDevis.toFixed(2)} €`],
+            ['TVA (18%)', `${tva.toFixed(2)} €`],
+            ['Total TTC', `${total.toFixed(2)} €`]
+        ],
+        styles: { 
+            cellPadding: 3, 
+            fontSize: 10,
+            valign: 'middle',
+            halign: 'left' // Alignement horizontal par défaut pour les cellules
+        },
+        columnStyles: {
+            1: { halign: 'right' } // Aligne la deuxième colonne (Prix HT) à droite
+        },
+        headStyles: { 
+            fillColor: [70, 130, 180],
+            textColor: [255, 255, 255],
+            fontStyle: 'bold',
+            halign: 'left'
+        },
+        footStyles: { // Appliquer des styles aux totaux si nécessaire
+            fillColor: [240, 240, 240],
+            fontStyle: 'bold'
+        },
+        didDrawPage: function (data) {
+            // Pied de page : numéro de page
+            doc.setFontSize(8);
+            doc.text(`Page ${doc.internal.getNumberOfPages()}`, data.settings.margin.left, doc.internal.pageSize.height - 10);
+        }
     });
 
     // Conditions et signature
@@ -138,12 +139,7 @@ export function generateDevisPDF(params) {
       .text("- 30% à la livraison", 20, finalY + 15)
       .text("Validité du devis: 30 jours", 14, finalY + 25)
       .text("Nous restons à votre disposition pour toute question.", 14, finalY + 35)
-      .text("Signature:", 14, finalY + 45)
-      .line(50, finalY + 50, 100, finalY + 50); // Ligne de signature
-
-    doc.setFontSize(10).text("[VOTRE NOM]", 14, finalY + 55);
-    doc.text("Gérant de Caladrius", 14, finalY + 60);
-
+      .line(20, finalY + 50, 100, finalY + 50); // Ligne de signature
     // Téléchargement
     doc.save(`Devis_${clientName.replace(/ /g, '_')}.pdf`);
 }
@@ -185,12 +181,12 @@ window.generatePDF = function() {
   const selectedOptions = Array.from(document.querySelectorAll('#options-list input[type="checkbox"]:checked'))
                               .map(cb => cb.value);
 
-  generateDevisPDF({
-      clientName: clientName,
-      projectType: projectType,
-      pageCount: pageCount,
-      selectedOptions: selectedOptions,
-      projectTypes: types,      // Passez vos données 'types'
-      availableOptions: specifics // Passez vos données 'specifics'
-  });
+generateDevisPDF({
+    clientName: clientName,
+    projectType: projectType,
+    pageCount: pageCount,
+    selectedOptions: selectedOptions,
+    projectTypes: types,      // Passez vos données 'types'
+    availableOptions: specifics // Passez vos données 'specifics'
+});
 };

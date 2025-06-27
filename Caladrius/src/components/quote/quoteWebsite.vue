@@ -36,7 +36,7 @@
             <text-area-tool v-model="myQuote.message"/>
             <div class="navigation-buttons">
               <secondButton label = "pécédent" @click="goToPrevStep"/>
-              <mainButton label = "suivant" @click="goToNextStep"/>
+              <mainButton label = "détails" @click="goToNextStep"/>
             </div>
           </div>
         </transition>
@@ -103,7 +103,7 @@
             <div class="navigation-buttons">
               <secondButton label="Précédent" @click="goToPrevStep"/>
               <second-button label="Télécharger PDF" @click="downloadPdf" class="pdf-button"/>
-              <mainButton label="Envoyer" @click="submitQuote"/>
+              <mainButton label="Envoyer"/>
             </div>
           </div>
         </transition>
@@ -180,7 +180,8 @@ export default {
             projectTypes: type, // Pass the 'types' array with 'id'
             availableOptions: specific, // Pass the 'specifics' array with 'id',
             clientEmail: myQuote.value.email,
-            phoneNuber: myQuote.value.phone_number
+            phoneNumber: myQuote.value.phone_number,
+            totalDevis: totalPrice.value,
           });
         };
 
