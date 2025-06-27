@@ -22,7 +22,7 @@ export const backends = [
 export const specifics = [
   { label: 'SEO', value: 'SEO', price: 300 },
   { label: 'Blog intégré', value: 'Blog intégré', price: 200 },
-  { label: 'Multilingue', value: 'Multilingue', price: 400 }
+  { label: 'Multilingue', value: 'Multilingue', price: 200 }
 ];
 
 export function calculateQuote(selectedType, selectedPages, selectedBackend, selectedSpecifics) {

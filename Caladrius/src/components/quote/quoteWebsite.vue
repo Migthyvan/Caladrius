@@ -102,7 +102,7 @@
             
             <div class="navigation-buttons">
               <secondButton label="Précédent" @click="goToPrevStep"/>
-              <second-button label="Télécharger PDF" @click="myPdf" class="pdf-button" />
+              <second-button label="Télécharger PDF" @click="downloadPdf" class="pdf-button"/>
               <mainButton label="Envoyer" @click="submitQuote"/>
             </div>
           </div>
@@ -165,18 +165,23 @@ export default {
           );
         });
 
-        const type = types;
+        const type = types.map(t => ({...t, id: t.value})); // Add id to types for pdf generation
         const pageNumber = pagesNumber;
         const backend = backends;
-        const specific = specifics;
+        const specific = specifics.map(s => ({...s, id: s.value})); // Add id to specifics for pdf generation
 
-        // Generate my pdf file
-        const myPdf = generateDevisPDF({
-          clientName: myQuote.value.name,
-          projecType: myQuote.value.types,
-          pageCount: myQuote.value.pagesNumber,
-          selectedOptions: myQuote.value.specific,
-        })
+        // Function to generate the PDF
+        const downloadPdf = () => {
+          generateDevisPDF({
+            clientName: myQuote.value.name,
+            projectType: myQuote.value.types, // Make sure this matches the 'id' in 'type'
+            pageCount: parseInt(myQuote.value.pagesNumber.match(/\d+/)[0]), // Extract number from string like '1-5 pages'
+            selectedOptions: myQuote.value.specific, // These should be the 'id's of selected options
+            projectTypes: type, // Pass the 'types' array with 'id'
+            availableOptions: specific, // Pass the 'specifics' array with 'id',
+            clientEmail: myQuote.value.email
+          });
+        };
 
         return {
           step,
@@ -188,7 +193,7 @@ export default {
           backend,
           specific,
           totalPrice,
-          myPdf,
+          downloadPdf,
         }
     }
 }
