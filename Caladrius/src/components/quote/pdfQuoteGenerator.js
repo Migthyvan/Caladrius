@@ -1,5 +1,5 @@
-import jsPDF from "jspdf";
-import "jspdf-autotable";
+import jsPDF from 'jspdf';
+import autoTable from 'jspdf-autotable';
 import { types, pagesNumber, specifics, backends, calculateQuote } from './quote';
 
 /**
@@ -22,6 +22,7 @@ export function generateDevisPDF(params) {
     projectTypes, // Ceci sera 'types'
     availableOptions, // Ceci sera 'specifics'
     clientEmail,
+    phoneNumber,
   } = params;
 
   // Trouver le projet sélectionné
@@ -45,14 +46,14 @@ export function generateDevisPDF(params) {
   const total = subtotal + tva;
 
   // Création du PDF
-  const doc = new jspdf.jsPDF(); // Utiliser jspdf.jsPDF car importé via UMD
+  const doc = new jsPDF(); // Utiliser jspdf.jsPDF car importé via UMD
 
   // ===== CONTENU DU PDF ===== //
   // En-tête
   doc.setFontSize(18).setTextColor(40, 40, 40)
       .text("Caladrius Technologies", 105, 20, { align: 'center' })
-      .setFontSize(14)
-      .text("DEVIS", 105, 30, { align: 'center' });
+      .setFontSize(12).setTextColor(100, 100, 100)
+      .text(`Devis pour ${projectType}`, 105, 30, { align: 'center' });
 
   // Informations société
   doc.setFontSize(10).setTextColor(100, 100, 100)
@@ -65,7 +66,8 @@ export function generateDevisPDF(params) {
       .text(`Date: ${new Date().toLocaleDateString('fr-FR')}`, 14, 70)
       .setFontSize(10)
       .text(`Nom: ${clientName}`, 14, 80)
-      .text(`Email: ${clientEmail}`, 81, 80);
+      .text(`Email: ${clientEmail}`, 81, 80)
+      .text(`Numero de Tel: ${phoneNumber}`, 141, 80);
 
   // Détails du projet
   doc.setFontSize(10).setTextColor(100, 100, 100).text("Détails du Projet:", 14, 90)
@@ -87,8 +89,8 @@ export function generateDevisPDF(params) {
       optionsYStart = y + 5; // Ajuste la position de départ du tableau si des options sont présentes
   }
 
-  // Tableau des prix
-  doc.autoTable({
+    // Tableau des prix
+    autoTable(doc,{
       startY: optionsYStart,
       head: [['Description', 'Prix HT']],
       body: [
@@ -126,11 +128,11 @@ export function generateDevisPDF(params) {
           doc.setFontSize(8);
           doc.text(`Page ${doc.internal.getNumberOfPages()}`, data.settings.margin.left, doc.internal.pageSize.height - 10);
       }
-  });
+    });
 
-  // Conditions et signature
-  const finalY = doc.lastAutoTable.finalY + 15;
-  doc.setFontSize(10).text("Conditions de paiement:", 14, finalY)
+    // Conditions et signature
+    const finalY = doc.lastAutoTable.finalY + 15;
+    doc.setFontSize(10).text("Conditions de paiement:", 14, finalY)
       .text("- 30% à la commande", 20, finalY + 5)
       .text("- 40% à la validation de la maquette", 20, finalY + 10)
       .text("- 30% à la livraison", 20, finalY + 15)
@@ -139,11 +141,11 @@ export function generateDevisPDF(params) {
       .text("Signature:", 14, finalY + 45)
       .line(50, finalY + 50, 100, finalY + 50); // Ligne de signature
 
-  doc.setFontSize(10).text("[VOTRE NOM]", 14, finalY + 55);
-  doc.text("Gérant de Caladrius", 14, finalY + 60);
+    doc.setFontSize(10).text("[VOTRE NOM]", 14, finalY + 55);
+    doc.text("Gérant de Caladrius", 14, finalY + 60);
 
-  // Téléchargement
-  doc.save(`Devis_${clientName.replace(/ /g, '_')}.pdf`);
+    // Téléchargement
+    doc.save(`Devis_${clientName.replace(/ /g, '_')}.pdf`);
 }
 
 // --- Logique d'interaction UI ---

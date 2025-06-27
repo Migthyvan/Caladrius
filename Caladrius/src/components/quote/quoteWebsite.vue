@@ -179,7 +179,8 @@ export default {
             selectedOptions: myQuote.value.specific, // These should be the 'id's of selected options
             projectTypes: type, // Pass the 'types' array with 'id'
             availableOptions: specific, // Pass the 'specifics' array with 'id',
-            clientEmail: myQuote.value.email
+            clientEmail: myQuote.value.email,
+            phoneNuber: myQuote.value.phone_number
           });
         };
 
