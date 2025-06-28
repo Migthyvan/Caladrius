@@ -1,112 +1,106 @@
 <template>
-    <div class="main__container center__flex__mobile" >
-        <navbar/>
-        <!-- Site Web -->
-        <transition :duration="{ enter: 1000, leave: 800 }" name="fade" mode="out-in">
-          <div class="features-container" v-show="step === 1" key="step1">
-            <h2> Devis pour site Web </h2>
-            <selectFamily label="Je selectionne mon type de site" :options="type"
-              v-model="myQuote.types"
-            />
-            <selectFamily
-              label="Mon nombre de pages" :options="pageNumber" v-model="myQuote.pagesNumber"
-            />
-            <selectFamily
-              label="Mon type de backend" :options="backend" v-model="myQuote.backend"
-            />
-            <checkBoxTool
-              question="Fonctionnalités" :options="specific" v-model="myQuote.specific"
-            />
+  <div class="main__container center__flex__mobile" >
+    <navbar/>
+    <!-- Site Web -->
+    <transition name="fade" mode="out-in">
+      <div class="features-container" v-if="step === 1" key="step1">
+        <h2> Devis pour site Web </h2>
+        <selectFamily label="Je selectionne mon type de site" :options="type"
+          v-model="myQuote.types"
+        />
+        <selectFamily
+          label="Mon nombre de pages" :options="pageNumber" v-model="myQuote.pagesNumber"
+        />
+        <selectFamily
+          label="Mon type de backend" :options="backend" v-model="myQuote.backend"
+        />
+        <checkBoxTool
+          question="Fonctionnalités" :options="specific" v-model="myQuote.specific"
+        />
 
-            <div class="navigation-buttons">
-              <secondButton label = "pécédent" @click="goToPrevStep"/>
-              <mainButton label = "suivant" @click="goToNextStep"/>
-            </div>
-          </div>
-        </transition>
+        <div class="navigation-buttons">
+          <secondButton label = "pécédent" @click="goToPrevStep"/>
+          <mainButton label = "suivant" @click="goToNextStep"/>
+        </div>
+      </div>
+      
+      <!-- Site Web step 2-->
 
-        <!-- Site Web step 2-->
-        <transition :duration="{ enter: 1000, leave: 800 }" name="fade" mode="out-in">
-
-          <div class="features-container"  v-show="step === 2" key="step2">
-            <h2> Vos informations personnelles </h2>
-            <inputFamily label = "Votre nom" v-model=myQuote.name />
-            <inputFamily label= "Email" v-model=myQuote.email />
-            <inputFamily label ="Numéro de téléphone" v-model=myQuote.phone_number />
-            <text-area-tool v-model="myQuote.message"/>
-            <div class="navigation-buttons">
-              <secondButton label = "pécédent" @click="goToPrevStep"/>
-              <mainButton label = "détails" @click="goToNextStep"/>
-            </div>
-          </div>
-        </transition>
-        
+      <div class="features-container"  v-else-if="step === 2" key="step2">
+        <h2> Vos informations personnelles </h2>
+        <inputFamily label = "Votre nom" v-model=myQuote.name />
+        <inputFamily label= "Email" v-model=myQuote.email />
+        <inputFamily label ="Numéro de téléphone" v-model=myQuote.phone_number />
+        <text-area-tool v-model="myQuote.message"/>
+        <div class="navigation-buttons">
+          <secondButton label = "pécédent" @click="goToPrevStep"/>
+          <mainButton label = "détails" @click="goToNextStep"/>
+        </div>
         <div class="price-display" v-if="totalPrice > 0">
           <h3>Estimation du prix: {{ totalPrice }} €</h3>
         </div>
-        
-        <transition :duration="{ enter: 1000, leave: 800 }" name="fade" mode="out-in">
+      </div>
 
-        <!-- Site Web step 3 -->
-          <div class="features-container" v-show="step === 3" key="step3">
-            <h2>Récapitulatif de votre devis</h2>
+      <!-- Site Web step 3 -->
+      <div class="features-container" v-else-if="step === 3" key="step3">
+        <h2>Récapitulatif de votre devis</h2>
+        
+        <div class="summary-section">
+            <h3>Configuration de votre site</h3>
+            <div class="summary-item">
+                <span class="summary-label">Type de site:</span>
+                <span class="summary-value">{{ myQuote.types || 'Non spécifié' }}</span>
+            </div>
+            <div class="summary-item">
+                <span class="summary-label">Nombre de pages:</span>
+                <span class="summary-value">{{ myQuote.pagesNumber || 'Non spécifié' }}</span>
+            </div>
+            <div class="summary-item">
+                <span class="summary-label">Backend:</span>
+                <span class="summary-value">{{ myQuote.backend || 'Non spécifié' }}</span>
+            </div>
+            <div class="summary-item" v-if="myQuote.specific && myQuote.specific.length > 0">
+              <span class="summary-label">Fonctionnalités:</span>
+              <span class="summary-value">{{ myQuote.specific.join(', ') }}</span>
+            </div>
+        </div>
             
-            <div class="summary-section">
-                <h3>Configuration de votre site</h3>
-                <div class="summary-item">
-                    <span class="summary-label">Type de site:</span>
-                    <span class="summary-value">{{ myQuote.types || 'Non spécifié' }}</span>
-                </div>
-                <div class="summary-item">
-                    <span class="summary-label">Nombre de pages:</span>
-                    <span class="summary-value">{{ myQuote.pagesNumber || 'Non spécifié' }}</span>
-                </div>
-                <div class="summary-item">
-                    <span class="summary-label">Backend:</span>
-                    <span class="summary-value">{{ myQuote.backend || 'Non spécifié' }}</span>
-                </div>
-                <div class="summary-item" v-if="myQuote.specific && myQuote.specific.length > 0">
-                  <span class="summary-label">Fonctionnalités:</span>
-                  <span class="summary-value">{{ myQuote.specific.join(', ') }}</span>
-                </div>
-            </div>
-              
-            <div class="summary-section">
-              <h3>Vos informations</h3>
-              <div class="summary-item">
-                  <span class="summary-label">Nom:</span>
-                  <span class="summary-value">{{ myQuote.name || 'Non spécifié' }}</span>
-              </div>
-              <div class="summary-item">
-                  <span class="summary-label">Email:</span>
-                  <span class="summary-value">{{ myQuote.email || 'Non spécifié' }}</span>
-              </div>
-              <div class="summary-item">
-                  <span class="summary-label">Téléphone:</span>
-                  <span class="summary-value">{{ myQuote.phone_number || 'Non spécifié' }}</span>
-              </div>
-              <div class="summary-item" v-if="myQuote.message">
-                  <span class="summary-label">Message:</span>
-                  <span class="summary-value">{{ myQuote.message }}</span>
-              </div>
-            </div>
-              
-              
-            <div class="summary-section price-section">
-              <h3>Prix total</h3>
-              <div class="total-price">
-                  {{ totalPrice }} €
-              </div>
-              <p class="price-note">Ce prix est une estimation et pourra être ajusté après discussion.</p>
-            </div>
-            
-            <div class="navigation-buttons">
-              <secondButton label="Précédent" @click="goToPrevStep"/>
-              <second-button label="Télécharger PDF" @click="downloadPdf" class="pdf-button"/>
-              <mainButton label="Envoyer"/>
-            </div>
+        <div class="summary-section">
+          <h3>Vos informations</h3>
+          <div class="summary-item">
+              <span class="summary-label">Nom:</span>
+              <span class="summary-value">{{ myQuote.name || 'Non spécifié' }}</span>
           </div>
-        </transition>
+          <div class="summary-item">
+              <span class="summary-label">Email:</span>
+              <span class="summary-value">{{ myQuote.email || 'Non spécifié' }}</span>
+          </div>
+          <div class="summary-item">
+              <span class="summary-label">Téléphone:</span>
+              <span class="summary-value">{{ myQuote.phone_number || 'Non spécifié' }}</span>
+          </div>
+          <div class="summary-item" v-if="myQuote.message">
+              <span class="summary-label">Message:</span>
+              <span class="summary-value">{{ myQuote.message }}</span>
+          </div>
+        </div>
+          
+          
+        <div class="summary-section price-section">
+          <h3>Prix total</h3>
+          <div class="total-price">
+              {{ totalPrice }} €
+          </div>
+          <p class="price-note">Ce prix est une estimation et pourra être ajusté après discussion.</p>
+        </div>
+        
+        <div class="navigation-buttons">
+          <secondButton label="Précédent" @click="goToPrevStep"/>
+          <second-button label="Télécharger PDF" @click="downloadPdf" class="pdf-button"/>
+          <mainButton label="Envoyer"/>
+        </div>
+      </div>
+      </transition>
   </div>
 </template>
 
@@ -243,38 +237,18 @@ export default {
   margin-top: 1rem;
 }
 
-.fade-enter-active {
-  transition: 
-  opacity 1.2s cubic-bezier(0.22, 1, 0.36, 1),
-  transform 1.2s cubic-bezier(0.22, 1, 0.36, 1);
-}
-
+/* Transition styles */
+.fade-enter-active,
 .fade-leave-active {
-  transition: 
-    opacity 0.8s cubic-bezier(0.55, 0, 0.1, 1),
-    transform 0.8s cubic-bezier(0.55, 0, 0.1, 1);
+  transition: all 0.5s ease;
 }
-
 .fade-enter-from {
   opacity: 0;
-  transition-duration: 1.2s;
-  transform: translateX(24px) scale(0.98);
-  filter: blur(1px);
+  transform: translateX(30px);
 }
-
 .fade-leave-to {
   opacity: 0;
-  transition-duration: 1.2s;
-  transform: translateX(-24px) scale(1.01);
-  filter: blur(1px);
-}
-
-.fade-enter-to,
-.fade-leave-from {
-  opacity: 1;
-  transition-duration: 1.2s;
-  transform: translateX(0) scale(1);
-  filter: blur(0);
+  transform: translateX(-30px);
 }
 
 .summary-section {
