@@ -12,15 +12,13 @@
       <div class="step" v-else-if="step === 2" key="step2">
         <h2 class="animated-title">Je crée mon devis gratuitement</h2>
         <h4>Je choisis mon type de projet</h4>
-        <choices-box 
-          :modelValue="quote"
-          @selected="handleSelectedItem" />
+        <choices-box v-model="choice" />
         <div class="navigation-buttons">
           <second-button label="Précédent" @click="step--" />
           <main-button 
             label="Suivant" 
-            @click= "route.push('/quote/website')"
-            :disabled="!projectType" 
+            @click="route.push(`/quote/${choice}`)"
+            :disabled="!choice"
           />
         </div>
       </div>
@@ -54,37 +52,9 @@ export default {
 
     const step = ref(1);
     const projectType = ref('');
-    const quote = [
-      'site web',
-      'application mobile',
-      'service freelance'
-    ]
+    
     const route = useRouter();
-
-    const labels = {
-      'Site web': {
-        type: 'Type de site web',
-        pages: 'Nombre de pages',
-        backend: 'Solution backend',
-        specific: 'Fonctionnalités spécifiques',
-      },
-      'Application mobile': {
-        platform: 'Plateforme cible',
-        features: 'Fonctionnalités principales',
-        backend: 'Solution backend'
-      },
-      'Service Freelance': {
-        service: 'Type de service',
-        duration: 'Durée estimée',
-        expertise: 'Niveau d\'expertise requis'
-      },
-      message: 'Votre message'
-    };
-
-    const isFeaturesValid = computed(() => {
-      return Object.keys(selectedFeatures.value).length > 0;
-    });
-
+    const choice = ref("");
     const moveToNextStep = () => {
       step.value++;
     };
@@ -92,9 +62,8 @@ export default {
     return {
       step,
       projectType,
-      labels,
+      choice,
       moveToNextStep,
-      quote,
       route,
     };
   }

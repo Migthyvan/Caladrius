@@ -30,14 +30,20 @@ export default {
     setup(props, { emit }) {
         const activeIndex = ref(null);
         const items = ref([
-            { title: 'Site web' },
-            { title: 'Application mobile' },
-            { title: 'Service Freelance' }
+            { title: 'Site web',
+              urlName: 'website'
+             },
+            { title: 'Application mobile',
+              urlName: 'mobileapplication',
+            },
+            { title: 'Service Freelance',
+              urlName: 'freelance'
+            }
         ]);
 
         const selectItem = (item, index) => {
             activeIndex.value = index;
-            emit('update:modelValue', item.title);
+            emit('update:modelValue', item.urlName);
             emit('selected', item);
             console.log('Feature sélectionnée:', item);
         };

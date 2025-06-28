@@ -136,12 +136,6 @@ const routes = [
     name: 'quoteWebsite',
     component: () => import('../components/quote/quoteWebsite.vue')
   }, 
-  
-  {
-    path:'/external-quote',
-    name: 'external-quote',
-    component: () => import('../components/section/deepSeekquoteSection.vue')
-  }
 ];
 
 const router = createRouter({
