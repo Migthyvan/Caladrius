@@ -7,7 +7,7 @@ import { types, pagesNumber, specifics, backends, calculateQuote } from './quote
  * @param {Object} params - Paramètres du devis
  * @param {string} params.clientName - Nom du client
  * @param {string} params.projectType - Type de projet
- * @param {number} params.pageCount - Nombre de pages
+ * @param {string} params.pageCount - Nombre de pages
  * @param {Array} params.selectedOptions - Options sélectionnées
  * @param {Array} params.projectTypes - Liste des types de projets
  * @param {Array} params.availableOptions - Liste des options disponibles
@@ -17,7 +17,7 @@ export function generateDevisPDF(params) {
   const {
     clientName,
     projectType,
-    pageCount = 5,
+    pageCount,
     selectedOptions = [],
     projectTypes, // Ceci sera 'types'
     availableOptions, // Ceci sera 'specifics'
@@ -88,6 +88,8 @@ export function generateDevisPDF(params) {
             }
         });
         optionsYStart = y + 5; // Ajuste la position de départ du tableau si des options sont présentes
+    } else{
+        optionsYStart = 110; // Si aucune option n'est sélectionnée, commence le tableau plus bas
     }
 
     // Tableau des prix
@@ -96,8 +98,6 @@ export function generateDevisPDF(params) {
         head: [['Description', 'Prix HT']],
         body: [
             [`${currentProject.label} (base)`, `${currentProject.basePrice.toFixed(2)} €`],
-            [`Pages supplémentaires (${Math.max(0, pageCount - pagesNumber)})`, 
-            `${pagesExtraCost.toFixed(2)} €`],
             ...availableOptions
                 .filter(opt => selectedOptions.includes(opt.id))
                 .map(opt => [opt.label, `${opt.price.toFixed(2)} €`]),

@@ -175,7 +175,7 @@ export default {
           generateDevisPDF({
             clientName: myQuote.value.name,
             projectType: myQuote.value.types, // Make sure this matches the 'id' in 'type'
-            pageCount: parseInt(myQuote.value.pagesNumber.match(/\d+/)[0]), // Extract number from string like '1-5 pages'
+            pageCount: myQuote.value.pagesNumber, // Extract number from string like '1-5 pages'
             selectedOptions: myQuote.value.specific, // These should be the 'id's of selected options
             projectTypes: type, // Pass the 'types' array with 'id'
             availableOptions: specific, // Pass the 'specifics' array with 'id',
