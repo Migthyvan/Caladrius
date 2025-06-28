@@ -6,13 +6,14 @@
         v-model="inputValue"
         @change="updateValue"
       >
-        <option 
-          v-for="(item, index) in options" 
-          :key="index" 
-          :value="getOptionValue(item)"
-        >
-          {{ getOptionLabel(item) }}
-        </option>
+      <option></option>
+      <option 
+        v-for="(item, index) in options" 
+        :key="index" 
+        :value="getOptionValue(item)"
+      >
+        {{ getOptionLabel(item) }}
+      </option>
       </select>
     </div>
 </template>
