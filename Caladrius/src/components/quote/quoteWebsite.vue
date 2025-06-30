@@ -19,8 +19,12 @@
         />
 
         <div class="navigation-buttons">
-          <secondButton label = "pécédent" @click="goToPrevStep"/>
+          <secondButton label = "pécédent" @click="route.push('/quote')"/>
           <mainButton label = "suivant" @click="goToNextStep"/>
+        </div>
+
+        <div class="price-display" v-if="totalPrice > 0">
+          <h3>Estimation du prix: {{ totalPrice }} €</h3>
         </div>
       </div>
       
@@ -115,6 +119,7 @@ import InputFamily from '../tools/inputFamily.vue';
 import TextAreaTool from '../tools/textAreaTool.vue';
 import { types, pagesNumber, specifics, backends, calculateQuote } from './quote';
 import { generateDevisPDF } from './pdfQuoteGenerator';
+import { useRouter } from 'vue-router';
 
 export default {
     components: {
@@ -123,18 +128,20 @@ export default {
     },
 
     setup() {
+
+      const route = useRouter();
         
       /* About the differents steps */
         const step = ref(1);
         const goToNextStep = () => {
-            if (step.value === 1 && !myQuote.value.types) {
-                alert("Veuillez sélectionner un type de site");
-                return;
-            }
-            step.value++;
+          if (step.value === 1 && !myQuote.value.types) {
+            alert("Veuillez sélectionner un type de site");
+            return;
+          }
+          step.value++;
         };
         const goToPrevStep = () => {
-            step.value--;
+          step.value--;
         }
 
         /* About the quote */
@@ -180,6 +187,7 @@ export default {
         };
 
         return {
+          route,
           step,
           goToPrevStep,
           goToNextStep,
