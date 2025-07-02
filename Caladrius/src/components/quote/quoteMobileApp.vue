@@ -9,13 +9,13 @@
           v-model="myQuote.mobileTypes"
         />
         <selectFamily
-          label="Mon type d'application" :options="appliTypes" v-model="myQuote.appliTypes"
+          label="Mon type d'application" :options="appli" v-model="myQuote.appliTypes"
         />
         <selectFamily
           label="Mon type de backend" :options="backend" v-model="myQuote.backend"
         />
         <checkBoxTool
-          question="Fonctionnalités" :options="specific" v-model="myQuote.specific"
+          question="Autre fonctionnalités" :options="specific" v-model="myQuote.appSpecifics"
         />
 
         <div class="navigation-buttons">
@@ -28,7 +28,7 @@
         </div>
       </div>
       
-      <!-- Site Web step 2-->
+      <!-- step 2 -->
 
       <div class="features-container"  v-else-if="step === 2" key="step2">
         <h2> Vos informations personnelles </h2>
@@ -45,19 +45,19 @@
         </div>
       </div>
 
-      <!-- Site Web step 3 -->
+      <!-- step 3 -->
       <div class="features-container" v-else-if="step === 3" key="step3">
         <h2>Récapitulatif de votre devis</h2>
         
         <div class="summary-section">
             <h3>Configuration de votre site</h3>
             <div class="summary-item">
-                <span class="summary-label">Type de site:</span>
-                <span class="summary-value">{{ myQuote.types || 'Non spécifié' }}</span>
+                <span class="summary-label">plateforme:</span>
+                <span class="summary-value">{{ myQuote.mobileTypes || 'Non spécifié' }}</span>
             </div>
             <div class="summary-item">
-                <span class="summary-label">Nombre de pages:</span>
-                <span class="summary-value">{{ myQuote.pagesNumber || 'Non spécifié' }}</span>
+                <span class="summary-label">Type d'application:</span>
+                <span class="summary-value">{{ myQuote.appliTypes || 'Non spécifié' }}</span>
             </div>
             <div class="summary-item">
                 <span class="summary-label">Backend:</span>
@@ -117,7 +117,7 @@ import SecondButton from '../button/secondButton.vue';
 import { ref, computed } from 'vue';
 import InputFamily from '../tools/inputFamily.vue';
 import TextAreaTool from '../tools/textAreaTool.vue';
-import { appliTypes, specifics, backends, mobileTypes, calculateQuote } from './quote';
+import { appliTypes, appSpecifics, backends, mobileTypes, calculateQuote } from './quote';
 import { generateDevisPDF } from './pdfQuoteGenerator';
 import { useRouter } from 'vue-router';
 
@@ -134,7 +134,7 @@ export default {
       /* About the differents steps */
         const step = ref(1);
         const goToNextStep = () => {
-          if (step.value === 1 && !myQuote.value.types) {
+          if (step.value === 1 && !myQuote.value.mobileTypes) {
             alert("Veuillez sélectionner un type de site");
             return;
           }
@@ -162,14 +162,14 @@ export default {
             myQuote.value.mobileTypes,
             myQuote.value.appliTypes,
             myQuote.value.backend,
-            myQuote.value.specific
+            myQuote.value.appSpecifics
           );
         });
 
         const type = mobileTypes.map(t => ({...t, id: t.value})); // Add id to types for pdf generation
-        const Appli = appliTypes.map(a => ({...a, id: a.value})); // Add id to appliTypes for pdf generation
+        const appli = appliTypes.map(a => ({...a, id: a.value})); // Add id to appliTypes for pdf generation
         const backend = backends;
-        const specific = specifics.map(s => ({...s, id: s.value})); // Add id to specifics for pdf generation
+        const specific = appSpecifics.map(s => ({...s, id: s.value})); // Add id to specifics for pdf generation
 
         // Function to generate the PDF
         const downloadPdf = () => {
@@ -177,7 +177,7 @@ export default {
             clientName: myQuote.value.name,
             projectType: myQuote.value.mobileTypes, // Make sure this matches the 'id' in 'type'
             pageCount: myQuote.value.appliTypes, // Extract number from string like '1-5 pages'
-            selectedOptions: myQuote.value.specific, // These should be the 'id's of selected options
+            selectedOptions: myQuote.value.appSpecifics, // These should be the 'id's of selected options
             projectTypes: type, // Pass the 'types' array with 'id'
             availableOptions: specific, // Pass the 'specifics' array with 'id',
             clientEmail: myQuote.value.email,
@@ -193,7 +193,7 @@ export default {
           goToNextStep,
           myQuote,
           type,
-          Appli,
+          appli,
           backend,
           specific,
           totalPrice,

@@ -37,6 +37,11 @@ export const appliTypes = [
   { label: 'SaaS/Productivité', value: 'Saas/productivité', basePrice: 2000 },
 ];
 
+export const appSpecifics = [
+  { label: 'Notification Push', value: 'Notification Push', price: 300 },
+  { label: 'Multilingue', value: 'Multilingue', price: 400 },
+  { label: 'Fonctionnalités hors ligne', value: 'Fonctionnalités hors ligne', price: 500 }
+];
 
 export function calculateQuote(selectedType, selectedPages, selectedBackend, selectedSpecifics) {
   // Trouver le type sélectionné
