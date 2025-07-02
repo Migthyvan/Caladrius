@@ -136,6 +136,11 @@ const routes = [
     name: 'quoteWebsite',
     component: () => import('../components/quote/quoteWebsite.vue')
   }, 
+  {
+    path:'/quote/MobileApp',
+    name: 'quoteMobileApp',
+    component: () => import('../components/quote/quoteMobileApp.vue')
+  },
 ];
 
 const router = createRouter({
