@@ -4,7 +4,7 @@
     <!-- Site Web -->
     <transition name="fade" mode="out-in">
       <div class="features-container" v-if="step === 1" key="step1">
-        <h2> Devis pour site Web </h2>
+        <h2> Devis pour application mobile </h2>
         <selectFamily label="Je selectionne ma plateforme" :options="type"
           v-model="myQuote.mobileTypes"
         />
@@ -117,7 +117,7 @@ import SecondButton from '../button/secondButton.vue';
 import { ref, computed } from 'vue';
 import InputFamily from '../tools/inputFamily.vue';
 import TextAreaTool from '../tools/textAreaTool.vue';
-import { appliTypes, appSpecifics, backends, mobileTypes, calculateQuote } from './quote';
+import { appliTypes, appSpecifics, backends, mobileTypes, calculateQuoteMobileApp } from './quote';
 import { generateDevisPDF } from './pdfQuoteGenerator';
 import { useRouter } from 'vue-router';
 
@@ -153,12 +153,12 @@ export default {
           types: "",
           pagesNumber: "",
           backend: "",
-          specific: [],
+          appSpecifics: [],
         })
 
         // Calcul du prix total
         const totalPrice = computed(() => {
-          return calculateQuote(
+          return calculateQuoteMobileApp(
             myQuote.value.mobileTypes,
             myQuote.value.appliTypes,
             myQuote.value.backend,
@@ -173,7 +173,7 @@ export default {
 
         // Function to generate the PDF
         const downloadPdf = () => {
-          generateDevisPDF({
+          generateDevisPDF("Application Mobile",{
             clientName: myQuote.value.name,
             projectType: myQuote.value.mobileTypes, // Make sure this matches the 'id' in 'type'
             pageCount: myQuote.value.appliTypes, // Extract number from string like '1-5 pages'

@@ -1,5 +1,5 @@
 // just for the website
-export const types = [
+export const websiteTypes = [
   { label: 'Site vitrine', value: 'Site vitrine', basePrice: 499 },
   { label: 'Site e-commerce', value: 'Site e-commerce', basePrice: 1499 },
   { label: 'Site blog', value: 'Site blog', basePrice: 800 },
@@ -24,28 +24,10 @@ export const specifics = [
   { label: 'Blog intégré', value: 'Blog intégré', price: 200 },
   { label: 'Multilingue', value: 'Multilingue', price: 200 }
 ];
-//just for the mobile app
-export const mobileTypes = [
-  { label: 'Android', value: 'Android', basePrice: 1000 },
-  { label: 'IOS', value: 'IOS', basePrice: 2000 },
-  { label: 'Cross-platform', value: 'Cross-platform', basePrice: 1500 },
-];
-
-export const appliTypes = [
-  { label: 'Réseau social', value: 'Réseau social', basePrice: 1200 },
-  { label: 'App E-commerce', value: 'App E-commerce', basePrice: 1800 },
-  { label: 'SaaS/Productivité', value: 'Saas/productivité', basePrice: 2000 },
-];
-
-export const appSpecifics = [
-  { label: 'Notification Push', value: 'Notification Push', price: 300 },
-  { label: 'Multilingue', value: 'Multilingue', price: 400 },
-  { label: 'Fonctionnalités hors ligne', value: 'Fonctionnalités hors ligne', price: 500 }
-];
 
 export function calculateQuote(selectedType, selectedPages, selectedBackend, selectedSpecifics) {
   // Trouver le type sélectionné
-  const type = types.find(t => t.value === selectedType);
+  const type = websiteTypes.find(t => t.value === selectedType);
   if (!type) return 0;
 
   let totalPrice = type.basePrice;
@@ -66,6 +48,58 @@ export function calculateQuote(selectedType, selectedPages, selectedBackend, sel
   if (selectedSpecifics && selectedSpecifics.length > 0) {
     selectedSpecifics.forEach(spec => {
       const specific = specifics.find(s => s.value === spec);
+      if (specific) {
+        totalPrice += specific.price;
+      }
+    });
+  }
+
+  return totalPrice;
+}
+
+
+//just for the mobile app
+export const mobileTypes = [
+  { label: 'Android', value: 'Android', basePrice: 1000 },
+  { label: 'IOS', value: 'IOS', basePrice: 2000 },
+  { label: 'Cross-platform', value: 'Cross-platform', basePrice: 1500 },
+];
+
+export const appliTypes = [
+  { label: 'Réseau social', value: 'Réseau social', multiplier: 2.5 },
+  { label: 'App E-commerce', value: 'App E-commerce', multiplier: 1.5 },
+  { label: 'SaaS/Productivité', value: 'Saas/productivité', multiplier: 2 },
+];
+
+export const appSpecifics = [
+  { label: 'Notification Push', value: 'Notification Push', price: 300 },
+  { label: 'Multilingue', value: 'Multilingue', price: 400 },
+  { label: 'Fonctionnalités hors ligne', value: 'Fonctionnalités hors ligne', price: 500 }
+];
+
+export function calculateQuoteMobileApp(selectedType, selectedAppKind, selectedBackend, selectedAppSpecifics) {
+  // Trouver le type sélectionné
+  const type = mobileTypes.find(t => t.value === selectedType);
+  if (!type) return 0;
+
+  let totalPrice = type.basePrice;
+
+  // Appliquer le multiplicateur du type d'application
+  const appKind = appliTypes.find(p => p.value === selectedAppKind);
+  if (appKind) {
+    totalPrice *= appKind.multiplier;
+  }
+
+  // Ajouter le coût du backend
+  const backend = backends.find(b => b.value === selectedBackend);
+  if (backend) {
+    totalPrice += backend.price;
+  }
+
+  // Ajouter les fonctionnalités spécifiques
+  if (selectedAppSpecifics && selectedAppSpecifics.length > 0) {
+    selectedAppSpecifics.forEach(spec => {
+      const specific = appSpecifics.find(s => s.value === spec);
       if (specific) {
         totalPrice += specific.price;
       }

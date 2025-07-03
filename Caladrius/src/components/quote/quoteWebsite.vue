@@ -117,7 +117,7 @@ import SecondButton from '../button/secondButton.vue';
 import { ref, computed } from 'vue';
 import InputFamily from '../tools/inputFamily.vue';
 import TextAreaTool from '../tools/textAreaTool.vue';
-import { types, pagesNumber, specifics, backends, calculateQuote } from './quote';
+import { websiteTypes, pagesNumber, specifics, backends, calculateQuote } from './quote';
 import { generateDevisPDF } from './pdfQuoteGenerator';
 import { useRouter } from 'vue-router';
 
@@ -166,14 +166,14 @@ export default {
           );
         });
 
-        const type = types.map(t => ({...t, id: t.value})); // Add id to types for pdf generation
+        const type = websiteTypes.map(t => ({...t, id: t.value})); // Add id to types for pdf generation
         const pageNumber = pagesNumber;
         const backend = backends;
         const specific = specifics.map(s => ({...s, id: s.value})); // Add id to specifics for pdf generation
 
         // Function to generate the PDF
         const downloadPdf = () => {
-          generateDevisPDF({
+          generateDevisPDF('Website',{
             clientName: myQuote.value.name,
             projectType: myQuote.value.types, // Make sure this matches the 'id' in 'type'
             pageCount: myQuote.value.pagesNumber, // Extract number from string like '1-5 pages'

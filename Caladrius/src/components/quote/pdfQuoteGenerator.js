@@ -1,6 +1,6 @@
 import jsPDF from 'jspdf';
 import autoTable from 'jspdf-autotable';
-import { types, pagesNumber, specifics, backends, calculateQuote } from './quote';
+import { websiteTypes, pagesNumber, specifics, backends, calculateQuote } from './quote';
 
 /**
  * Génère un devis PDF
@@ -13,7 +13,8 @@ import { types, pagesNumber, specifics, backends, calculateQuote } from './quote
  * @param {Array} params.availableOptions - Liste des options disponibles
 */
 
-export function generateDevisPDF(params) {
+export function generateDevisPDF(quoteType, params) {
+  
   const {
     clientName,
     projectType,
@@ -25,6 +26,14 @@ export function generateDevisPDF(params) {
     phoneNumber,
     totalDevis,
   } = params;
+
+  // On va définir une variable pour faire rendre les libélés dynamiques
+  let kindOfproject = 'Type de projet'
+  let pageNumbers = "Nombre de pages"
+  if (quoteType != 'Website') {
+    kindOfproject = "Type de plateforme";
+    pageNumbers = "Type d'application"
+  }
 
   // Trouver le projet sélectionné
   const currentProject = projectTypes.find(p => p.id === projectType);
@@ -73,8 +82,8 @@ export function generateDevisPDF(params) {
     // Détails du projet
     doc.setFontSize(10).setTextColor(100, 100, 100).text("Détails du Projet:", 14, 90)
         .setFontSize(10)
-        .text(`Type de projet: ${currentProject.label}`, 14, 100)
-        .text(`Nombre de pages: ${pageCount}`, 81, 100)
+        .text(`${kindOfproject}: ${currentProject.label}`, 14, 100)
+        .text(`${pageNumbers}: ${pageCount}`, 81, 100)
         .text('Options',144, 100);
 
     // Options
@@ -143,36 +152,6 @@ export function generateDevisPDF(params) {
     // Téléchargement
     doc.save(`Devis_${clientName.replace(/ /g, '_')}.pdf`);
 }
-
-// --- Logique d'interaction UI ---
-document.addEventListener('DOMContentLoaded', () => {
-  const projectTypeSelect = document.getElementById('projectType');
-  const optionsListDiv = document.getElementById('options-list');
-
-  // Remplir les types de projet
-  types.forEach(type => {
-      const option = document.createElement('option');
-      option.value = type.id;
-      option.textContent = type.label;
-      projectTypeSelect.appendChild(option);
-  });
-
-  // Remplir les fonctionnalités spécifiques sous forme de cases à cocher
-  specifics.forEach(option => {
-      const div = document.createElement('div');
-      div.className = 'checkbox-item';
-      const input = document.createElement('input');
-      input.type = 'checkbox';
-      input.id = `option-${option.id}`;
-      input.value = option.id;
-      const label = document.createElement('label');
-      label.htmlFor = `option-${option.id}`;
-      label.textContent = `<span class="math-inline">\{option\.label\} \(</span>{option.price}€)`;
-      div.appendChild(input);
-      div.appendChild(label);
-      optionsListDiv.appendChild(div);
-  });
-});
 
 window.generatePDF = function() {
   const clientName = document.getElementById('clientName').value;

@@ -34,7 +34,7 @@ export default {
               urlName: 'website'
              },
             { title: 'Application mobile',
-              urlName: 'mobileapplication',
+              urlName: 'MobileApp',
             },
             { title: 'Service Freelance',
               urlName: 'freelance'
