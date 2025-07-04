@@ -1,10 +1,10 @@
 <template>
-  <div class="main__container center__flex__mobile">
+  <div class="submain__container ">
     <p class="title" data-aos="fade-up">Nos services</p>
-    <h2 class="subtitle" data-aos="fade-up">
+    <h2 data-aos="fade-up">
         Trouvez tout ce dont vous avez besoin pour une présence effective en ligne
     </h2>
-    <h3 style="font-size: 1.4rem; text-align: center; max-width: 600px;" data-aos="fade-up">
+    <h3 data-aos="fade-up">
         Nous vous proposérons un éventail de solution adapatées à vos besoins et surtout qui
         qui répondent aux normes de votre audience.
     </h3 >
@@ -63,10 +63,6 @@ export default {
 </script>
 
 <style scoped>
-.main__container{
-    padding-top: 6rem;
-    background: #16120F;
-}
 
 .card{
     display: flex;
@@ -94,10 +90,6 @@ export default {
     transition: ease-in-out 0.5s;
 }
 
-.subtitle{
-    font-size: 2rem;
-}
-
 @media (min-width: 768px) {
 
     .service__container{
@@ -106,9 +98,7 @@ export default {
         gap: 2rem;
     }
     
-    title, .subtitle{
-        text-align: center;
-    }
+    
 
     .subtitle{
         font-size: 2rem;
@@ -125,14 +115,6 @@ export default {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         gap: 2rem;
-    }
-
-    title, .subtitle{
-        text-align: center;
-    }
-
-    .subtitle{
-        font-size: 2rem;
     }
 }
 </style>

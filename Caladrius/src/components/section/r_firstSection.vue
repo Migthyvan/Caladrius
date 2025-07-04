@@ -1,17 +1,14 @@
 <template>
-    <div class="main__container center__flex__mobile">
-        <div class="main__content center__flex__mobile ">
-            <div class="title-line"></div>
-            <h1 class="animated-title">
-                Allions la technologie de l'avenir à la sagesse éternelle de nos terres.
-            </h1>
-            <h3 class="animated-subtitle">
-                Decouvrez notre panoplie de solutions digitales pour faire grandir votre business.
-            </h3>
-            <div class="about__btn">
-                <mainButton label = "Commencer" @click = "router.push('/quote')"></mainButton>
-                <span @click="router.push('/services')">En savoir plus <i class="ri-contract-right-line" style="color: #2b92ff;" @click="router.push('/services')"></i> </span>
-            </div>
+    <div class="main__container">
+        <h1 class="animated-title">
+            Allions la technologie de l'avenir à la sagesse éternelle de nos terres.
+        </h1>
+        <h3 class="animated-subtitle">
+            Decouvrez notre panoplie de solutions digitales pour faire grandir votre business.
+        </h3>
+        <div class="about__btn">
+            <mainButton label = "Commencer" @click = "router.push('/quote')"></mainButton>
+            <span @click="router.push('/services')">En savoir plus <i class="ri-contract-right-line" style="color: #2b92ff;" @click="router.push('/services')"></i> </span>
         </div>
     </div>
 </template>
@@ -47,19 +44,6 @@ export default {
 </script>
 
 <style scoped>
-.main__container{
-    padding: 4rem 1rem 1rem 1rem;
-    background: 
-    linear-gradient(to bottom, 
-        rgba(22, 18, 15, 0.4) 0%, 
-        rgba(22, 18, 15, 0.7) 70%, 
-        #16120F 100%),
-    url('../../assets/pictures/antiquities-6973196_1920.jpg');
-    background-size: cover;
-    box-sizing: border-box;
-    min-height: 100vh;
-    overflow-y: hidden;
-}
 
 /* Animations */
 .animated-title {
