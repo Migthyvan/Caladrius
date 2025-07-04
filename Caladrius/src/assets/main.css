@@ -1,6 +1,7 @@
 @import './style/base/_base.css';
 @import './style/base/_typography.css';
 @import './style/layout/_div_and_section.css';
+@import './style/Tools/_buttons.css';
 
 section{
   background: #16120F;

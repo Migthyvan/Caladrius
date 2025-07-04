@@ -16,21 +16,30 @@
     background-size: cover;
     box-sizing: border-box;
     overflow-y: hidden;
-    min-height: 100vh;
+    height: 100vh;
 }
 
 .submain__container{
     display: flex;
     flex-direction: column;
-    justify-content: left;
+    justify-content: center;
     align-items: center;
     gap: 2rem;
     padding: 2rem 1rem 1rem 1rem;
-    background: #16120F;
+    background: linear-gradient(-280deg, #16120F 80%, #007bff 100%);
     background-size: cover;
     box-sizing: border-box;
     overflow-y: hidden;
     min-height: 100vh;
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  gap: 1rem;
+  width: 100%;
 }
 
 /* For Tablet */
@@ -50,11 +59,18 @@
         align-items: center;
         gap: 2rem;
         padding: 2rem 1rem 1rem 1rem;
-        background: #16120F;
+        background: linear-gradient(135deg, #16120F 0%, #007bff 100%);
         background-size: cover;
         box-sizing: border-box;
         overflow-y: hidden;
         margin: 0 4rem;
+    }
+
+    .step {
+        align-items: center;
+        padding-top: 4rem;
+        max-width: 800px;
+        margin: 0 auto;
     }
 }
 /* For Desktop */
@@ -64,7 +80,7 @@
     .submain__container{
         display: flex;
         flex-direction: column;
-        justify-content: left;
+        justify-content: center;
         align-items: center;
         gap: 2rem;
         padding: 2rem 1rem 1rem 1rem;
