@@ -60,6 +60,7 @@ export default {
       { path: '/services', name: 'Services' },
       { path: '/contact', name: 'Contact' },
       { path: '/newsletter', name: 'Newsletter' },
+      {path: '/talking', name: 'Let\s Talk'}
     ];
 
     const isActive = (link) => {

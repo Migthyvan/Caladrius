@@ -59,6 +59,13 @@ const routes = [
       window.location.href = 'https://caladriustech.com/newsletter'
     }
   },
+  {
+    path:'/talking',
+    name:'projects',
+    component: () => import('../components/Talking/mainTalkingPage.vue')
+  },
+
+  /* About copyrighting */
 
   {
     path:'/conditions',
