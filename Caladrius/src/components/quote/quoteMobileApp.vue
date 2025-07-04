@@ -1,5 +1,5 @@
 <template>
-  <div class="main__container center__flex__mobile" >
+  <div class="submain__container" >
     <navbar/>
     <!-- Site Web -->
     <transition name="fade" mode="out-in">
@@ -135,7 +135,7 @@ export default {
         const step = ref(1);
         const goToNextStep = () => {
           if (step.value === 1 && !myQuote.value.mobileTypes) {
-            alert("Veuillez sélectionner un type de site");
+            alert("Veuillez sélectionner une plateforme.");
             return;
           }
           step.value++;

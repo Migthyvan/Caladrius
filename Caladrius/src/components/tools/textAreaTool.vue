@@ -46,7 +46,7 @@ export default {
     flex-direction: column;
     gap: 1rem;
     width: 100%;
-    max-width: 600px;
+    max-width: 500px;
 }
 
 label {
@@ -54,12 +54,13 @@ label {
 }
 
 textarea {
-    padding: 1rem;
+    padding: 2rem;
     background: #16120F;
     border: 1px solid #f3f3f3;
     outline: #f3f3f3;
     color: #f3f3f3;
     border-radius: 0.5rem;
+    font-size: 1.1rem;
 }
 
 textarea:focus {

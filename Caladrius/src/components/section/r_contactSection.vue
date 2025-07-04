@@ -1,5 +1,5 @@
 <template>
-<div class="main__container center__flex__mobile">
+<div class="submain__container">
     <p class="title" data-aos="fade-right">Contact</p>
     <h2 class="subtitle" data-aos="fade-left">
         Nous contacter
@@ -53,10 +53,6 @@ export default {
 
 <style scoped>
 
-.main__container{
-    padding: 6rem 1rem 1rem 1rem;
-    background: #16120F;
-}
 .card{
     display: flex;
     gap: 1rem;

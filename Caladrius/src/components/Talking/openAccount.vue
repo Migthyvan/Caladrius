@@ -5,7 +5,7 @@
       <div class="step" v-if="step === 1" key="step1">
         <h2>Discussons ensemble</h2>
         <h4>
-          Découvrez ne communauté, prenez part aux différents projets sur lesquelles
+          Découvrez une communauté, prenez part aux différents projets sur lesquelles
           nous travaillons et donnez vos points de vues.
         </h4>
         <p>(Bientôt disponible)</p>

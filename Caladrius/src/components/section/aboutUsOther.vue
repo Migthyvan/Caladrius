@@ -1,5 +1,5 @@
 <template>
-    <div class="main__container center__flex__mobile">
+    <div class="submain__container">
         <p data-aos="fade-up" class="title">A propos</p>
         <h2 class="subtitle" data-aos="fade-up">
             Qui sommes-nous?

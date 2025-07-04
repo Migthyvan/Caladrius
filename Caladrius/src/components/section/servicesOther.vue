@@ -1,5 +1,5 @@
 <template>
-    <div class="main__container center__flex__mobile">
+    <div class="submain__container">
         <p class="title">Services</p>
         <h2 class="subtitle">
             Que proposons-nous?

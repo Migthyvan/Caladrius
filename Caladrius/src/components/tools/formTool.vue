@@ -167,6 +167,7 @@ export default {
     flex-direction: column;
     gap: 1rem;
     width: 100%;
+    max-width: 500px;
 }
 
 .about__email{
