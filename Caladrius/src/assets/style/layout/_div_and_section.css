@@ -33,6 +33,19 @@
     min-height: 100vh;
 }
 
+.about__dashboard{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    gap: 2rem;
+    padding: 2rem 1rem 1rem 1rem;
+    background: #16120F;
+    background-size: cover;
+    box-sizing: border-box;
+    overflow-y: hidden;
+    min-height: 100vh;
+}
+
 .step {
   display: flex;
   flex-direction: column;

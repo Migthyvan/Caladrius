@@ -65,6 +65,12 @@ const routes = [
     component: () => import('../components/Talking/mainTalkingPage.vue')
   },
 
+  {
+    path:'/talking/topics',
+    name:'topics',
+    component: () => import('../components/Talking/mainTopics.vue')
+  },
+
   /* About copyrighting */
 
   {
