@@ -1,5 +1,5 @@
 <template>
-    <div class="main__container center__flex__mobile">
+    <div class="submain__container">
         <p class="title" data-aos="fade-up">A propos</p>
         <h2 class="subtitle" data-aos="fade-up">
             Qui sommes-nous?
@@ -19,7 +19,7 @@
             <div class="card">
                 <i class="fa-solid fa-book" data-aos="fade-up"></i>
                 <div class="card__info">
-                    <h4 data-aos="fade-up">Nos valeurs</h4>
+                    <h4 data-aos="fade-up" class="card__title">Nos valeurs</h4>
                     <p data-aos="fade-up">
                         Chez caladrius, nous croyons en l'innovation, la créativité et l'engagement envers nos clients.
                     </p>
@@ -29,7 +29,7 @@
             <div class="card">
                 <i class="fa-solid fa-pen" data-aos="fade-down"></i>
                 <div class="card__info">
-                    <h4 data-aos="fade-down">Nos principes</h4>
+                    <h4 data-aos="fade-down" class="card__title">Nos principes</h4>
                     <p data-aos="fade-up">
                         Nous nous engageons à fournir des solutions de qualité, en respectant les délais et en dépassant les attentes de nos clients.
                     </p>
@@ -39,7 +39,7 @@
             <div class="card">
                 <i class="fa-solid fa-bullseye" data-aos="fade-up"></i>
                 <div class="card__info">
-                    <h4 data-aos="fade-up">Nos objectifs</h4>
+                    <h4 data-aos="fade-up" class="card__title">Nos objectifs</h4>
                     <p data-aos="fade-up">
                         Notre objectif est de transformer vos idées en réalité numérique,
                         en vous offrant des solutions sur mesure qui répondent à vos besoins spécifiques.

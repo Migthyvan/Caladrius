@@ -199,10 +199,4 @@ export default {
   transform: translateX(-30px);
 }
 
-.divider {
-  height: 1px; /* L'épaisseur de votre ligne */
-  width: 70%; /* La largeur de la ligne (ici, 100% de son conteneur) */
-  background-color: #ccc; /* La couleur de la ligne (un gris clair) */
-  margin: 20px 0; /* Marge au-dessus et en-dessous pour l'espacement */
-}
 </style>

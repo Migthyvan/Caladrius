@@ -1,7 +1,7 @@
 <template>
   <div>
     <sidebar/>
-    
+    <topic-section/>
   </div>
 </template>
 
@@ -9,10 +9,11 @@
 import { ref, onMounted, onBeforeUnmount } from 'vue'
 import navbar from '../layout/navbar.vue'
 import sidebar from '../layout/sidebar.vue'
+import TopicSection from './topicSection.vue'
 
 export default {
     components:{
-        navbar, sidebar
+      navbar, sidebar, TopicSection
     },
 
     setup(){

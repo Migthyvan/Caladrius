@@ -56,12 +56,11 @@ export default {
     const router = useRouter();
 
     const navLinks = [
-      { path: '/', name: 'Accueil', icon: 'fas fa-home', exact: true },
+      { path: '/', name: 'Sujets', icon: 'fas fa-home', exact: true },
       { path: '/about', name: 'À propos', icon: 'fas fa-info-circle' },
       { path: '/services', name: 'Services', icon: 'fas fa-cogs' },
       { path: '/contact', name: 'Contact', icon: 'fas fa-envelope' },
       { path: '/newsletter', name: 'Newsletter', icon: 'fas fa-newspaper' },
-      { path: '/talking', name: "Let's Talk", icon: 'fas fa-comments' }
     ];
 
     const isActive = (link) => {

@@ -12,7 +12,7 @@
         <div class="card">
             <i class="fa-solid fa-code" data-aos="fade-up"></i>
             <div class="card__info">
-                <h4 data-aos="fade-up">Service freelance</h4>
+                <h4 data-aos="fade-up" class="card__title">Service freelance</h4>
                 <p data-aos="fade-up">
                     Nous sommes une équipe de développeurs et de designers passionnés, et
                    nous offrons des services de freelance pour vous aider à réaliser vos projets.
@@ -24,7 +24,7 @@
         <div class="card">
             <i class="fa-solid fa-mobile-screen-button" data-aos="fade-up"></i>
             <div class="card__info">
-                <h4 data-aos="fade-up">Conception d'application mobile</h4>
+                <h4 data-aos="fade-up" class="card__title">Conception d'application mobile</h4>
                 <p data-aos="fade-up">
                     nous concevons des applications mobiles sur mesure 
                     pour répondre à vos besoins spécifiques en veuillant à
@@ -37,7 +37,7 @@
         <div class="card">
             <i class="fa-solid fa-laptop" data-aos="fade-up"></i>
             <div class="card__info">
-                <h4 data-aos="fade-up">Conception de site internet</h4>
+                <h4 data-aos="fade-up" class="card__title">Conception de site internet</h4>
                 <p data-aos="fade-up">
                     Grâce à notre expertise en développement web,
                     nous créons des sites internet modernes et personnalisés pour vous démarquer en ligne.

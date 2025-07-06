@@ -55,6 +55,13 @@
   width: 100%;
 }
 
+.divider {
+  height: 1px; /* L'épaisseur de votre ligne */
+  width: 70%; /* La largeur de la ligne (ici, 100% de son conteneur) */
+  background-color: #ccc; /* La couleur de la ligne (un gris clair) */
+  margin: 20px 0; /* Marge au-dessus et en-dessous pour l'espacement */
+}
+
 /* For Tablet */
 @media (min-width: 768px) {
     .main__container{
@@ -96,7 +103,7 @@
         justify-content: center;
         align-items: center;
         gap: 2rem;
-        padding: 8rem 1rem 1rem 1rem;
+        padding: 4rem 1rem 1rem 1rem;
         background: #16120F;
         background-size: cover;
         box-sizing: border-box;
