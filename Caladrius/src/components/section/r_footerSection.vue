@@ -31,7 +31,11 @@
         <div class="sub__container ">
           <h4 class="subtitle">Réseaux sociaux</h4>
           <ul>
-            <li class="footer_li"><i class="ri-facebook-circle-fill"></i> Caladrius </li>
+            <li class="footer_li">
+                <a href="https://www.facebook.com/caladriustech" target="_blank">
+                    <i class="ri-facebook-circle-fill"></i> Caladrius 
+                </a>
+            </li>
             <li class="footer_li">
                 <a href="https://www.instagram.com/caladriusllc/" target="_blank">
                     <i class="ri-instagram-line"></i> Caladriusllc

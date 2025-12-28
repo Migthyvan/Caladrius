@@ -175,6 +175,7 @@ export default{
     align-items: center;
     gap: 1rem;
     padding: 6rem 1rem 1rem 1rem;
+    height: 100%;
 }
 
 ul{
