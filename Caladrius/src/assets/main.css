@@ -1,41 +1,49 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rethink+Sans:ital,wght@0,400..800;1,400..800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 @import "tailwindcss";
+
+:root{
+  --primary-color:#222222;
+  --secondary-color:#7b7b7b;
+  --tertiary-color:#f8f8f8;
+  --white-color:#ffffff;
+}
 
 *{
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: 'Inter', sans-serif;
+  font-family: "Rethink Sans", sans-serif;
+  font-optical-sizing: auto;
 }
 
 .body{
-  background: #16120F;
+  background: var(--tertiary-color);
 }
 
 h1 {
   font-size: 3rem;
   font-weight: 600;
-  color: #f3f3f3;
+  color: var(--primary-color);
   margin-bottom: 1rem;
 }
 
 h2 {
   font-size: 2rem;
   font-weight: 600;
-  color: #f3f3f3;
+  color: var(--primary-color);
   margin-bottom: 1rem;
 }
 
 h3 {
   font-size: 1.5rem;
-  color: #f3f3f3;
+  color: var(--primary-color);
   margin-bottom: 1rem;
 }
 
 h4 {
   font-size: 1.1rem;
-  color: #2b92ff;
+  color: var(--primary-color);
   margin-bottom: 1rem;
 }
 

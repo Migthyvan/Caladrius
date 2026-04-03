@@ -125,7 +125,7 @@ export default {
 }
 
 .nav__container.scrolled {
-  background-color: #252525f8;
+  background-color: var(--tertiary-color);
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(10px);
 }
@@ -133,7 +133,7 @@ export default {
 .div__logo h3 {
   font-weight: 500;
   font-size: 1.5rem;
-  color: #f3f3f3;
+  color: var(--primary-color);
   margin: 0;
   transition: transform 0.3s ease;
 }
@@ -160,7 +160,7 @@ export default {
 
 .div__menu a {
   text-decoration: none;
-  color: #f3f3f3;
+  color: var(--primary-color);
   font-weight: 400;
   transition: all 0.3s ease;
   position: relative;
@@ -168,11 +168,11 @@ export default {
 }
 
 .div__menu a:hover {
-  color: #4dabf7;
+  color: var(--primary-color);
 }
 
 .div__menu a.active {
-  color: #4dabf7;
+  color: var(--primary-color);
   font-weight: 500;
 }
 

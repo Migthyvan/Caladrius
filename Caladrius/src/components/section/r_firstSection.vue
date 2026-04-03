@@ -49,16 +49,11 @@ export default {
 <style scoped>
 .main__container{
     padding: 4rem 1rem 1rem 1rem;
-    background: 
-    linear-gradient(to bottom, 
-        rgba(22, 18, 15, 0.4) 0%, 
-        rgba(22, 18, 15, 0.7) 70%, 
-        #16120F 100%),
-    url('../../assets/pictures/antiquities-6973196_1920.jpg');
-    background-size: cover;
+    background-color: #f3f3f3;
     box-sizing: border-box;
     min-height: 100vh;
     overflow-y: hidden;
+    color: #222222;
 }
 
 /* Animations */

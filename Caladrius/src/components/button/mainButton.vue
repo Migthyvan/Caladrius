@@ -46,12 +46,12 @@ export default {
 <style scoped>
 .main__button {
   padding: 0.5rem;
-  border: 1px solid #007bff;
+  border: 1px solid #222222;
   border-radius: 0.6rem;
   font-size: 1rem;
   font-weight: 600;
-  background: #007bff;
-  color: #f3f3f3;
+  background: var(--primary-color);
+  color: var(--white-color);
   width: 50%;
   cursor: pointer;
   transition: all 0.5s ease;
@@ -61,14 +61,14 @@ export default {
 }
 
 .main__button:disabled {
-  background: #005fc4;
-  border-color: #005fc4;
+  background: var(--primary-color);
+  background: var(--primary-color);
   cursor: not-allowed;
 }
 
 .main__button:hover:enabled {
-  background: #005fc4;
-  border-color: #007bff;
+  background: var(--primary-color);
+  border-color: var(--primary-color);
 }
 
 @media (min-width: 768px) {
