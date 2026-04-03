@@ -3,14 +3,17 @@
         <div class="main__content center__flex__mobile ">
             <div class="title-line"></div>
             <h1 class="animated-title">
-                Allions la technologie de l'avenir à la sagesse éternelle de nos terres.
+                Quand l'esprit critique de l'économiste s'associe à la technologie.
             </h1>
             <h3 class="animated-subtitle">
-                Decouvrez notre panoplie de solutions digitales pour faire grandir votre business.
+                Vous fournir la technologie qui fait grandir votre business.
             </h3>
             <div class="about__btn">
                 <mainButton label = "Commencer" @click = "router.push('/services')"></mainButton>
-                <span @click="router.push('/services')">En savoir plus <i class="ri-contract-right-line" style="color: #2b92ff;" @click="router.push('/services')"></i> </span>
+                <span @click="router.push('/services')">
+                    En savoir plus 
+                    <i class="ri-contract-right-line" @click="router.push('/services')"></i> 
+                </span>
             </div>
         </div>
     </div>
@@ -50,6 +53,10 @@ export default {
 .main__container{
     padding: 4rem 1rem 1rem 1rem;
     background-color: #f3f3f3;
+    background-image: 
+        linear-gradient(to right, rgba(136, 136, 136, 0.1) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(201, 201, 201, 0.1) 1px, transparent 1px);
+    background-size: 40px 40px; /* taille des carrés */
     box-sizing: border-box;
     min-height: 100vh;
     overflow-y: hidden;
@@ -96,7 +103,8 @@ export default {
 
 .about__btn span, .about__btn span i{
     cursor: pointer;
-    transition: ease-in-out 0.5s;   
+    transition: ease-in-out 0.5s;
+    color: #222222;
 }
 
 .about__btn span:hover {
